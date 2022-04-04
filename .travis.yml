@@ -1,0 +1,31 @@
+language: node_js
+
+node_js:
+  - 16
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+  - yarn install
+
+jobs:
+  include:
+    - stage: Lint-staged
+      script: yarn lint-staged
+    - stage: Test
+      script: yarn test
+    - stage: Build
+      script: yarn build
+    - stage: Deploy
+      before_deploy:
+        - yarn build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github-token: $GITHUB_TOKEN
+        local_dir: build
+        on:
+          all_branches: true
