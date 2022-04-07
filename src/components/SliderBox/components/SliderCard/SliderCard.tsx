@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './SliderCard.scss';
-// import Timer from './components/Timer/Timer';
+import Timer from './components/Timer';
 
 type SliderCardProps = {
   name: string;
@@ -46,7 +46,7 @@ const SliderCard = ({ name, date }: SliderCardProps) => {
         >
           06/04/2022
         </Typography>
-        {/* <Timer date={date} /> */}
+        <Timer date={date} />
         <CardActions className="slider-card-footer">
           <Button size="medium" color="primary" variant="outlined">
             <Link to="/launch/home" className="slider-card-read-more-link">
