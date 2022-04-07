@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { TimerList } from './components/TimerList';
+import { TimerTitle } from './components/TimerTitle';
+import './CountdownTimer.scss';
 
-interface ICountdownTimerProps {
+interface CountdownTimerProps {
   launchDate: number;
 }
 
-function CountdownTimer({ launchDate }: ICountdownTimerProps) {
+export const CountdownTimer = ({ launchDate }: CountdownTimerProps) => {
   const [days, setDays] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
   const [seconds, setSeconds] = useState<number>(0);
   const [isLaunched, setIsLaunched] = useState<boolean>(false);
 
-  const intervalId = setInterval(() => {
+  const calculateValues = () => {
     const difference: number = launchDate - Number(new Date());
     if (difference > 0) {
       setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
@@ -21,19 +24,25 @@ function CountdownTimer({ launchDate }: ICountdownTimerProps) {
     } else {
       setIsLaunched(true);
     }
-  }, 1000);
+  };
 
   useEffect(() => {
+    const timeoutId = setTimeout(calculateValues, 1000);
     return () => {
-      clearInterval(intervalId);
+      clearTimeout(timeoutId);
     };
   });
 
-  return !isLaunched ? (
-    <p>{`Time left: ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`}</p>
-  ) : (
-    <p>Launched</p>
+  return (
+    <div className="timer-container">
+      {!isLaunched ? (
+        <div>
+          <TimerTitle text="Countdown to launch" />
+          <TimerList values={[days, hours, minutes, seconds]} />
+        </div>
+      ) : (
+        <TimerTitle text="Launched" />
+      )}
+    </div>
   );
-}
-
-export default CountdownTimer;
+};
