@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState, useEffect } from 'react';
+import './Timer.scss';
 
 type timerProps = {
   date: string;
@@ -14,14 +16,12 @@ const Timer = ({ date }: timerProps) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const differnce: number = Date.parse(date) - Number(new Date());
-      if (differnce > 0) {
-        setDays(Math.floor(differnce / (1000 * 60 * 60 * 24)));
-        setHours(
-          Math.floor((differnce % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        );
-        setMinutes(Math.floor((differnce % (1000 * 60 * 60)) / (1000 * 60)));
-        setSeconds(Math.floor((differnce % (1000 * 60)) / 1000));
+      const difference: number = Date.parse(date) - Number(new Date());
+      if (difference > 0) {
+        setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
+        setHours(Math.floor((difference / (1000 * 60 * 60)) % 24));
+        setMinutes(Math.floor((difference / 1000 / 60) % 60));
+        setSeconds(Math.floor((difference / 1000) % 60));
       } else {
         setIsLaunched(true);
       }
@@ -32,18 +32,30 @@ const Timer = ({ date }: timerProps) => {
   }, []);
 
   return (
-    <div>
+    <Box className="slider-timer-container">
       {isLaunched ? (
-        'Launched'
+        <Box className="slider-timer-container">
+          <Typography variant="body1" component="div" align="center">
+            Launched
+          </Typography>
+        </Box>
       ) : (
-        <Box>
-          Days - {days}
-          Hours - {hours}
-          minutes - {minutes}
-          Seconds - {seconds}
+        <Box className="slider-timer-container">
+          <Typography variant="h6" component="div" align="center">
+            Days: <br /> {days}
+          </Typography>
+          <Typography variant="h6" component="div" align="center">
+            Hours: <br /> {hours}
+          </Typography>
+          <Typography variant="h6" component="div" align="center">
+            Minutes: <br /> {minutes}
+          </Typography>
+          <Typography variant="h6" component="div" align="center">
+            Seconds: <br /> {seconds}
+          </Typography>
         </Box>
       )}
-    </div>
+    </Box>
   );
 };
 
