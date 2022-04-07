@@ -1589,7 +1589,6 @@
   version "5.0.0-alpha.76"
   resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-alpha.76.tgz#683d68eff6d52e19e9962f608a5d3b8b6fb6ef55"
   integrity sha512-Pd0l4DvjXiGRyipn/CTDlYB2XrJwhpLktVXvbvcmzL2SMDaNprSarZqBkPHIubkulmRDZEEcnFDrpKgeSJDg4A==
-=======
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@emotion/is-prop-valid" "^1.1.2"
@@ -2147,7 +2146,7 @@
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.4.4.tgz#5d9b63132df54d8909fce1c3f8ca260fdd693e17"
   integrity sha512-ReVR2rLTV1kvtlWFyuot+d1pkpG2Fw/XKE3PDAdj57rbM97ttSp9JZ2UsP+2EHTylra9cUf6JA7tGwW1INzUrA==
 
-"@types/prop-types@*", "@types/prop-types@^15.7.4":
+"@types/prop-types@*":
   version "15.7.4"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==

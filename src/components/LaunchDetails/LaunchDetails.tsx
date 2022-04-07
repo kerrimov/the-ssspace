@@ -1,78 +1,69 @@
+import React from 'react';
 import {
   Container,
-  Button,
   Grid,
   Card,
+  CardActionArea,
   CardMedia,
+  CardContent,
   CardHeader,
   Typography,
+  ThemeProvider,
 } from '@mui/material';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import data from './data';
-import CountdownTimer from '../CountdownTimer';
+import { GobackButton } from '../GobackButton';
+import { CountdownTimer } from '../CountdownTimer';
+import { launchDetails } from '../../mocks/launchDetails';
+import './LaunchDetails.scss';
 
-function LaunchDetails() {
-  const launchDate: number = Date.parse(data.net);
+export const LaunchDetails = () => {
+  const details: string[] = [
+    'Area:',
+    `${launchDetails.pad.name}, ${launchDetails.pad.location.name}`,
+    'Status:',
+    launchDetails.status.name,
+    'Date:',
+    launchDetails.net,
+  ];
   return (
-    <Container>
-      {/* <NavLink to="/">Go back</NavLink> */}
-      <Button size="large" variant="outlined" sx={{ m: 2 }}>
-        Go back
-      </Button>
-      <Card sx={{ minWidth: 275 }} raised>
-        <Grid
-          container
-          columnSpacing={{ sm: 2, md: 3 }}
-          columns={{ xs: 4, sm: 8, md: 12 }}
-        >
-          <Grid item xs={4} sm={3} md={4}>
-            <CardMedia
-              src={data.image}
-              alt={data.name}
-              height="100%"
-              component="img"
-            />
+    <Container className="container">
+      <GobackButton to="/" />
+      <Card raised>
+        <CardActionArea>
+          <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid item xs={4} sm={3} md={4}>
+              <CardMedia
+                src={launchDetails.image}
+                alt={launchDetails.name}
+                height="100%"
+                component="img"
+              />
+            </Grid>
+            <Grid item xs={4} sm={5} md={8} sx={{ p: 2 }}>
+              <CardHeader
+                title={launchDetails.name}
+                subheader={launchDetails.launch_service_provider.name}
+                titleTypographyProps={{ variant: 'h5' }}
+                className="card-title"
+              />
+              <CardContent>
+                <Grid
+                  display="grid"
+                  gridTemplateColumns="1fr 11fr"
+                  gap={2}
+                  className="card-details-grid"
+                >
+                  {details.map((el, i) => (
+                    <Typography variant="body1" key={i}>
+                      {el}
+                    </Typography>
+                  ))}
+                </Grid>
+                <CountdownTimer launchDate={Date.parse(launchDetails.net)} />
+              </CardContent>
+            </Grid>
           </Grid>
-          <Grid
-            item
-            xs={4}
-            sm={5}
-            md={8}
-            style={{ backgroundColor: '#fafafa' }}
-          >
-            <CardHeader
-              title={data.name}
-              subheader={data.launch_service_provider.name}
-            />
-            {/* <CardContent> */}
-            <Typography
-              sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
-              {`Area: ${data.pad.name}, ${data.pad.location.name}`}
-            </Typography>
-            <Typography
-              sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
-              Status: {data.status.name}
-            </Typography>
-            <Typography
-              sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
-              Date: {data.net}
-            </Typography>
-            <CountdownTimer launchDate={launchDate} />
-          </Grid>
-        </Grid>
+        </CardActionArea>
       </Card>
     </Container>
   );
-}
-
-export default LaunchDetails;
+};

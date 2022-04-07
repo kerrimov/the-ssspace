@@ -1,0 +1,9 @@
+@import '../../shared/styles/variables';
+
+.MuiButton-root.goback-button,
+.MuiButton-root.goback-button:hover,
+.MuiButton-root.goback-button:focus {
+  margin: 0.5rem;
+  border: $goback-button-border solid;
+  font-weight: 700;
+}
