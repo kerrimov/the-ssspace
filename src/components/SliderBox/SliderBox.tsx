@@ -8,10 +8,11 @@ import SliderCard from './components/SliderCard';
 import { Container } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Box } from '@mui/system';
+import { slidesArray } from './sliders';
 
 const SliderBox = () => {
   return (
-    <Container className="slider-container">
+    <Container className="slider-container" maxWidth="xl">
       <Swiper
         loop
         className="slider-box"
@@ -34,10 +35,16 @@ const SliderBox = () => {
         })}
       </Swiper>
       <Box className="slider-card-button-prev-arrow">
-        <ArrowBackIosIcon className="slider-card-icon-prev-arrow" />
+        <ArrowBackIosIcon
+          className="slider-card-icon-prev-arrow"
+          color="primary"
+        />
       </Box>
       <Box className="slider-card-button-next-arrow">
-        <ArrowBackIosIcon className="slider-card-icon-next-arrow" />
+        <ArrowBackIosIcon
+          className="slider-card-icon-next-arrow"
+          color="primary"
+        />
       </Box>
     </Container>
   );
