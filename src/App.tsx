@@ -8,11 +8,10 @@ import { theme } from './theme/theme';
 export const App = () => {
   const routes = useRoutes(Routes);
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Header />
-        {routes}
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <Header></Header>
+      <div style={{ marginTop: '64px' }}></div>
+      {routes}
+    </ThemeProvider>
   );
 };
