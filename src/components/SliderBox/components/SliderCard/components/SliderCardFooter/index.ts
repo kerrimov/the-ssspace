@@ -1,0 +1,1 @@
+export { SliderCardFooter } from './SliderCardFooter';

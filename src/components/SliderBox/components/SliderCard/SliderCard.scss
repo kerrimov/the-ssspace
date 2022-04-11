@@ -1,25 +1,10 @@
+@import '../../../../shared/styles/variables.scss';
+
 .slider-card {
   display: flex;
-  border: 1px #90caf9 solid;
-}
-
-.slider-card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  border: 1px $primary_color solid;
 }
 
 .slider-card-content-container {
   flex: 1 1 auto;
-}
-
-.slider-card-footer {
-  align-items: center;
-  align-self: flex-end;
-}
-
-.slider-card-read-more-link {
-  color: #ffee58;
-  text-decoration: none;
 }

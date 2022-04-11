@@ -1,53 +1,36 @@
 import React from 'react';
-import './SliderBox.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Autoplay, Navigation } from 'swiper';
-import SliderCard from './components/SliderCard';
 import { Container } from '@mui/material';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { Box } from '@mui/system';
-import { slidesArray } from './sliders';
+import { SliderCard } from './components/SliderCard';
+import { slidesArray } from './slidesData';
+import './SliderBox.scss';
+import { SliderArrow } from './components/SliderArrow';
 
-const SliderBox = () => {
-  return (
-    <Container className="slider-container" maxWidth="xl">
-      <Swiper
-        loop
-        className="slider-box"
-        simulateTouch={false}
-        spaceBetween={10}
-        slidesPerView={1}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        modules={[Autoplay, Navigation]}
-        navigation={{
-          prevEl: '.slider-card-button-prev-arrow',
-          nextEl: '.slider-card-button-next-arrow',
-        }}
-      >
-        {slidesArray.map((card, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <SliderCard name={card.name} date={card.date} />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      <Box className="slider-card-button-prev-arrow">
-        <ArrowBackIosIcon
-          className="slider-card-icon-prev-arrow"
-          color="primary"
-        />
-      </Box>
-      <Box className="slider-card-button-next-arrow">
-        <ArrowBackIosIcon
-          className="slider-card-icon-next-arrow"
-          color="primary"
-        />
-      </Box>
-    </Container>
-  );
-};
-
-export default SliderBox;
+export const SliderBox = () => (
+  <Container className="slider-container" maxWidth="xl">
+    <Swiper
+      loop
+      className="slider-box"
+      simulateTouch={false}
+      spaceBetween={10}
+      slidesPerView={1}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      modules={[Autoplay, Navigation]}
+      navigation={{
+        prevEl: '.slider-card-button-prev-arrow',
+        nextEl: '.slider-card-button-next-arrow',
+      }}
+    >
+      {slidesArray.map((card, index) => (
+        <SwiperSlide key={index}>
+          <SliderCard name={card.name} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    <SliderArrow direction="prev" />
+    <SliderArrow direction="next" />
+  </Container>
+);

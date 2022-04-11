@@ -1,9 +1,9 @@
-type slidesArrayType = {
+interface SlidesArrayType {
   name: string;
   date: string;
-};
+}
 
-export const slidesArray: Array<slidesArrayType> = [
+export const slidesArray: Array<SlidesArrayType> = [
   {
     name: 'Upcoming',
     date: '2022-04-13T19:28:34Z',

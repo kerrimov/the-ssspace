@@ -1,0 +1,1 @@
+export { SliderCardMain } from './SliderCardMain';
