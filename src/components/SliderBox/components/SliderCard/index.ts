@@ -1,1 +1,1 @@
-export { default } from './SliderCard';
+export { SliderCard } from './SliderCard';

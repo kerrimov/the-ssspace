@@ -1,0 +1,11 @@
+@import '../../../../../../shared/styles/variables.scss';
+
+.slider-card-footer {
+  align-items: center;
+  align-self: flex-end;
+}
+
+.slider-card-read-more-link {
+  color: $contrast-text-color;
+  text-decoration: none;
+}
