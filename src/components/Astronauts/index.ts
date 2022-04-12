@@ -1,1 +1,1 @@
-export { default } from './Astronauts';
+export { Astronauts } from './Astronauts';
