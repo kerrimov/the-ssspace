@@ -8,7 +8,6 @@ import {
   CardContent,
   CardHeader,
   Typography,
-  ThemeProvider,
 } from '@mui/material';
 import { GobackButton } from '../GobackButton';
 import { CountdownTimer } from '../CountdownTimer';
