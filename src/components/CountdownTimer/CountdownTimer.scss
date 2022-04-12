@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 @import '../../shared/styles/variables';
 
+=======
+:root {
+  --smaller: 0.75;
+}
+>>>>>>> 1bb72fd (change classes name pattern in scss files, change default export to named etc.)
 .timer-container {
   max-width: 65%;
   margin: 1.5rem auto;
@@ -12,3 +18,55 @@
     max-width: initial;
   }
 }
+<<<<<<< HEAD
+=======
+
+.timer-title {
+  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: normal;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  @media screen and (max-width: 900px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 0.8rem;
+  }
+}
+
+.timer-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.timer-item {
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+.timer-value {
+  display: block;
+  text-align: center;
+
+  font-size: 2.5rem;
+  @media all and (max-width: 900px) {
+    font-size: calc(2.5rem * var(--smaller));
+  }
+}
+
+.timer-caption {
+  display: block;
+  text-align: center;
+
+  font-size: 0.8rem;
+  @media all and (max-width: 900px) {
+    font-size: calc(0.8rem * var(--smaller));
+  }
+}
+>>>>>>> 1bb72fd (change classes name pattern in scss files, change default export to named etc.)

@@ -33,6 +33,7 @@ export const CountdownTimer = ({ launchDate }: CountdownTimerProps) => {
     };
   });
 
+<<<<<<< HEAD
   return (
     <div className="timer-container">
       {!isLaunched ? (
@@ -44,5 +45,31 @@ export const CountdownTimer = ({ launchDate }: CountdownTimerProps) => {
         <TimerTitle text="Launched" />
       )}
     </div>
+=======
+  return !isLaunched ? (
+    <div className="timer-container">
+      <p className="timer-title">Countdown to launch</p>
+      <ul className="timer-list">
+        <li className="timer-item">
+          <span className="timer-value">{days}</span>
+          <span className="timer-caption">days</span>
+        </li>
+        <li className="timer-item">
+          <span className="timer-value">{hours}</span>
+          <span className="timer-caption">hours</span>
+        </li>
+        <li className="timer-item">
+          <span className="timer-value">{minutes}</span>
+          <span className="timer-caption">minutes</span>
+        </li>
+        <li className="timer-item">
+          <span className="timer-value">{seconds}</span>
+          <span className="timer-caption">seconds</span>
+        </li>
+      </ul>
+    </div>
+  ) : (
+    <p className="timer-title">Launched</p>
+>>>>>>> 1bb72fd (change classes name pattern in scss files, change default export to named etc.)
   );
 };
