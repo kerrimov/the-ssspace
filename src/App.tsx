@@ -1,15 +1,14 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
-import rootRoutes from './routes/root';
+import { rootRoutes } from './components/Routes';
+import { Header } from './components/Header';
 
-function App() {
+export const App = () => {
   const elements = useRoutes(rootRoutes);
   return (
     <>
-      <header>Header</header>
+      <Header />
       {elements}
     </>
   );
-}
-
-export default App;
+};

@@ -1,1 +1,1 @@
-export { default } from './Agencies';
+export { Agencies } from './Agencies';
