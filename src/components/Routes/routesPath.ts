@@ -1,7 +1,7 @@
 export const enum RoutesPath {
-  homeUrl = '/',
-  eventsUrl = '/events',
-  agenciesUrl = '/agencies',
-  astronautsUrl = '/astronauts',
-  aboutUrl = '/about',
+  HOME = '/',
+  EVENTS = '/events',
+  AGENCIES = '/agencies',
+  ASTRONAUTS = '/astronauts',
+  ABOUT = '/about',
 }
