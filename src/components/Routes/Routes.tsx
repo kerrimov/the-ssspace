@@ -5,37 +5,31 @@ import { Agencies } from '../Agencies';
 import { Astronauts } from '../Astronauts';
 import { Events } from '../Events';
 import { Home } from '../Home';
-import {
-  homeUrl,
-  eventsUrl,
-  agenciesUrl,
-  astronautsUrl,
-  aboutUrl,
-} from './routesUrl';
+import { RoutesPath } from './routesPath';
 
-export const rootRoutes = [
+export const Routes = [
   {
-    path: homeUrl,
+    path: RoutesPath.homeUrl,
     element: <Home />,
   },
   {
-    path: eventsUrl,
+    path: RoutesPath.eventsUrl,
     element: <Events />,
   },
   {
-    path: agenciesUrl,
+    path: RoutesPath.agenciesUrl,
     element: <Agencies />,
   },
   {
-    path: astronautsUrl,
+    path: RoutesPath.astronautsUrl,
     element: <Astronauts />,
   },
   {
-    path: aboutUrl,
+    path: RoutesPath.aboutUrl,
     element: <About />,
   },
   {
     path: '*',
-    element: <Navigate to={homeUrl} replace={true} />,
+    element: <Navigate to={RoutesPath.homeUrl} />,
   },
 ];
