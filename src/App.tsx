@@ -1,14 +1,14 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
-import { rootRoutes } from './components/Routes';
+import { Routes } from './components/Routes';
 import { Header } from './components/Header';
 
 export const App = () => {
-  const elements = useRoutes(rootRoutes);
+  const routes = useRoutes(Routes);
   return (
     <>
       <Header />
-      {elements}
+      {routes}
     </>
   );
 };
