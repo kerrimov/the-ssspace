@@ -9,27 +9,27 @@ import { RoutesPath } from './routesPath';
 
 export const Routes = [
   {
-    path: RoutesPath.homeUrl,
+    path: RoutesPath.HOME,
     element: <Home />,
   },
   {
-    path: RoutesPath.eventsUrl,
+    path: RoutesPath.EVENTS,
     element: <Events />,
   },
   {
-    path: RoutesPath.agenciesUrl,
+    path: RoutesPath.AGENCIES,
     element: <Agencies />,
   },
   {
-    path: RoutesPath.astronautsUrl,
+    path: RoutesPath.ASTRONAUTS,
     element: <Astronauts />,
   },
   {
-    path: RoutesPath.aboutUrl,
+    path: RoutesPath.ABOUT,
     element: <About />,
   },
   {
     path: '*',
-    element: <Navigate to={RoutesPath.homeUrl} />,
+    element: <Navigate to={RoutesPath.HOME} />,
   },
 ];
