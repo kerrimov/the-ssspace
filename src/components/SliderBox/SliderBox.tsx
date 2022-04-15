@@ -5,12 +5,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
-import { slidesArray } from './slidesData';
-import './SliderBox.scss';
 import { SliderArrow } from './components/SliderArrow';
+import { slides } from './mocks/slidesData';
+import './SliderBox.scss';
 
 export const SliderBox = () => (
   <Container className="slider-container" maxWidth="xl">
+    <SliderArrow direction="previous" />
     <Swiper
       loop
       className="slider-box"
@@ -20,17 +21,16 @@ export const SliderBox = () => (
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       modules={[Autoplay, Navigation]}
       navigation={{
-        prevEl: '.slider-card-button-prev-arrow',
-        nextEl: '.slider-card-button-next-arrow',
+        prevEl: '.slider-card-icon-previous-arrow',
+        nextEl: '.slider-card-icon-next-arrow',
       }}
     >
-      {slidesArray.map((card, index) => (
+      {slides.map((card, index) => (
         <SwiperSlide key={index}>
           <SliderCard name={card.name} />
         </SwiperSlide>
       ))}
     </Swiper>
-    <SliderArrow direction="prev" />
     <SliderArrow direction="next" />
   </Container>
 );
