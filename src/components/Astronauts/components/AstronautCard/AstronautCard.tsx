@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Container,
   Card,
@@ -11,8 +12,19 @@ import {
 import './AstronautCard.scss';
 
 export const AstronautCard = () => {
+  const navigate = useNavigate();
+
   return (
-    <Container maxWidth="xs">
+    <Container>
+      <Typography
+        className="astronauts_header"
+        gutterBottom
+        variant="h2"
+        component="div"
+        sx={{ color: 'primary.dark' }}
+      >
+        Astronauts
+      </Typography>
       <Card sx={{ maxWidth: 268 }} className="astronautCard">
         <CardMedia
           component="img"
@@ -29,26 +41,18 @@ export const AstronautCard = () => {
           >
             Julie Payette
           </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            className="astronautCardContent_agency"
-          >
-            Canadian Space Agency
-          </Typography>
-          <div className="astronautCardContent_separator"></div>
-          <Typography variant="h6" sx={{ color: 'primary.contrastText' }}>
-            Time left for flight
-          </Typography>
           <Typography variant="body2" color="text.secondary">
-            Date
+            Canadian Space Agency
           </Typography>
         </CardContent>
         <CardActions className="astronautCardActions">
           <Button
             variant="contained"
-            size="small"
+            size="medium"
             sx={{ color: 'primary.contrastText' }}
+            onClick={() => {
+              navigate('/astronauts/details');
+            }}
           >
             More info
           </Button>
