@@ -1,3 +1,10 @@
 import React from 'react';
+import { AstronautCard } from './AstronautCard';
 
-export const Astronauts = () => <div>Astronauts</div>;
+export const Astronauts = () => {
+  return (
+    <>
+      <AstronautCard />
+    </>
+  );
+};

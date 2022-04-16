@@ -1,0 +1,1 @@
+export { AstronautCard } from './AstronautCard';
