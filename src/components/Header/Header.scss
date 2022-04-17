@@ -1,33 +1,38 @@
-.logo {
-  display: flex;
-  justify-content: flex-start;
-  width: 50px;
-  height: 50px;
-  margin-right: 24px;
-}
+@import '../../shared/styles/variables';
 
-.navPages {
-  display: flex;
-  justify-content: flex-start;
-  flex-grow: 1;
-}
+.header {
+  &-logo {
+    display: flex;
+    justify-content: flex-start;
+    width: 3.125rem;
+    height: 3.125rem;
+    margin-right: 1.5re;
+  }
 
-.navPage {
-  margin: 4px;
-}
+  &-navigation {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
 
-.socialNetworks {
-  display: flex;
-  justify-content: flex-end;
-}
-.socialNetworks > .socialNetwork {
-  min-width: 24px;
-}
+    & &-item {
+      margin: 0.25rem;
+      color: $contrast-text-color;
 
-.socialNetwork:hover {
-  transform: scale(1.1);
-}
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 
-.navPage:hover {
-  transform: scale(1.1);
+  &-socials {
+    display: flex;
+    justify-content: flex-end;
+    & &-item {
+      min-width: 1.5rem;
+      color: $contrast-text-color;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 }
