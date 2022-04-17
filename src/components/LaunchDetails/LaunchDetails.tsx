@@ -7,25 +7,22 @@ import {
   CardMedia,
   CardContent,
   CardHeader,
-  Typography,
 } from '@mui/material';
 import { GobackButton } from '../GobackButton';
+import { CardDetails } from './components/CardDetails';
 import { CountdownTimer } from '../CountdownTimer';
 import { launchDetails } from '../../mocks/launchDetails';
 import './LaunchDetails.scss';
 
 export const LaunchDetails = () => {
-  const details: string[] = [
-    'Area:',
+  const detailsValues: string[] = [
     `${launchDetails.pad.name}, ${launchDetails.pad.location.name}`,
-    'Status:',
     launchDetails.status.name,
-    'Date:',
     launchDetails.net,
   ];
   return (
     <Container className="container">
-      <GobackButton to="/" />
+      <GobackButton path="/" />
       <Card raised>
         <CardActionArea>
           <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -45,18 +42,7 @@ export const LaunchDetails = () => {
                 className="card-title"
               />
               <CardContent>
-                <Grid
-                  display="grid"
-                  gridTemplateColumns="1fr 11fr"
-                  gap={2}
-                  className="card-details-grid"
-                >
-                  {details.map((el, i) => (
-                    <Typography variant="body1" key={i}>
-                      {el}
-                    </Typography>
-                  ))}
-                </Grid>
+                <CardDetails values={detailsValues} />
                 <CountdownTimer launchDate={Date.parse(launchDetails.net)} />
               </CardContent>
             </Grid>
