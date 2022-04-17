@@ -11,10 +11,16 @@
 
   .astronautCardContent {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
   }
 
   .astronautCardActions {
     justify-content: center;
+
+    .astronautCardActions_button {
+      .astronautCardActions_buttonIcon {
+        margin-right: 0.5rem;
+      }
+    }
   }
 }
