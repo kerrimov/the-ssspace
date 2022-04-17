@@ -5,7 +5,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { RoutesPath } from '../Routes/routesPath';
-import { instagramUrl, linkedInUrl, gitHubUrl } from './constants';
+import { instagramUrl, linkedInUrl, gitHubUrl } from './socials';
 import './Header.scss';
 
 const pages = [
@@ -16,7 +16,7 @@ const pages = [
   { name: 'About', url: RoutesPath.ABOUT },
 ];
 
-const socialNetworks = [
+const socials = [
   { component: InstagramIcon, url: instagramUrl },
   { component: LinkedInIcon, url: linkedInUrl },
   { component: GitHubIcon, url: gitHubUrl },
@@ -24,20 +24,19 @@ const socialNetworks = [
 
 export const Header = () => {
   return (
-    <AppBar position="fixed">
+    <AppBar className="header" position="fixed">
       <Container maxWidth="xl">
         <Toolbar>
-          <Box className="logo" component={Link} to={RoutesPath.HOME}>
+          <Box className="header-logo" component={Link} to={RoutesPath.HOME}>
             <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Logo" />
           </Box>
-          <Box className="navPages" component="nav">
+          <Box className="header-navigation" component="nav">
             {pages.map(({ name, url }) => (
               <Button
-                className="navPage"
+                className="header-navigation-item"
                 key={url}
                 variant="text"
                 size="large"
-                sx={{ color: 'primary.contrastText' }}
                 to={url}
                 component={Link}
               >
@@ -45,12 +44,11 @@ export const Header = () => {
               </Button>
             ))}
           </Box>
-          <Box className="socialNetworks">
-            {socialNetworks.map(({ component: Component, url }) => (
+          <Box className="header-socials">
+            {socials.map(({ component: Component, url }) => (
               <Button
-                className="socialNetwork"
+                className="header-socials-item"
                 key={url}
-                sx={{ color: 'primary.contrastText' }}
                 href={url}
                 target="_blank"
               >
