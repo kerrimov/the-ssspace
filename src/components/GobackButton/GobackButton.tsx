@@ -4,9 +4,9 @@ import { Button } from '@mui/material';
 import './GobackButton.scss';
 
 interface GobackButtonProps {
-  to: string;
+  path: string;
 }
-export const GobackButton = ({ to }: GobackButtonProps) => {
+export const GobackButton = ({ path }: GobackButtonProps) => {
   const navigate = useNavigate();
 
   return (
@@ -15,7 +15,7 @@ export const GobackButton = ({ to }: GobackButtonProps) => {
       size="large"
       variant="outlined"
       onClick={() => {
-        navigate(to);
+        navigate(path);
       }}
     >
       Go back
