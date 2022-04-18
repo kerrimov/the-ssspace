@@ -1,0 +1,16 @@
+@import '../../../../shared/styles/variables';
+
+.header-navigation {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+
+  & &-item {
+    margin: 0.25rem;
+    color: $contrast-text-color;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../../../shared/styles/variables';
+
+.header-socials {
+  display: flex;
+  justify-content: flex-end;
+  & &-item {
+    min-width: 1.5rem;
+    color: $contrast-text-color;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
