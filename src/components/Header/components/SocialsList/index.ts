@@ -1,0 +1,1 @@
+export { SocialsList } from './SocialsList';
