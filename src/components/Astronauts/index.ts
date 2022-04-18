@@ -1,1 +1,0 @@
-export { Astronauts } from './Astronauts';
