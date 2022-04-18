@@ -1,1 +1,0 @@
-export { AstronautCard } from './AstronautCard';

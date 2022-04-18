@@ -1,0 +1,1 @@
+export { AstronautsItemImage } from './AstronautsItemImage';

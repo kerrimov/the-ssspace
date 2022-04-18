@@ -1,0 +1,1 @@
+export { AstronautsList } from './AstronautsList';

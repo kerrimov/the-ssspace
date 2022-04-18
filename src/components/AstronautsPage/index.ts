@@ -1,0 +1,1 @@
+export { AstronautsPage } from './AstronautsPage';
