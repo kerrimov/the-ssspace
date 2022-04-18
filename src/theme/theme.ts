@@ -1,21 +1,22 @@
 import { createTheme } from '@mui/material';
+import variables from '../shared/styles/_variables.scss';
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#90caf9',
-      light: '#c3fdff',
-      dark: '#5d99c6',
-      contrastText: '#212121',
+      main: variables.primaryMain,
+      light: variables.primaryLight,
+      dark: variables.primaryDark,
+      contrastText: variables.primaryContrastText,
     },
     secondary: {
-      main: '#ffee58',
-      light: '#ffff8b',
-      dark: '#c9bc1f',
-      contrastText: '#212121',
+      main: variables.secondaryMain,
+      light: variables.secondaryLight,
+      dark: variables.secondaryDark,
+      contrastText: variables.primaryContrastText,
     },
   },
   typography: {
-    fontFamily: 'Nunito',
+    fontFamily: variables.defaultFont,
   },
 });
