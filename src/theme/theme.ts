@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material';
+
 import variables from '../shared/styles/_variables.scss';
 
 export const theme = createTheme({
