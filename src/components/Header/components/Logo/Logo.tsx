@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { RoutesPath } from '../../../Routes/routesPath';
+import { RoutesPath } from '../../../Router/routesPath';
 import './Logo.scss';
 
 export const Logo = () => (

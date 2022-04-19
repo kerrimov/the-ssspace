@@ -1,4 +1,4 @@
-import { RoutesPath } from '../../Routes/routesPath';
+import { RoutesPath } from '../../Router/routesPath';
 
 const enum RoutesName {
   HOME = 'Home',
