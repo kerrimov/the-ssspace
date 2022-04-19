@@ -1,0 +1,8 @@
+.card-details {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 11fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  padding-left: 5rem;
+}

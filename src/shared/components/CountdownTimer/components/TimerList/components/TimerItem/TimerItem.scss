@@ -1,0 +1,27 @@
+@import '../../../../../../styles/variables';
+
+.timer-item {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  color: $contrast-text-color;
+}
+
+.timer-value {
+  display: block;
+  text-align: center;
+
+  font-size: 2.5rem;
+  @media all and (max-width: $tablet-breakpoint) {
+    font-size: 2rem;
+  }
+}
+
+.timer-caption {
+  display: block;
+  text-align: center;
+
+  font-size: 0.8rem;
+  @media all and (max-width: $tablet-breakpoint) {
+    font-size: 0.6rem;
+  }
+}
