@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.MuiButton-root.secondary-button,
+.MuiButton-root.secondary-button:hover,
+.MuiButton-root.secondary-button:focus {
+  margin: 0.5rem;
+  border: $goback-button-border solid;
+  font-weight: $font-weight-bold;
+}

@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.timer-container {
+  max-width: 65%;
+  margin: 1.5rem auto;
+  padding: 1rem 3rem;
+
+  color: $contrast-text-color;
+  border: $default-border-width solid $timer-border-color;
+  border-radius: $default-border-radius;
+  @media screen and (max-width: $tablet-breakpoint) {
+    max-width: initial;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../../../styles/variables';
+
+.timer-title {
+  margin: 1rem 0;
+  text-align: center;
+  
+  font-size: 1.5rem;
+  font-weight: $font-weight-normal;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  @media screen and (max-width: $tablet-breakpoint) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 0.8rem;
+  }
+}
