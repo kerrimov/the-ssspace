@@ -2,6 +2,8 @@ import { createTheme } from '@mui/material';
 
 import variables from '../shared/styles/_variables.scss';
 
+console.log(variables);
+
 export const theme = createTheme({
   palette: {
     primary: {
