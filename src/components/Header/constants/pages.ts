@@ -8,7 +8,12 @@ const enum RoutesName {
   ABOUT = 'About',
 }
 
-export const pages = [
+interface Page {
+  name: RoutesName;
+  url: RoutesPath;
+}
+
+export const pages: Page[] = [
   { name: RoutesName.HOME, url: RoutesPath.HOME },
   { name: RoutesName.EVENTS, url: RoutesPath.EVENTS },
   { name: RoutesName.AGENCIES, url: RoutesPath.AGENCIES },

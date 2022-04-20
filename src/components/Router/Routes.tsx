@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate } from 'react-router';
+import { Navigate, RouteObject } from 'react-router';
 import { About } from '../About';
 import { Agencies } from '../Agencies';
 import { Astronauts } from '../Astronauts';
@@ -7,7 +7,7 @@ import { Events } from '../Events';
 import { Home } from '../Home';
 import { RoutesPath } from './routesPath';
 
-export const Routes = [
+export const routesConfig: RouteObject[] = [
   {
     path: RoutesPath.HOME,
     element: <Home />,

@@ -5,7 +5,7 @@ import './SocialsList.scss';
 
 export const SocialsList = () => (
   <Box className="header-socials">
-    {socials.map(({ icon: Icon, url }, index) => (
+    {socials.map(({ icon: Icon, url }, index: number) => (
       <Button
         className="header-socials-item"
         key={index}

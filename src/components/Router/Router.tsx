@@ -1,9 +1,9 @@
 import React from 'react';
 import './Router.scss';
 import { useRoutes } from 'react-router-dom';
-import { Routes } from './Routes';
+import { routesConfig } from './routes';
 
 export const Router = () => {
-  const routes = useRoutes(Routes);
+  const routes: React.ReactElement | null = useRoutes(routesConfig);
   return <div className="router-elements-wrapper">{routes}</div>;
 };
