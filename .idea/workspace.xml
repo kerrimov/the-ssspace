@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f78522f-0ce2-4659-b4c1-6c4f5af7a552" name="Changes" comment="renamed some components and refactore imports, constants, iamge">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SliderBox/components/SliderCard/SliderCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SliderBox/components/SliderCard/SliderCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SliderBox/mocks/images/rocket-lauch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SliderBox/mocks/slidesData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SliderBox/mocks/slidesData.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

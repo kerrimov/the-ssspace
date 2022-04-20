@@ -1,10 +1,8 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import { Card, CardContent, CardMedia } from '@mui/material';
 import { SliderCardMain } from './components/SliderCardMain';
 import { SliderCardFooter } from './components/SliderCardFooter';
-// import rocketImage from './../../mocks/images/rocket-lauch.jpg;
+import { imageSliderUrl } from '../../mocks/slidesData';
 import './SliderCard.scss';
 
 interface SliderCardProps {
@@ -16,7 +14,7 @@ export const SliderCard = ({ name }: SliderCardProps) => (
     <CardMedia
       component="img"
       height="550"
-      // image={rocketImage}
+      image={imageSliderUrl}
       alt="rocket launch"
     />
     <CardContent className="slider-card-content">
