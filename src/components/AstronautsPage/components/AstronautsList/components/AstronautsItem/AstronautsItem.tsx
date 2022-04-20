@@ -5,12 +5,10 @@ import { AstronautsItemContent } from './components/AstronautsItemContent';
 import { AstronautsItemActions } from './components/AstronautsItemActions';
 import './AstronautsItem.scss';
 
-export const AstronautsItem = () => {
-  return (
-    <Card className="astronauts-item">
-      <AstronautsItemImage />
-      <AstronautsItemContent />
-      <AstronautsItemActions />
-    </Card>
-  );
-};
+export const AstronautsItem = () => (
+  <Card className="astronauts-item">
+    <AstronautsItemImage />
+    <AstronautsItemContent />
+    <AstronautsItemActions />
+  </Card>
+);

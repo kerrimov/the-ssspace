@@ -1,4 +1,6 @@
-export const astronautsData = {
+import type { Astronauts } from '../types/Astronauts';
+
+export const astronautsData: Astronauts = {
   name: 'Julie Payette',
   agency: {
     name: 'Canadian Space Agency',
