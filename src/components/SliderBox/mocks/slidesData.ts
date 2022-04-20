@@ -17,3 +17,6 @@ export const slides: Array<SlidesType> = [
     date: '2022-04-06T19:28:34Z',
   },
 ];
+
+export const imageSliderUrl =
+  'https://upload.wikimedia.org/wikipedia/commons/d/d1/Falcon_Heavy_Demo_Mission_%2839337245145%29.jpg';
