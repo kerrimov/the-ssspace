@@ -6,7 +6,7 @@ import './NavigationList.scss';
 
 export const NavigationList = () => (
   <Box className="header-navigation" component="nav">
-    {pages.map(({ name, url }, index) => (
+    {pages.map(({ name, url }, index: number) => (
       <Button
         className="header-navigation-item"
         key={index}
