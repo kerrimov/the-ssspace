@@ -1,8 +1,8 @@
 import React from 'react';
 import { AppBar, Toolbar, Container } from '@mui/material';
-import { NavigationList } from './NavigationList';
-import { Logo } from './Logo';
-import { SocialsList } from './SocialsList';
+import { NavigationList } from './components/NavigationList';
+import { Logo } from './components/Logo';
+import { SocialsList } from './components/SocialsList';
 
 export const Header = () => {
   return (
