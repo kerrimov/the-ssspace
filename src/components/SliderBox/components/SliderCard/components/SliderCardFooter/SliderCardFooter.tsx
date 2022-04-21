@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { Button, CardActions } from '@mui/material';
 import './SliderCardFooter.scss';
 
 export const SliderCardFooter = () => (
