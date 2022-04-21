@@ -1,5 +1,6 @@
 import { RoutesPath } from '../../Router/routesPath';
-import { RoutesName, Page } from '../types/pages.type';
+import { RoutesName } from '../types/pages';
+import type { Page } from '../types/pages';
 
 export const pages: Page[] = [
   { name: RoutesName.HOME, url: RoutesPath.HOME },
