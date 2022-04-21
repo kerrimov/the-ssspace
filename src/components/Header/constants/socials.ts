@@ -1,5 +1,6 @@
 import { Instagram, LinkedIn, GitHub } from '@mui/icons-material';
-import { SocialsUrl, Socials } from '../types/socials.type';
+import { SocialsUrl } from '../types/socials';
+import type { Socials } from '../types/socials';
 
 export const socials: Socials[] = [
   { icon: Instagram, url: SocialsUrl.INSTAGRAM },
