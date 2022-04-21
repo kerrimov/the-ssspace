@@ -1,17 +1,5 @@
 import { RoutesPath } from '../../Router/routesPath';
-
-const enum RoutesName {
-  HOME = 'Home',
-  EVENTS = 'Events',
-  AGENCIES = 'Agencies',
-  ASTRONAUTS = 'Astronauts',
-  ABOUT = 'About',
-}
-
-interface Page {
-  name: RoutesName;
-  url: RoutesPath;
-}
+import { RoutesName, Page } from '../types/pages.type';
 
 export const pages: Page[] = [
   { name: RoutesName.HOME, url: RoutesPath.HOME },
