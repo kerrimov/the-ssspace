@@ -1,7 +1,9 @@
-import React from 'react';
-import { Box, Button } from '@mui/material';
-import { socials } from '../../constants/socials';
 import './SocialsList.scss';
+
+import { Box, Button } from '@mui/material';
+import React from 'react';
+
+import { socials } from '../../constants/socials';
 
 export const SocialsList = () => (
   <Box className="header-socials">
