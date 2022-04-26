@@ -1,0 +1,53 @@
+name: github-actions-workflow
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Yarn and dependencies
+        run: |
+          npm install -g yarn
+          yarn install
+
+      - name: Lint-staged
+        run: yarn lint-staged
+
+      - name: Test
+        run: yarn test
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Yarn and dependencies
+        run: |
+          npm install -g yarn
+          yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: build
