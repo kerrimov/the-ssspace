@@ -2,7 +2,6 @@
 $primary-main: #90caf9;
 $primary-light: #c3fdff;
 $primary-dark: #5d99c6;
-$primary-contrastText: #212121;
 $secondary-main: #ffee58;
 $secondary-light: #ffff8b;
 $secondary-dark: #c9bc1f;
@@ -30,7 +29,7 @@ $font-weight-bold: 700;
   primaryMain: $primary-main;
   primaryLight: $primary-light;
   primaryDark: $primary-dark;
-  primaryContrastText: $primary-contrastText;
+  primaryContrastText: $contrast-text-color;
   secondaryMain: $secondary-main;
   secondaryLight: $secondary-light;
   secondaryDark: $secondary-dark;
