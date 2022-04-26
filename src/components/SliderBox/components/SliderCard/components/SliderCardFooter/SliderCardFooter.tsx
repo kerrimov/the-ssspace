@@ -6,7 +6,7 @@ import './SliderCardFooter.scss';
 export const SliderCardFooter = () => (
   <CardActions className="slider-card-footer">
     <Button size="medium" color="primary" variant="contained">
-      <Link to="/launch/details" className="slider-card-read-more-link">
+      <Link to="#" className="slider-card-read-more-link">
         Read more
       </Link>
     </Button>
