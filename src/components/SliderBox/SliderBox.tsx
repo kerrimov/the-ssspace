@@ -6,8 +6,9 @@ import 'swiper/css/navigation';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
-import { ArrowDirection, Slides } from './types/sliderTypes';
+import type { Slides } from './types/sliderTypes';
 import { slides } from './mocks/slidesData';
+import { ArrowDirection } from './components/SliderArrow/constants';
 import './SliderBox.scss';
 
 export const SliderBox = () => (

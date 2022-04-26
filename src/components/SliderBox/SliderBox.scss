@@ -1,5 +1,4 @@
-#root {
-  .slider-container {
+.MuiContainer-root.slider-container {
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -11,6 +10,7 @@
       }
     }
   }
+<<<<<<< HEAD
 }
 
 .slider-card-button-prev-arrow {
@@ -56,3 +56,6 @@
 .slider-card-icon-next-arrow {
   transform: rotate(180deg) scale(2);
 }
+=======
+
+>>>>>>> added constants file, fixed some styles, refactoring code in slider arrow component, and some data code
