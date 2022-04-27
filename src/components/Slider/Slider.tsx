@@ -1,17 +1,16 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
 import type { Slides } from './types/sliderTypes';
 import { slides } from './mocks/slidesData';
-import { ArrowDirection } from './components/SliderArrow/constants';
-import './SliderBox.scss';
+import { ArrowDirection } from './constants/constants';
+import 'swiper/css';
+import './Slider.scss';
 
-export const SliderBox = () => (
+export const Slider = () => (
   <Container className="slider-container" maxWidth="xl">
     <SliderArrow direction={ArrowDirection.PREVIOUS} />
     <Swiper
