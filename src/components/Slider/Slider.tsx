@@ -4,7 +4,7 @@ import { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
-import type { Slides } from './types/sliderTypes';
+import type { Slides } from './types/SliderTypes';
 import { slides } from './mocks/slidesData';
 import { ArrowDirection } from './constants/constants';
 import 'swiper/css';
@@ -28,7 +28,7 @@ export const Slider = () => (
     >
       {slides.map((card: Slides, index: number) => (
         <SwiperSlide key={index}>
-          <SliderCard name={card.name} image={card.imageURL} />
+          <SliderCard name={card.name} image={card.imageURL} date={card.date} />
         </SwiperSlide>
       ))}
     </Swiper>
