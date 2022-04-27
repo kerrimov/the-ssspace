@@ -5,5 +5,5 @@ import { routesConfig } from './routes';
 
 export const Router = () => {
   const routes: React.ReactElement | null = useRoutes(routesConfig);
-  return <div className="router-elements-wrapper">{routes}</div>;
+  return <main className="router-elements-wrapper">{routes}</main>;
 };
