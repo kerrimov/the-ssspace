@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowForwardIos, ArrowBackIos } from '@mui/icons-material';
-import { ArrowDirection } from './constants';
+import { ArrowDirection } from '../../constants/constants';
 import './SliderArrow.scss';
 
 interface SliderArrowProps {
