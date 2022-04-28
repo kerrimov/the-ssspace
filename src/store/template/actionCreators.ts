@@ -1,12 +1,7 @@
-import { TEMPLATE_TYPE_1, TEMPLATE_TYPE_2 } from './actionTypes';
-import type { TemplateState } from './reducer';
+import { TemplateActionTypes } from './actionTypes';
+import type { TemplateState } from '../types';
 
 export const templateAction1 = (template: TemplateState) => ({
-  type: TEMPLATE_TYPE_1,
-  payload: template,
-});
-
-export const templateAction2 = (template: TemplateState) => ({
-  type: TEMPLATE_TYPE_2,
+  type: TemplateActionTypes.TEMPLATE_TYPE_1,
   payload: template,
 });
