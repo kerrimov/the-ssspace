@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, RouteObject } from 'react-router';
 import { About } from '../About';
-import { Agencies } from '../Agencies';
+import { AgenciesPage } from '../AgenciesPage';
 import { AstronautsPage } from '../AstronautsPage';
 import { Events } from '../Events';
 import { Home } from '../Home';
@@ -18,7 +18,7 @@ export const routesConfig: RouteObject[] = [
   },
   {
     path: RoutesPath.AGENCIES,
-    element: <Agencies />,
+    element: <AgenciesPage />,
   },
   {
     path: RoutesPath.ASTRONAUTS,
