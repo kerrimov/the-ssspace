@@ -1,14 +1,16 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper';
+import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
 import type { Slides } from './types/SliderTypes';
 import { slides } from './mocks/slidesData';
 import { ArrowDirection } from './constants/constants';
-import 'swiper/css';
+import 'swiper/swiper-bundle.css';
 import './Slider.scss';
+
+SwiperCore.use([Navigation, Autoplay]);
 
 export const Slider = () => (
   <Container className="slider-container" maxWidth="xl">
@@ -20,7 +22,6 @@ export const Slider = () => (
       spaceBetween={10}
       slidesPerView={1}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
-      modules={[Autoplay, Navigation]}
       navigation={{
         prevEl: '.slider-card-icon-previous-arrow',
         nextEl: '.slider-card-icon-next-arrow',
