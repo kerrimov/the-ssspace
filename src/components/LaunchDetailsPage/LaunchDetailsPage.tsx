@@ -6,9 +6,9 @@ import {
   CardActionArea,
   CardMedia,
 } from '@mui/material';
-import { SecondaryButton } from '../../shared/components/SecondaryButton';
 import { LaunchCardContent } from './components/LaunchCardContent';
 import { launchDetails } from './mocks/launchDetails';
+import { SecondaryButton } from '../../shared/components/SecondaryButton';
 import './LaunchDetailsPage.scss';
 
 export const LaunchDetailsPage = () => {

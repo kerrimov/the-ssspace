@@ -4,7 +4,6 @@ import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
-import type { Slides } from './types/SliderTypes';
 import { slides } from './mocks/slidesData';
 import { ArrowDirection } from './constants/constants';
 import 'swiper/swiper-bundle.css';

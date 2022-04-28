@@ -17,13 +17,45 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier", "simple-import-sort"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "import"],
 
   "rules": {
     "prettier/prettier": "error",
     "semi": ["error", "always"],
     "quotes": ["error", "single"],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "external",
+          "index",
+          "sibling",
+          "parent",
+          "internal",
+          "builtin",
+          "object",
+          "type"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "**/*css",
+            "group": "type",
+            "position": "after"
+          },
+          {
+            "pattern": "./**/*.scss",
+            "group": "type",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "./**/*.scss", "**/*css"],
+        "warnOnUnassignedImports": true
+      }
+    ]
   }
 }
