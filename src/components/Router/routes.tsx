@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navigate, RouteObject } from 'react-router';
-
 import { RoutesPath } from './routesPath';
 import { About } from '../About';
 import { AgenciesPage } from '../AgenciesPage';

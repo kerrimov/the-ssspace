@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button, CardActions } from '@mui/material';
 import { setSliderActiveId } from './helpers/setSliderActiveId';
 import { SliderSetActiveSlideId } from '../../../../types/SliderTypes';
+import { RoutesPath } from '../../../../../Router/routesPath';
 import './SliderCardFooter.scss';
 
 interface SliderCardFooterProps {
@@ -27,7 +28,7 @@ const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
     <CardActions className="slider-card-footer">
       <Button size="medium" color="primary" variant="contained">
         <Link
-          to="#"
+          to={RoutesPath.DETAILS}
           className="slider-card-read-more-link"
           onClick={() => onClickSetActiveId(id)}
         >
