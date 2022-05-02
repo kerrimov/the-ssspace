@@ -1,0 +1,1 @@
+export { AgenciesItemImage } from './AgenciesItemImage';
