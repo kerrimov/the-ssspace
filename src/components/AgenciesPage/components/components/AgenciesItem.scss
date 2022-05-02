@@ -1,0 +1,5 @@
+@import '../../../../shared/styles/mixins';
+
+.agencies-item {
+  @include card-item;
+}

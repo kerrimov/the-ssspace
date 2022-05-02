@@ -1,13 +1,10 @@
-import { Container, Grid, Paper } from '@material-ui/core';
 import React from 'react';
+import { AgenciesList } from './components';
+import './AgenciesPage.scss';
 
 export const AgenciesPage = () => (
-  <>
-    <h1>Agencies</h1>
-    <Paper>
-      <Container>
-        <Grid container></Grid>
-      </Container>
-    </Paper>
-  </>
+  <section className="agencies-page">
+    <h1 className="agencies-header">Agencies</h1>
+    <AgenciesList />
+  </section>
 );
