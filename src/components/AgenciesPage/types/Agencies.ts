@@ -13,3 +13,7 @@ export interface Agencies extends AgenciesName {
 }
 
 export type AgenciesSpecification = Omit<Agencies, 'image'>;
+
+export interface SpecificationTableProps {
+  specifications: AgenciesSpecification;
+}

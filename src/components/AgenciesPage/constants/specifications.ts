@@ -6,7 +6,7 @@ enum Specification {
   SPACECRAFT = 'Spacecraft',
 }
 
-export const specifications: Specification[] = [
+export const specificationHeadings: Specification[] = [
   Specification.TYPE,
   Specification.ADMINISTRATOR,
   Specification.COUNTRY_CODE,

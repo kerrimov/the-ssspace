@@ -7,7 +7,7 @@ import { SliderArrow } from './components/SliderArrow';
 import type { Slides } from './types/SliderTypes';
 import { slides } from './mocks/slidesData';
 import { ArrowDirection } from './constants/constants';
-import 'swiper/swiper-bundle.css';
+// import 'swiper/swiper-bundle.css';
 import './Slider.scss';
 
 SwiperCore.use([Navigation, Autoplay]);
