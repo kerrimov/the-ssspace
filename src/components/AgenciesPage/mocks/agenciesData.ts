@@ -6,7 +6,7 @@ export const agenciesData: Agencies = {
   type: 'Commercial',
   country_code: 'FRA',
   launchers: 'Ariane 5 | Vega',
-  spacecraft: 'string',
+  spacecraft: 'Shenzhou',
   image:
     'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/arianespace_logo_20210603173752.png',
 };
