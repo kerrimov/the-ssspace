@@ -7,6 +7,7 @@ interface LaunchPad extends LaunchDetailName {
 }
 
 export interface LaunchDetails {
+  id: string;
   name: string;
   status: LaunchDetailName;
   net: string;
