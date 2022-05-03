@@ -1,14 +1,17 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { launchDetails } from '../../../../mocks/launchDetails';
+import type { LaunchDetails } from '../../../../types/LaunchDetails';
 import { captions } from '../../../../constants/captions';
 import './CardDetails.scss';
 
-export const CardDetails = () => {
+interface CardDetailsProps {
+  details: LaunchDetails;
+}
+export const CardDetails = ({ details }: CardDetailsProps) => {
   const detailsValues: string[] = [
-    `${launchDetails.pad.name}, ${launchDetails.pad.location.name}`,
-    launchDetails.status.name,
-    launchDetails.net,
+    `${details.pad.name}, ${details.pad.location.name}`,
+    details.status.name,
+    details.net,
   ];
 
   const renderTypographyList = (texts: string[]) =>
