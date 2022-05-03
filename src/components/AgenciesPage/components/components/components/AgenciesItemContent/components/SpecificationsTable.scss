@@ -1,0 +1,13 @@
+@import '../../../../../../../shared/styles/variables';
+.table-specification {
+  width: 100%;
+  font-family: $default-font;
+
+  &-headings {
+    text-align: left;
+  }
+
+  &-value {
+    text-align: right;
+  }
+}

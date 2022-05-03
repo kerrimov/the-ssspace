@@ -1,12 +1,7 @@
 import React from 'react';
 import { CardContent, Typography } from '@mui/material';
 import { agenciesData } from '../../../../mocks/agenciesData';
-// import {
-//   specifications,
-//   specificationValueMapping,
-// } from '../../../../constants/specifications';
 import { SpecificationsTable } from './components';
-// import { AgenciesSpecification } from '../../../../types/Agencies';
 import './AgenciesItemContent.scss';
 
 export const AgenciesItemContent = () => {

@@ -1,0 +1,18 @@
+@import '../../../../../../shared/styles/variables';
+
+.agencies-item-actions {
+  justify-content: center;
+
+  &-button {
+    color: $contrast-text-color;
+
+    &:hover,
+    &:focus {
+      color: $primary-light;
+    }
+
+    &-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}
