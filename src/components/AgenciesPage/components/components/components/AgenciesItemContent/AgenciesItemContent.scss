@@ -1,15 +1,8 @@
 @import '../../../../../../shared/styles/variables';
-
-.card-details {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 11fr;
-  grid-template-rows: repeat(5, 1fr);
-  // gap: 1rem;
-}
-
 .agencies-item-content {
   text-align: center;
+  padding-bottom: 1rem;
   margin-bottom: 0.5rem;
   color: $contrast-text-color;
+  border-bottom: 1px solid $primary-main;
 }

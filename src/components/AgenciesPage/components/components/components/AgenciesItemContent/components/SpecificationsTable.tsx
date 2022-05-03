@@ -4,11 +4,12 @@ import {
   specificationValueMapping,
 } from '../../../../../constants/specifications';
 import type { SpecificationTableProps } from '../../../../../types/Agencies';
+import './SpecificationsTable.scss';
 
 export const SpecificationsTable: React.FC<SpecificationTableProps> = ({
   specifications,
 }) => (
-  <table>
+  <table className="table-specification">
     <tbody>
       {specificationHeadings.map((specification: string, index: number) => {
         const specificationKey = specificationValueMapping[specification];
@@ -17,8 +18,10 @@ export const SpecificationsTable: React.FC<SpecificationTableProps> = ({
         return (
           specificationValue && (
             <tr key={index}>
-              <th>{specification}</th>
-              <td>{specificationValue}</td>
+              <th className="table-specification-headings">{specification}</th>
+              <td className="table-specification-value">
+                {specificationValue}
+              </td>
             </tr>
           )
         );
