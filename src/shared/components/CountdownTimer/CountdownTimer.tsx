@@ -28,6 +28,10 @@ export const CountdownTimer = ({ launchDate }: CountdownTimerProps) => {
     return () => timerCleanup(timeoutId);
   });
 
+  useEffect(() => {
+    setTimerValues(calculateTimerValues(timeToLaunch));
+  }, []);
+
   return (
     <div className="timer-container">
       {!isLaunched ? (
