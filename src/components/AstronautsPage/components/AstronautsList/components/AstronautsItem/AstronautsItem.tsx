@@ -6,9 +6,9 @@ import { AstronautsItemActions } from './components/AstronautsItemActions';
 import { Astronauts } from '../../../../types/Astronauts';
 import './AstronautsItem.scss';
 
-export const AstronautsItem = ({ name, agency, image }: Astronauts) => (
+export const AstronautsItem = ({ name, agency, profile_image }: Astronauts) => (
   <Card className="astronauts-item">
-    <AstronautsItemImage image={image} />
+    <AstronautsItemImage image={profile_image} />
     <AstronautsItemContent name={name} agency={agency} />
     <AstronautsItemActions />
   </Card>
