@@ -4,11 +4,12 @@ import { AgenciesItemImage } from './components/AgenciesItemImage';
 import { AgenciesItemContent } from './components/AgenciesItemContent';
 import { AgenciesItemActions } from './components/AgenciesItemActions';
 import './AgenciesItem.scss';
+import type { AgenciesItemProps } from '../../types/Agencies';
 
-export const AgenciesItem = () => (
+export const AgenciesItem: React.FC<AgenciesItemProps> = ({ agency }) => (
   <Card className="agencies-item">
-    <AgenciesItemImage />
-    <AgenciesItemContent />
+    <AgenciesItemImage agency={agency} />
+    <AgenciesItemContent agency={agency} />
     <AgenciesItemActions />
   </Card>
 );

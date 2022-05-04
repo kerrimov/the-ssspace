@@ -1,7 +1,9 @@
-@import '../../../../shared/styles/mixins';
-
 .agencies-item {
-  @include card-item;
+  padding-bottom: 0.5rem;
+  margin: 0 auto 2rem;
   max-width: 20rem;
-  margin-bottom: 2rem;
+  height: 36rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

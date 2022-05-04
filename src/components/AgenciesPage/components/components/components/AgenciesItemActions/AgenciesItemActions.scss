@@ -2,6 +2,8 @@
 
 .agencies-item-actions {
   justify-content: center;
+  border-top: 1px solid $primary-main;
+  margin: 0 1rem;
 
   &-button {
     color: $contrast-text-color;
