@@ -1,3 +1,11 @@
 .agencies-item-image-wrapper {
-  margin: 1rem;
+  margin: 0 1rem;
+  padding: auto 0rem;
+  height: 14rem;
+  display: flex;
+  justify-content: center;
+
+  & > img {
+    object-fit: contain;
+  }
 }

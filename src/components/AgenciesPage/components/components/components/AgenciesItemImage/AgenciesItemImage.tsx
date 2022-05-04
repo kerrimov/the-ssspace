@@ -1,15 +1,11 @@
 import React from 'react';
 import { CardMedia } from '@mui/material';
-import { agenciesData } from '../../../../mocks/agenciesData';
+// import { agenciesData } from '../../../../mocks/agenciesData';
 import './AgenciesItemImage.scss';
+import { AgenciesItemProps } from '../../../../types/Agencies';
 
-export const AgenciesItemImage = () => (
+export const AgenciesItemImage: React.FC<AgenciesItemProps> = ({ agency }) => (
   <div className="agencies-item-image-wrapper">
-    <CardMedia
-      // className="agencies-item-image"
-      component="img"
-      image={agenciesData.image}
-      alt="astronaut"
-    ></CardMedia>
+    <CardMedia component="img" image={agency.image} alt="astronaut"></CardMedia>
   </div>
 );

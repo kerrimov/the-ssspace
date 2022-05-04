@@ -3,21 +3,24 @@ import { CardContent, Typography } from '@mui/material';
 import { agenciesData } from '../../../../mocks/agenciesData';
 import { SpecificationsTable } from './components';
 import './AgenciesItemContent.scss';
+import type { AgenciesItemProps } from '../../../../types/Agencies';
 
-export const AgenciesItemContent = () => {
+export const AgenciesItemContent: React.FC<AgenciesItemProps> = ({
+  agency,
+}) => {
   return (
-    <CardContent>
+    <CardContent className="agencies-item-card">
       <Typography
-        className="agencies-item-content"
+        className="agencies-item-card-content"
         gutterBottom
         variant="h5"
         component="div"
       >
-        {agenciesData.name}
+        {agency.name}
       </Typography>
 
       <div className="card-details">
-        <SpecificationsTable specifications={agenciesData} />
+        <SpecificationsTable specifications={agency} />
       </div>
     </CardContent>
   );
