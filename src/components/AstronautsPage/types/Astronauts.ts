@@ -5,5 +5,5 @@ interface AstronautsName {
 export interface Astronauts extends AstronautsName {
   [x: string]: any;
   agency: AstronautsName;
-  image: string;
+  profile_image: string;
 }
