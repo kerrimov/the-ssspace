@@ -1,12 +1,12 @@
 import React from 'react';
 import { Navigate, RouteObject } from 'react-router';
 
+import { RoutesPath } from './routesPath';
 import { About } from '../About';
 import { AgenciesPage } from '../AgenciesPage';
 import { AstronautsPage } from '../AstronautsPage';
 import { Events } from '../Events';
 import { Home } from '../Home';
-import { RoutesPath } from './routesPath';
 
 export const routesConfig: RouteObject[] = [
   {

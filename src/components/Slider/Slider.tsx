@@ -6,6 +6,7 @@ import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
 import { slides } from './mocks/slidesData';
 import { ArrowDirection } from './constants/constants';
+import { Slides } from './types/SliderTypes';
 import 'swiper/swiper-bundle.css';
 import './Slider.scss';
 
