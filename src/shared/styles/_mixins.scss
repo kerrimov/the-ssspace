@@ -2,16 +2,11 @@
 
 @mixin page-header {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 4rem;
+  line-height: 3rem;
   text-align: center;
   color: $primary-dark;
   text-shadow: 4px 3px 5px $primary-main;
-}
-
-@mixin card-item {
-  max-width: 16.75rem;
-  padding-bottom: 0.5rem;
-  margin: auto;
-  margin-left: auto;
+  font-family: $default-font;
 }
