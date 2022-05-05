@@ -1,11 +1,11 @@
 import React from 'react';
+import { Dispatch } from 'redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, CardActions } from '@mui/material';
-import './SliderCardFooter.scss';
-import { useDispatch } from 'react-redux';
-import { Dispatch } from 'redux';
 import { SliderAnyActions } from '../../../../types/SliderTypes';
 import { sliderSetActiveID } from '../../../../redux/sliderActionsCreators';
+import './SliderCardFooter.scss';
 
 interface SliderCardFooterProps {
   id: string;
