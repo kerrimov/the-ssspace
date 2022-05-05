@@ -9,53 +9,58 @@ import { Slides } from './types/SliderTypes';
 import 'swiper/swiper-bundle.css';
 import './Slider.scss';
 import { useSelectorTyped } from './redux/store';
-import { useDispatch } from 'react-redux';
 import { Endpoints } from '../../shared/api/constants/endpoints';
-import { Slides } from './types/SliderTypes';
+import { SliderAnyActions, Slides } from './types/SliderTypes';
 import { getSlides } from './services/getSlides';
+import { useDispatch } from 'react-redux';
+import { Dispatch } from 'redux';
 
 SwiperCore.use([Navigation, Autoplay]);
 
 export const Slider = () => {
-  const { slides, error, isLoading } = useSelectorTyped(state => state);
-  const dispatch = useDispatch();
+  const { slides, error, isLoading } = useSelectorTyped(state => state.slider);
+  const dispatch = useDispatch<Dispatch<SliderAnyActions>>();
 
   useEffect(() => {
-    dispatch(
-      getSlides(
-        Endpoints.GO_FOR_LAUNCHES_ENDPOINT,
-        Endpoints.PREVIOUS_LAUNCHES_ENDPOINT,
-      ),
-    );
+    getSlides(
+      Endpoints.GO_FOR_LAUNCHES_ENDPOINT,
+      Endpoints.PREVIOUS_LAUNCHES_ENDPOINT,
+    )(dispatch);
   }, []);
 
-  return (
-    <Container className="slider-container" maxWidth="xl">
-      <SliderArrow direction={ArrowDirection.PREVIOUS} />
-      <Swiper
-        loop
-        className="slider-box"
-        simulateTouch={false}
-        spaceBetween={10}
-        slidesPerView={1}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        navigation={{
-          prevEl: '.slider-card-icon-previous-arrow',
-          nextEl: '.slider-card-icon-next-arrow',
-        }}
-      >
-        {slides.map((slides: Slides, index: number) => (
-          <SwiperSlide key={index}>
-            <SliderCard
-              name={slides.name}
-              image={slides.image}
-              date={slides.net}
-              id={slides.id}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <SliderArrow direction={ArrowDirection.NEXT} />
-    </Container>
+  return !error ? (
+    isLoading ? (
+      <p>Loading..</p> // there I guess we should decide spinner image
+    ) : (
+      <Container className="slider-container" maxWidth="xl">
+        <SliderArrow direction={ArrowDirection.PREVIOUS} />
+        <Swiper
+          loop
+          className="slider-box"
+          simulateTouch={false}
+          spaceBetween={10}
+          slidesPerView={1}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          navigation={{
+            prevEl: '.slider-card-icon-previous-arrow',
+            nextEl: '.slider-card-icon-next-arrow',
+          }}
+        >
+          {slides.map((slides: Slides, index: number) => (
+            <SwiperSlide key={index}>
+              <SliderCard
+                name={slides.name}
+                image={slides.image}
+                date={slides.net}
+                id={slides.id}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <SliderArrow direction={ArrowDirection.NEXT} />
+      </Container>
+    )
+  ) : (
+    <p>error</p> //I guess there should be a link to 404 page with error prop
   );
 };

@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
-import { SliderInitialState, Slides } from '../types/SliderTypes';
 import { sliderReducer } from './sliderReducer';
 
 export const store = configureStore({
@@ -9,6 +8,6 @@ export const store = configureStore({
   },
 });
 
-export const useSelectorTyped: TypedUseSelectorHook<
-  SliderInitialState<Slides>
-> = useSelector;
+type sliderState = ReturnType<typeof store.getState>;
+
+export const useSelectorTyped: TypedUseSelectorHook<sliderState> = useSelector;

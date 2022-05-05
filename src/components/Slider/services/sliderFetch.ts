@@ -3,5 +3,6 @@ import { Slides } from '../types/SliderTypes';
 
 export const fetchData = async (url: string): Promise<Array<Slides>> => {
   const response = await axios.get(url);
+  console.log(response);
   return response.data.results;
 };

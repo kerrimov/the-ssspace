@@ -37,6 +37,11 @@ export const sliderReducer = (
         isLoading: false,
         error: payload,
       };
+    case SliderActions.SET_ACTIVE_ID:
+      return {
+        ...state,
+        activeSlideID: payload,
+      };
     default:
       return state;
   }
