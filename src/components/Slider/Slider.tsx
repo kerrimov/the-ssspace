@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Dispatch } from 'redux';
+import { useDispatch } from 'react-redux';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirection } from './constants/constants';
-import { Slides } from './types/SliderTypes';
-import 'swiper/swiper-bundle.css';
-import './Slider.scss';
-import { useSelectorTyped } from './redux/store';
-import { Endpoints } from '../../shared/api/constants/endpoints';
 import { SliderAnyActions, Slides } from './types/SliderTypes';
 import { getSlides } from './services/getSlides';
-import { useDispatch } from 'react-redux';
-import { Dispatch } from 'redux';
+import { useSelectorTyped } from './redux/store';
+import { Endpoints } from '../../shared/api/constants/endpoints';
+import 'swiper/swiper-bundle.css';
+import './Slider.scss';
 
 SwiperCore.use([Navigation, Autoplay]);
 
