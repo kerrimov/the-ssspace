@@ -2,6 +2,7 @@ import {
   SliderGetData,
   SliderGetDataError,
   SliderGetDataSuccess,
+  SliderSetActiveID,
   Slides,
 } from '../types/SliderTypes';
 import { SliderActions } from './sliderActions';
@@ -20,4 +21,9 @@ export const sliderGetDataError = (
 ): SliderGetDataError => ({
   type: SliderActions.GET_DATA_ERROR,
   payload: error,
+});
+
+export const sliderSetActiveID = (id: string): SliderSetActiveID => ({
+  type: SliderActions.SET_ACTIVE_ID,
+  payload: id,
 });

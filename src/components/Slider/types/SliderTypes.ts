@@ -29,7 +29,13 @@ export interface SliderGetDataError extends AnyAction {
   payload: null | string;
 }
 
+export interface SliderSetActiveID extends AnyAction {
+  type: typeof SliderActions.SET_ACTIVE_ID;
+  payload: string;
+}
+
 export type SliderAnyActions =
   | SliderGetData
   | SliderGetDataSuccess
-  | SliderGetDataError;
+  | SliderGetDataError
+  | SliderSetActiveID;

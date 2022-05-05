@@ -13,7 +13,6 @@ export const getSlides =
     try {
       dispatch(sliderGetData());
       const data = await Promise.all([fetchData(url1), fetchData(url2)]);
-      console.log(data);
       const slides = data.flatMap((array, index) =>
         index === 0 ? array.slice(0, 2) : array.slice(0, 1),
       );
