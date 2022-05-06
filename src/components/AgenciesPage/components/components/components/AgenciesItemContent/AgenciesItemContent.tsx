@@ -1,9 +1,8 @@
 import React from 'react';
 import { CardContent, Typography } from '@mui/material';
-import { agenciesData } from '../../../../mocks/agenciesData';
 import { SpecificationsTable } from './components';
-import './AgenciesItemContent.scss';
 import type { AgenciesItemProps } from '../../../../types/Agencies';
+import './AgenciesItemContent.scss';
 
 export const AgenciesItemContent: React.FC<AgenciesItemProps> = ({
   agency,

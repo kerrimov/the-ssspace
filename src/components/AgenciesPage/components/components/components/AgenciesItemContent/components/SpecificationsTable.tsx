@@ -11,21 +11,26 @@ export const SpecificationsTable: React.FC<SpecificationTableProps> = ({
 }) => (
   <table className="table-specification">
     <tbody>
-      {specificationHeadings.map((specification: string, index: number) => {
-        const specificationKey = specificationValueMapping[specification];
-        const specificationValue = specifications[specificationKey];
+      {specificationHeadings.map(
+        (specificationHeading: string, index: number) => {
+          const specificationKey =
+            specificationValueMapping[specificationHeading];
+          const specificationValue = specifications[specificationKey];
 
-        return (
-          specificationValue && (
-            <tr key={index}>
-              <th className="table-specification-headings">{specification}</th>
-              <td className="table-specification-value">
-                {specificationValue}
-              </td>
-            </tr>
-          )
-        );
-      })}
+          return (
+            specificationValue && (
+              <tr key={index}>
+                <th className="table-specification-headings">
+                  {specificationHeading}
+                </th>
+                <td className="table-specification-value">
+                  {specificationValue}
+                </td>
+              </tr>
+            )
+          );
+        },
+      )}
     </tbody>
   </table>
 );
