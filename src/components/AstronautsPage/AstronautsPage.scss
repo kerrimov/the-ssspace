@@ -1,10 +1,5 @@
-@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
 
 .astronauts-header {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 4rem;
-  text-align: center;
-  color: $primary-dark;
-  text-shadow: 4px 3px 5px $primary-main;
+  @include page-header;
 }

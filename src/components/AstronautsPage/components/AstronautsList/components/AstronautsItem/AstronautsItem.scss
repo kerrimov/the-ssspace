@@ -1,6 +1,11 @@
 .astronauts-item {
   max-width: 16.75rem;
   padding-bottom: 1rem;
+  margin-bottom: 1rem;
   margin-right: auto;
   margin-left: auto;
+  height: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
