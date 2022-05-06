@@ -1,17 +1,6 @@
-import { Agencies } from '../types/Agencies';
+import { Agency } from '../types/Agencies';
 
-// export const agenciesData: Agencies = {
-//   name: 'Arianespace',
-//   administrator: 'CEO: Stéphane Israël',
-//   type: 'Commercial',
-//   country_code: 'FRA',
-//   launchers: 'Ariane 5 | Vega',
-//   // spacecraft: 'Shenzhou',
-//   image:
-//     'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/arianespace_logo_20210603173752.png',
-// };
-
-export const agenciesData: Agencies[] = [
+export const agenciesData: Agency[] = [
   {
     id: 0,
     name: 'Arianespace',
@@ -19,8 +8,7 @@ export const agenciesData: Agencies[] = [
     type: 'Commercial',
     country_code: 'FRA',
     launchers: 'Ariane 5 | Vega',
-    // spacecraft: 'Shenzhou',
-    image:
+    image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/arianespace_logo_20210603173752.png',
   },
   {
@@ -31,7 +19,7 @@ export const agenciesData: Agencies[] = [
     country_code: 'USA',
     launchers: 'Ariane 5 | Vega',
     spacecraft: 'Shenzhou',
-    image:
+    image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/national2520aeronautics2520and2520space2520administration_logo_20190207032448.png',
   },
 
@@ -42,7 +30,7 @@ export const agenciesData: Agencies[] = [
     type: 'Government',
     country_code: 'CHN',
     launchers: 'Shenzhou',
-    image:
+    image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520national2520space2520administration_logo_20190207032431.png',
   },
   {
@@ -53,7 +41,7 @@ export const agenciesData: Agencies[] = [
     country_code: 'CHN',
     launchers: 'PSLV | GSLV',
     spacecraft: 'Shenzhou',
-    image:
+    image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/indian2520space2520research2520organization_logo_20190215225409.png',
   },
 ];
