@@ -6,13 +6,16 @@ export interface Slides {
   net: string;
   id: string;
   name: string;
+  mission: {
+    description: string;
+  };
 }
 
 export interface SliderInitialState<T> {
   slides: Array<T>;
   isLoading: boolean;
   error: null | string;
-  activeSlideID: null | string;
+  activeSlideId: null | string;
 }
 
 export interface SliderGetData extends AnyAction {

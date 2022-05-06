@@ -9,7 +9,7 @@ const sliderInitialState: SliderInitialState<Slides> = {
   slides: [],
   isLoading: true,
   error: null,
-  activeSlideID: null,
+  activeSlideId: null,
 };
 export const sliderReducer = (
   state = sliderInitialState,

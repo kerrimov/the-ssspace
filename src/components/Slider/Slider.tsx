@@ -22,8 +22,8 @@ export const Slider = () => {
 
   useEffect(() => {
     getSlides(
-      Endpoints.GO_FOR_LAUNCHES_ENDPOINT,
-      Endpoints.PREVIOUS_LAUNCHES_ENDPOINT,
+      Endpoints.BASE_ENDPOINT + Endpoints.GO_FOR_LAUNCHES_ENDPOINT,
+      Endpoints.BASE_ENDPOINT + Endpoints.PREVIOUS_LAUNCHES_ENDPOINT,
     )(dispatch);
   }, []);
 
@@ -52,6 +52,7 @@ export const Slider = () => {
                 image={slides.image}
                 date={slides.net}
                 id={slides.id}
+                description={slides.mission.description}
               />
             </SwiperSlide>
           ))}

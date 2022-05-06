@@ -8,16 +8,19 @@ import { fetchData } from './sliderFetch';
 import { SliderAnyActions } from '../types/SliderTypes';
 
 export const getSlides =
-  (url1: string, url2: string) =>
+  (upcomingLaunchesUrl: string, previousLaunchesUrl: string) =>
   async (dispatch: Dispatch<SliderAnyActions>): Promise<void> => {
     try {
       dispatch(sliderGetData());
-      const data = await Promise.all([fetchData(url1), fetchData(url2)]);
-      const slides = data.flatMap((array, index) =>
-        index === 0 ? array.slice(0, 2) : array.slice(0, 1),
+      const data = await Promise.all([
+        fetchData(upcomingLaunchesUrl),
+        fetchData(previousLaunchesUrl),
+      ]);
+      const slides = data.flatMap((launchesArray, index) =>
+        index === 0 ? launchesArray.slice(0, 2) : launchesArray.slice(0, 1),
       );
       dispatch(sliderGetDataSuccess(slides));
-    } catch (e) {
-      dispatch(sliderGetDataError(String(e)));
+    } catch (error) {
+      dispatch(sliderGetDataError(String(error)));
     }
   };
