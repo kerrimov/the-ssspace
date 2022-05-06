@@ -1,19 +1,19 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { AstronautsItem } from './components/AstronautsItem';
+import { selectAstronauts } from '../../selectors/astronautsSelectors';
 import type { Astronauts } from '../../types/Astronauts';
 
-interface AstronautsList {
-  astronauts: Astronauts;
-}
+export const AstronautsList = () => {
+  const { astronauts } = selectAstronauts();
 
-export const AstronautsList = ({ astronauts }: AstronautsList) => {
   return (
-    <Grid container justifyContent="center" columns={{ xs: 4, md: 8 }}>
+    <Grid container>
       {astronauts.map(
         ({ name, agency, profile_image }: Astronauts, index: number) => (
-          <Grid key={index} item xs={2}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
             <AstronautsItem
+              key={index}
               name={name}
               agency={agency}
               profile_image={profile_image}

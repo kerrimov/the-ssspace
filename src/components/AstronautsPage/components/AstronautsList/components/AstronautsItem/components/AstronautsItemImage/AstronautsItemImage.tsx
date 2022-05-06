@@ -1,13 +1,12 @@
 import React from 'react';
 import { CardMedia } from '@mui/material';
-// import { astronautsData } from '../../../../../../mocks/astronautsData';
 import './AstronautsItemImage.scss';
 
-interface AstronautsItemImage {
+interface AstronautsItemImageProps {
   image: string;
 }
 
-export const AstronautsItemImage = ({ image }: AstronautsItemImage) => (
+export const AstronautsItemImage = ({ image }: AstronautsItemImageProps) => (
   <CardMedia
     className="astronauts-item-image"
     component="img"
