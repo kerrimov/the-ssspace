@@ -7,6 +7,7 @@ import { AgenciesPage } from '../AgenciesPage';
 import { AstronautsPage } from '../AstronautsPage';
 import { Events } from '../Events';
 import { Home } from '../Home';
+import { LaunchDetailsPage } from '../LaunchDetailsPage';
 
 export const routesConfig: RouteObject[] = [
   {
@@ -28,6 +29,26 @@ export const routesConfig: RouteObject[] = [
   {
     path: RoutesPath.ABOUT,
     element: <About />,
+  },
+  {
+    path: RoutesPath.DETAILS,
+    element: <LaunchDetailsPage />,
+  },
+  {
+    path: RoutesPath.PREVIOUS,
+    element: <Home />,
+  },
+  {
+    path: RoutesPath.CREWED,
+    element: <Home />,
+  },
+  {
+    path: RoutesPath.CA_LOCATION,
+    element: <Home />,
+  },
+  {
+    path: RoutesPath.FL_LOCATION,
+    element: <Home />,
   },
   {
     path: '*',
