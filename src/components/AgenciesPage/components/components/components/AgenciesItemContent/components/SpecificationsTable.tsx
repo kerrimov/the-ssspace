@@ -3,10 +3,14 @@ import {
   specificationHeadings,
   specificationValueMapping,
 } from '../../../../../constants/specifications';
-import type { SpecificationTableProps } from '../../../../../types/Agencies';
+import type { AgenciesSpecification } from '../../../../../types/Agencies';
 import './SpecificationsTable.scss';
 
-export const SpecificationsTable: React.FC<SpecificationTableProps> = ({
+interface SpecificationsTableProps {
+  specifications: AgenciesSpecification;
+}
+
+export const SpecificationsTable: React.FC<SpecificationsTableProps> = ({
   specifications,
 }) => (
   <table className="table-specification">

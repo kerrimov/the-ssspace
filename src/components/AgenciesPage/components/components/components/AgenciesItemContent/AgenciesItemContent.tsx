@@ -1,10 +1,14 @@
 import React from 'react';
 import { CardContent, Typography } from '@mui/material';
 import { SpecificationsTable } from './components';
-import type { AgenciesItemProps } from '../../../../types/Agencies';
+import type { AgencyItemContent } from '../../../../types/Agencies';
 import './AgenciesItemContent.scss';
 
-export const AgenciesItemContent: React.FC<AgenciesItemProps> = ({
+interface AgenciesItemContentProps {
+  agency: AgencyItemContent;
+}
+
+export const AgenciesItemContent: React.FC<AgenciesItemContentProps> = ({
   agency,
 }) => {
   return (
