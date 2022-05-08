@@ -10,12 +10,5 @@ export interface Agency {
   [key: string]: string | undefined | number;
 }
 
-export type AgenciesSpecification = Omit<Agency, 'image_url' | 'name'>;
-
-export interface SpecificationTableProps {
-  specifications: AgenciesSpecification;
-}
-
-export interface AgenciesItemProps {
-  agency: Agency;
-}
+export type AgencyItemContent = Omit<Agency, 'id' | 'image_url'>;
+export type AgenciesSpecification = Omit<Agency, 'id' | 'image_url' | 'name'>;
