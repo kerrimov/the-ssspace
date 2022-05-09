@@ -1,9 +1,5 @@
 import { AnyAction } from '@reduxjs/toolkit';
-import {
-  LAUNCH_REQUEST,
-  LAUNCH_SUCCESS,
-  LAUNCH_ERROR,
-} from '../actions/actionTypes';
+import { LaunchActions } from '../actions/actionTypes';
 import { InitialState } from '../constants/initialState';
 
 export const launchReducer = (
@@ -12,17 +8,17 @@ export const launchReducer = (
 ) => {
   if (!payload) return state;
   switch (type) {
-    case `${payload.filterValue}_${LAUNCH_REQUEST}`:
+    case `${payload.filterValue}_${LaunchActions.LAUNCH_REQUEST}`:
       return { ...state, isLoading: true, error: null };
 
-    case `${payload.filterValue}_${LAUNCH_SUCCESS}`:
+    case `${payload.filterValue}_${LaunchActions.LAUNCH_SUCCESS}`:
       return {
         ...state,
         [payload.filterValue]: payload[payload.filterValue],
         isLoading: false,
       };
 
-    case `${payload.filterValue}_${LAUNCH_ERROR}`:
+    case `${payload.filterValue}_${LaunchActions.LAUNCH_ERROR}`:
       return { ...state, isLoading: false, error: payload.error };
 
     default:
