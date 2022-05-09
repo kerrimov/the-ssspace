@@ -5,17 +5,4 @@
   border-top: 1px solid $primary-main;
   height: 2rem;
   flex: 1 1 auto;
-
-  &-button {
-    color: $contrast-text-color;
-
-    &:hover,
-    &:focus {
-      color: $primary-light;
-    }
-
-    &-icon {
-      margin-right: 0.5rem;
-    }
-  }
 }

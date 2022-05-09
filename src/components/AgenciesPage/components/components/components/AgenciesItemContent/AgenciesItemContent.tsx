@@ -10,21 +10,19 @@ interface AgenciesItemContentProps {
 
 export const AgenciesItemContent: React.FC<AgenciesItemContentProps> = ({
   agency,
-}) => {
-  return (
-    <CardContent className="agencies-item-card">
-      <Typography
-        className="agencies-item-card-content"
-        gutterBottom
-        variant="h5"
-        component="div"
-      >
-        {agency.name}
-      </Typography>
+}) => (
+  <CardContent className="agencies-item-card">
+    <Typography
+      className="agencies-item-card-content"
+      gutterBottom
+      variant="h5"
+      component="div"
+    >
+      {agency.name}
+    </Typography>
 
-      <div className="card-details">
-        <SpecificationsTable specifications={agency} />
-      </div>
-    </CardContent>
-  );
-};
+    <div className="card-details">
+      <SpecificationsTable specifications={agency} />
+    </div>
+  </CardContent>
+);

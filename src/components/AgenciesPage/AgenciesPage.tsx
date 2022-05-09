@@ -5,9 +5,7 @@ import './AgenciesPage.scss';
 
 export const AgenciesPage = () => (
   <Container maxWidth="xl">
-    <section>
-      <h1 className="agencies-header">Agencies</h1>
-      <AgenciesList />
-    </section>
+    <h1 className="agencies-header">Agencies</h1>
+    <AgenciesList />
   </Container>
 );
