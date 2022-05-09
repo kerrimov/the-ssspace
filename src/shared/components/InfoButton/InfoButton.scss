@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.agencies-item-actions-button {
+  color: $contrast-text-color;
+
+  &:hover,
+  &:focus {
+    color: $primary-light;
+  }
+
+  &-icon {
+    margin-right: 0.5rem;
+  }
+}
