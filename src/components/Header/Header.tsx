@@ -4,16 +4,14 @@ import { NavigationList } from './components/NavigationList';
 import { SocialsList } from './components/SocialsList';
 import { Logo } from './components/Logo';
 
-export const Header = () => {
-  return (
-    <AppBar className="header" position="fixed">
-      <Container maxWidth="xl">
-        <Toolbar>
-          <Logo />
-          <NavigationList />
-          <SocialsList />
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
-};
+export const Header = () => (
+  <AppBar className="header" position="fixed">
+    <Container maxWidth="xl">
+      <Toolbar>
+        <Logo />
+        <NavigationList />
+        <SocialsList />
+      </Toolbar>
+    </Container>
+  </AppBar>
+);
