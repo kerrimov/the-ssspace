@@ -20,9 +20,6 @@ export const AgenciesItemContent: React.FC<AgenciesItemContentProps> = ({
     >
       {agency.name}
     </Typography>
-
-    <div className="card-details">
-      <SpecificationsTable specifications={agency} />
-    </div>
+    <SpecificationsTable specifications={agency} />
   </CardContent>
 );
