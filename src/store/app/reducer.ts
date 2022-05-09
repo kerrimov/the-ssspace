@@ -1,16 +1,12 @@
 // import { AnyAction } from 'redux';
 import { AppActionTypes } from './actionTypes';
-import type { AppState } from '../types';
+import type { AppAction, AppState } from '../types';
 
 //TODO: update with real values
 const initialState: AppState = {
   name: '',
   value: 0,
 };
-interface AppAction {
-  type: AppActionTypes;
-  payload?: AppState;
-}
 
 //for example, will be changed
 export const appReducer = (state = initialState, action: AppAction) => {
