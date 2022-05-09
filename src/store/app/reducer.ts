@@ -1,4 +1,4 @@
-import { AnyAction } from 'redux';
+// import { AnyAction } from 'redux';
 import { AppActionTypes } from './actionTypes';
 import type { AppState } from '../types';
 
@@ -7,10 +7,14 @@ const initialState: AppState = {
   name: '',
   value: 0,
 };
+interface AppAction {
+  type: AppActionTypes;
+  payload?: AppState;
+}
 
 //for example, will be changed
-export const appReducer = (state = initialState, action: AnyAction) => {
-  const { type, payload } = action;
+export const appReducer = (state = initialState, action: AppAction) => {
+  const { type, payload = {} } = action;
 
   switch (type) {
     case AppActionTypes.APP_TYPE_1:

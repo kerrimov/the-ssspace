@@ -27,7 +27,7 @@ _Builds the app for production to the build folder._
 
 ### Syntax
 
-- Keep code lines under 80 columns wide..
+- Keep code lines under 80 columns wide.
 - Use soft tabs set to 2 spaces.
 - Indent lines with tabs instead of spaces.
 - Use single quotes.
@@ -43,18 +43,26 @@ _Builds the app for production to the build folder._
 - Place 1 space before the opening parenthesis in control statements (if, while
   etc.). Place no space before the argument list in function calls and
   declarations.
-- Set off operators with spaces.
 
 ### Style
 
 - Use Sass to keep large stylesheets well-organized.
 - Favor rems for relative values, preferably typography.
 - Don’t be afraid of using px when you want to exactly define a measure.
-- Don't abuse !important.
+- Don't use important.
 - Always prefer SVG over raster assets.
 
 ### Import/Export
 
-- Eslint-plugin-simple-import-sort is used for import, which provides specific
-  order.
+- Use fot import eslint-plugin-import, groups order:
+  - react;
+  - external;
+  - index;
+  - sibling;
+  - parent;
+  - internal;
+  - builtin;
+  - object;
+  - type;
+  - styles.
 - Always prefer named Export.
