@@ -1,4 +1,3 @@
-// import { AnyAction } from 'redux';
 import { AppActionTypes } from './actionTypes';
 import type { AppAction, AppState } from '../types';
 
