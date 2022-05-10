@@ -1,16 +1,18 @@
 export enum LaunchFilters {
   PREVIOUS = 'PREVIOUS',
   CREWED = 'CREWED',
-  CA_LOCATION = 'CA_LOCATION',
-  FL_LOCATION = 'FL_LOCATION',
+  CALIFORNIA = 'CALIFORNIA',
+  FLORIDA = 'FLORIDA',
 }
 
 export enum FilterCaptions {
   PREVIOUS = 'Previous launches',
   CREWED = 'Crewed launches',
-  CA_LOCATION = 'Location: California',
-  FL_LOCATION = 'Location: Florida',
+  CALIFORNIA = 'Location: California',
+  FLORIDA = 'Location: Florida',
 }
 
-export const CA_LOCATION = '11';
-export const FL_LOCATION = '12,27';
+export enum LocationIds {
+  CALIFORNIA = '11',
+  FLORIDA = '12,27',
+}

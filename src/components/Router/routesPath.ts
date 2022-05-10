@@ -7,6 +7,6 @@ export enum RoutesPath {
   DETAILS = '/details',
   PREVIOUS = '/launches-previous',
   CREWED = '/launches-crewed',
-  CA_LOCATION = '/launches-california',
-  FL_LOCATION = '/launches-florida',
+  CALIFORNIA = '/launches-california',
+  FLORIDA = '/launches-florida',
 }

@@ -43,11 +43,11 @@ export const routesConfig: RouteObject[] = [
     element: <Home />,
   },
   {
-    path: RoutesPath.CA_LOCATION,
+    path: RoutesPath.CALIFORNIA,
     element: <Home />,
   },
   {
-    path: RoutesPath.FL_LOCATION,
+    path: RoutesPath.FLORIDA,
     element: <Home />,
   },
   {
