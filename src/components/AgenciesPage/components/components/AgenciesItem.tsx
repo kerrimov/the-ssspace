@@ -10,7 +10,9 @@ interface AgenciesItemProps {
   agency: Agency;
 }
 
-export const AgenciesItem: React.FC<AgenciesItemProps> = ({ agency }) => (
+export const AgenciesItem: React.FC<AgenciesItemProps> = ({
+  agency,
+}: AgenciesItemProps) => (
   <Card className="agencies-item">
     <AgenciesItemImage image={agency.image_url} />
     <AgenciesItemContent agency={agency} />

@@ -10,7 +10,7 @@ interface AgenciesItemContentProps {
 
 export const AgenciesItemContent: React.FC<AgenciesItemContentProps> = ({
   agency,
-}) => (
+}: AgenciesItemContentProps) => (
   <CardContent className="agencies-item-card">
     <Typography
       className="agencies-item-card-content"
