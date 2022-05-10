@@ -12,7 +12,7 @@ interface SpecificationsTableProps {
 
 export const SpecificationsTable: React.FC<SpecificationsTableProps> = ({
   specifications,
-}) => (
+}: SpecificationsTableProps) => (
   <table className="table-specification">
     <tbody>
       {specificationHeadings.map(
