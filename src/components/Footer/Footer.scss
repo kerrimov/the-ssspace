@@ -1,0 +1,38 @@
+@import '../../shared/styles/variables.scss';
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 3rem;
+  overflow: hidden;
+  background: $secondary-main;
+}
+
+.footer-container {
+  width: 150%;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.footer-content {
+  letter-spacing: 0.1rem;
+  display: block;
+  width: 100%;
+  animation: move 5s linear infinite;
+  color: $contrast-text-color;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
