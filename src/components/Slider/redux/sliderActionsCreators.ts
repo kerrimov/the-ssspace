@@ -1,4 +1,4 @@
-import {
+import type {
   SliderGetData,
   SliderGetDataError,
   SliderGetDataSuccess,
@@ -8,22 +8,23 @@ import {
 import { SliderActions } from './sliderActions';
 
 export const sliderGetData = (): SliderGetData => ({
-  type: SliderActions.GET_DATA,
+  type: SliderActions.LOAD_SLIDER_DATA,
 });
 export const sliderGetDataSuccess = (
-  slides: Array<Slides>,
+  slides: Array<Array<Slides>>,
 ): SliderGetDataSuccess => ({
-  type: SliderActions.GET_DATA_SUCCESS,
+  type: SliderActions.GET_SLIDER_DATA_SUCCESS,
   payload: slides,
 });
+
 export const sliderGetDataError = (
   error: null | string,
 ): SliderGetDataError => ({
-  type: SliderActions.GET_DATA_ERROR,
+  type: SliderActions.GET_SLIDER_DATA_ERROR,
   payload: error,
 });
 
 export const sliderSetActiveID = (id: string): SliderSetActiveID => ({
-  type: SliderActions.SET_ACTIVE_ID,
+  type: SliderActions.SET_ACTIVE_SLIDE_ID,
   payload: id,
 });

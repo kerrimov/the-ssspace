@@ -1,14 +1,18 @@
-import { Dispatch } from 'redux';
+import type { Dispatch } from 'redux';
 import {
   sliderGetData,
   sliderGetDataError,
   sliderGetDataSuccess,
 } from '../redux/sliderActionsCreators';
 import { fetchData } from './sliderFetch';
-import { SliderAnyActions } from '../types/SliderTypes';
+import type { SliderAnyActions } from '../types/SliderTypes';
+import { Endpoints } from '../../../shared/api/constants/endpoints';
 
 export const getSlides =
-  (upcomingLaunchesUrl: string, previousLaunchesUrl: string) =>
+  (
+    upcomingLaunchesUrl = `${Endpoints.BASE_ENDPOINT}${Endpoints.GO_FOR_LAUNCHES_ENDPOINT}`,
+    previousLaunchesUrl = `${Endpoints.BASE_ENDPOINT}${Endpoints.PREVIOUS_LAUNCHES_ENDPOINT}`,
+  ) =>
   async (dispatch: Dispatch<SliderAnyActions>): Promise<void> => {
     try {
       dispatch(sliderGetData());
@@ -16,10 +20,7 @@ export const getSlides =
         fetchData(upcomingLaunchesUrl),
         fetchData(previousLaunchesUrl),
       ]);
-      const slides = data.flatMap((launchesArray, index) =>
-        index === 0 ? launchesArray.slice(0, 2) : launchesArray.slice(0, 1),
-      );
-      dispatch(sliderGetDataSuccess(slides));
+      dispatch(sliderGetDataSuccess(data));
     } catch (error) {
       dispatch(sliderGetDataError(String(error)));
     }

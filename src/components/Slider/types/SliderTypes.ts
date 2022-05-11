@@ -11,29 +11,29 @@ export interface Slides {
   };
 }
 
-export interface SliderInitialState<T> {
-  slides: Array<T>;
+export interface SliderInitialState {
+  slides: Array<Slides>;
   isLoading: boolean;
   error: null | string;
   activeSlideId: null | string;
 }
 
 export interface SliderGetData extends AnyAction {
-  type: typeof SliderActions.GET_DATA;
+  type: SliderActions.LOAD_SLIDER_DATA;
 }
 
 export interface SliderGetDataSuccess extends AnyAction {
-  type: typeof SliderActions.GET_DATA_SUCCESS;
-  payload: Array<Slides>;
+  type: SliderActions.GET_SLIDER_DATA_SUCCESS;
+  payload: Array<Array<Slides>>;
 }
 
 export interface SliderGetDataError extends AnyAction {
-  type: typeof SliderActions.GET_DATA_ERROR;
+  type: SliderActions.GET_SLIDER_DATA_ERROR;
   payload: null | string;
 }
 
 export interface SliderSetActiveID extends AnyAction {
-  type: typeof SliderActions.SET_ACTIVE_ID;
+  type: SliderActions.SET_ACTIVE_SLIDE_ID;
   payload: string;
 }
 
