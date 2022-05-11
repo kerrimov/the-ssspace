@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Dispatch } from 'redux';
+import type { Dispatch } from 'redux';
 import { useDispatch } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { SliderCard } from './components/SliderCard';
@@ -16,20 +16,17 @@ import './Slider.scss';
 
 SwiperCore.use([Navigation, Autoplay]);
 
-export const Slider = () => {
+export const Slider: React.FC = () => {
   const { slides, error, isLoading } = useSelectorTyped(state => state.slider);
   const dispatch = useDispatch<Dispatch<SliderAnyActions>>();
 
   useEffect(() => {
-    getSlides(
-      Endpoints.BASE_ENDPOINT + Endpoints.GO_FOR_LAUNCHES_ENDPOINT,
-      Endpoints.BASE_ENDPOINT + Endpoints.PREVIOUS_LAUNCHES_ENDPOINT,
-    )(dispatch);
+    getSlides()(dispatch);
   }, []);
 
   return !error ? (
     isLoading ? (
-      <p>Loading..</p> // there I guess we should decide spinner image
+      <p>Loading..</p> //todo: there I guess we should decide spinner image
     ) : (
       <Container className="slider-container" maxWidth="xl">
         <SliderArrow direction={ArrowDirection.PREVIOUS} />
@@ -61,6 +58,6 @@ export const Slider = () => {
       </Container>
     )
   ) : (
-    <p>error</p> //I guess there should be a link to 404 page with error prop
+    <p>error</p> //todo: I guess there should be a link to 404 page with error prop
   );
 };

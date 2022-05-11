@@ -13,19 +13,18 @@ interface SliderCardProps {
   description: string;
 }
 
-export const SliderCard = ({
-  name,
-  image,
-  date,
-  id,
-  description,
-}: SliderCardProps) => (
-  <Card className="slider-card">
-    <CardMedia component="img" image={image} alt="rocket launch" />
-    <CardContent className="slider-card-content">
-      <SliderCardMain name={name} description={description} date={date} />
-      <CountdownTimer launchDate={date} />
-      <SliderCardFooter id={id} />
-    </CardContent>
-  </Card>
-);
+export const SliderCard: React.FC<SliderCardProps> = (
+  props: SliderCardProps,
+) => {
+  const { name, image, date, id, description } = props;
+  return (
+    <Card className="slider-card">
+      <CardMedia component="img" image={image} alt="rocket launch" />
+      <CardContent className="slider-card-content">
+        <SliderCardMain name={name} description={description} date={date} />
+        <CountdownTimer launchDate={date} />
+        <SliderCardFooter id={id} />
+      </CardContent>
+    </Card>
+  );
+};

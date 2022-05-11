@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Dispatch } from 'redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, CardActions } from '@mui/material';
-import { SliderAnyActions } from '../../../../types/SliderTypes';
-import { sliderSetActiveID } from '../../../../redux/sliderActionsCreators';
+import type { SliderSetActiveID } from '../../../../types/SliderTypes';
+import { setSliderActiveId } from './helpers/setSliderActiveId';
 import './SliderCardFooter.scss';
 
 interface SliderCardFooterProps {
   id: string;
 }
 
-export const SliderCardFooter = React.memo(({ id }: SliderCardFooterProps) => {
-  const dispatch = useDispatch<Dispatch<SliderAnyActions>>();
+export const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
+  id,
+}: SliderCardFooterProps) => {
+  const dispatch = useDispatch<Dispatch<SliderSetActiveID>>();
+
+  const onClickSetActiveId = useCallback(
+    (id: string) => {
+      setSliderActiveId(id)(dispatch);
+    },
+    [id],
+  );
 
   return (
     <CardActions className="slider-card-footer">
@@ -20,13 +29,13 @@ export const SliderCardFooter = React.memo(({ id }: SliderCardFooterProps) => {
         <Link
           to="#"
           className="slider-card-read-more-link"
-          onClick={e => dispatch(sliderSetActiveID(id))}
+          onClick={() => onClickSetActiveId(id)}
         >
           Read more
         </Link>
       </Button>
     </CardActions>
   );
-});
+};
 
-SliderCardFooter.displayName = 'SliderCardFooter';
+React.memo(SliderCardFooter);

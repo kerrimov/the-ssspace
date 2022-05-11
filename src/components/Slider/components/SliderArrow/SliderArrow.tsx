@@ -7,7 +7,9 @@ interface SliderArrowProps {
   direction: string;
 }
 
-export const SliderArrow = ({ direction }: SliderArrowProps) =>
+export const SliderArrow: React.FC<SliderArrowProps> = ({
+  direction,
+}: SliderArrowProps) =>
   ArrowDirection.PREVIOUS === direction ? (
     <ArrowBackIos
       className={`slider-card-icon-${direction}-arrow`}

@@ -10,7 +10,7 @@ interface SliderCardMainProps {
   date: string;
 }
 
-export const SliderCardMain = ({
+export const SliderCardMain: React.FC<SliderCardMainProps> = ({
   name,
   description,
   date,

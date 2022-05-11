@@ -1,6 +1,6 @@
-export enum SliderActions {
-  GET_DATA = 'slider/getData',
-  GET_DATA_SUCCESS = 'slider/getDataSuccess',
-  GET_DATA_ERROR = 'slider/getDataError',
-  SET_ACTIVE_ID = 'slider/setActiveID',
+export const enum SliderActions {
+  LOAD_SLIDER_DATA = 'loadData',
+  GET_SLIDER_DATA_SUCCESS = 'getDataSuccess',
+  GET_SLIDER_DATA_ERROR = 'getDataError',
+  SET_ACTIVE_SLIDE_ID = 'setActiveSliderId',
 }
