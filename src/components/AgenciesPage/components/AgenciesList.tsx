@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Grid } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { ThunkDispatch } from '@reduxjs/toolkit';
 import { AgenciesItem } from './components';
-import { fetchAgencies } from '../services/fetchAgencies';
-import { Agency } from '../types/Agencies';
+import { selectAgencies } from '../selectors/selectors';
+import { getAgenciesData } from '../services/getAgenciesData';
+import { AgenciesAction } from '../reducers/agenciesReducer';
+import { StoreState } from '../../../store';
 
 export const AgenciesList = () => {
-  const [data, setData] = useState<Agency[]>([]);
+  const dispatch =
+    useDispatch<ThunkDispatch<StoreState, void, AgenciesAction>>();
+  const agencies = selectAgencies();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetchAgencies();
-      setData(response);
-    };
-
-    fetchData();
+    dispatch(getAgenciesData());
   }, []);
 
-  if (!data.length) return null;
+  if (!agencies.length) return null;
 
   return (
     <Grid container>
-      {data.map(agency => (
+      {agencies.map(agency => (
         <Grid item key={agency.id} xs={12} sm={6} md={4} lg={3}>
           <AgenciesItem agency={agency} />
         </Grid>
