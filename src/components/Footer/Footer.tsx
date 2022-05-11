@@ -3,24 +3,17 @@ import { Typography } from '@mui/material';
 import './Footer.scss';
 
 export const Footer = () => {
-  const footerText: Array<string> = [];
+  const footerText: Array<JSX.Element> = [];
   for (let i = 0; i < 9; i++) {
-    footerText.push('Все буде Україна!');
+    footerText.push(
+      <Typography className="footer-content" variant="body1" component="p">
+        Все буде Україна!
+      </Typography>,
+    );
   }
   return (
     <footer className="footer">
-      <div className="footer-container">
-        {footerText.map((text, index) => (
-          <Typography
-            className="footer-content"
-            variant="body1"
-            component="p"
-            key={index}
-          >
-            {text}
-          </Typography>
-        ))}
-      </div>
+      <div className="footer-container">{footerText}</div>
     </footer>
   );
 };
