@@ -1,6 +1,7 @@
 import type { LaunchDetails } from '../types/LaunchDetails';
 
 export const launchDetails: LaunchDetails = {
+  id: '0bc91464-1d61-4545-95c8-01040dc5eec9',
   name: 'Long March 4B (?) | SJ-6 Group 06 (?)',
   status: {
     name: 'Go for Launch',
