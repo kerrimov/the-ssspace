@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import type { LaunchDetails } from '../../../../types/LaunchDetails';
 import { captions } from '../../../../constants/captions';
+import type { LaunchDetails } from '../../../../types/LaunchDetails';
 import './CardDetails.scss';
 
 interface CardDetailsProps {
