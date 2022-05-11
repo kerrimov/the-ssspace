@@ -6,8 +6,8 @@ export interface Agency {
   country_code: string;
   launchers: string;
   image_url: string;
-  spacecraft?: string;
-  [key: string]: string | undefined | number;
+  spacecraft: string;
+  [key: string]: string | number;
 }
 
 export type AgencyItemContent = Omit<Agency, 'id' | 'image_url'>;
