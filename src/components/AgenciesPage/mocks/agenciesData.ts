@@ -8,6 +8,7 @@ export const agenciesData: Agency[] = [
     type: 'Commercial',
     country_code: 'FRA',
     launchers: 'Ariane 5 | Vega',
+    spacecraft: '',
     image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/arianespace_logo_20210603173752.png',
   },
@@ -30,6 +31,7 @@ export const agenciesData: Agency[] = [
     type: 'Government',
     country_code: 'CHN',
     launchers: 'Shenzhou',
+    spacecraft: '',
     image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520national2520space2520administration_logo_20190207032431.png',
   },
