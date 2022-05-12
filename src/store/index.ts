@@ -3,12 +3,14 @@ import { appReducer } from './app/reducer';
 import { agenciesReducer } from '../components/AgenciesPage/reducers/agenciesReducer';
 import { launchReducer } from '../components/LaunchFilter/reducers/launchReducer';
 import { astronautsReducer } from '../components/AstronautsPage/reducers/astronautsReducer';
+import { sliderReducer } from '../components/Slider/redux/sliderReducer';
 
 const reducer = combineReducers({
   app: appReducer,
   agencies: agenciesReducer,
   launches: launchReducer,
   astronauts: astronautsReducer,
+  slider: sliderReducer,
 });
 
 export const store = configureStore({

@@ -1,6 +1,9 @@
 export const enum SliderActions {
-  LOAD_SLIDER_DATA = 'loadData',
-  GET_SLIDER_DATA_SUCCESS = 'getDataSuccess',
-  GET_SLIDER_DATA_ERROR = 'getDataError',
-  SET_ACTIVE_SLIDE_ID = 'setActiveSliderId',
+  SLIDER_LOAD_DATA = 'sliderLoadData',
+  SLIDER_GET_SLIDES = 'sliderGetSlides',
+  SLIDER_GET_UPCOMING_LAUNCHES_SUCCESS = 'sliderGetUpcomingLaunchesSuccess',
+  SLIDER_GET_UPCOMING_LAUNCHES_ERROR = 'sliderGetUpcomingLaunchesError',
+  SLIDER_GET_PREVIOUS_LAUNCHES_SUCCESS = 'sliderGetPreviousLaunchesSuccess',
+  SLIDER_GET_PREVIOUS_LAUNCHES_ERROR = 'sliderGetPreviousLaunchesError',
+  SLIDER_SET_ACTIVE_SLIDE_ID = 'sliderSetActiveSlideId',
 }
