@@ -3,15 +3,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { Dispatch } from 'redux';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirection } from './constants/constants';
-import { SliderGetSlides, SliderState, Slides } from './types/SliderTypes';
 import { getPreviousLaunches } from './services/getPreviousLaunches';
 import { getUpcomingLaunches } from './services/getUpcomingLaunches';
 import { getSlides } from './redux/sliderSelectors';
-import { StoreState } from '../../store';
+import type { SliderAllActions, Slides } from './types/SliderTypes';
+import type { Dispatch } from 'redux';
 import 'swiper/swiper-bundle.css';
 import './Slider.scss';
 
@@ -19,13 +18,25 @@ SwiperCore.use([Navigation, Autoplay]);
 
 export const Slider: React.FC = () => {
   const slides: Array<Slides> = useSelector(getSlides);
-
-  const dispatch = useDispatch<Dispatch<SliderGetSlides>>();
+  const dispatch = useDispatch<Dispatch<SliderAllActions>>();
 
   useEffect(() => {
     getPreviousLaunches()(dispatch);
     getUpcomingLaunches()(dispatch);
   }, []);
+
+  const fillSlides = (launchSlides = slides) =>
+    launchSlides.map(launchSlides => (
+      <SwiperSlide key={launchSlides.id}>
+        <SliderCard
+          name={launchSlides.name}
+          image={launchSlides.image}
+          date={launchSlides.net}
+          id={launchSlides.id}
+          description={launchSlides.mission.description}
+        />
+      </SwiperSlide>
+    ));
 
   return (
     <Container className="slider-container" maxWidth="xl">
@@ -36,23 +47,13 @@ export const Slider: React.FC = () => {
         simulateTouch={false}
         spaceBetween={10}
         slidesPerView={1}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         navigation={{
           prevEl: '.slider-card-icon-previous-arrow',
           nextEl: '.slider-card-icon-next-arrow',
         }}
       >
-        {slides.map((slides: Slides, index: number) => (
-          <SwiperSlide key={index}>
-            <SliderCard
-              name={slides.name}
-              image={slides.image}
-              date={slides.net}
-              id={slides.id}
-              description={slides.mission.description}
-            />
-          </SwiperSlide>
-        ))}
+        {fillSlides()}
       </Swiper>
       <SliderArrow direction={ArrowDirection.NEXT} />
     </Container>

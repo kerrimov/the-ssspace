@@ -1,4 +1,3 @@
-import { Dispatch } from 'redux';
 import { fetchData } from './sliderFetch';
 import { Endpoints } from '../../../shared/api/constants/endpoints';
 import {
@@ -6,7 +5,8 @@ import {
   sliderGetPreviousLaunchesSuccess,
   sliderLoadData,
 } from '../redux/sliderActionsCreators';
-import {
+import type { Dispatch } from 'redux';
+import type {
   SliderGetPreviousLaunchesError,
   SliderGetPreviousLaunchesSuccess,
   SliderLoadData,
@@ -28,6 +28,6 @@ export const getPreviousLaunches =
       const upcomingLaunches = await fetchData(urlPreviousLaunches);
       dispatch(sliderGetPreviousLaunchesSuccess(upcomingLaunches));
     } catch (error) {
-      dispatch(sliderGetPreviousLaunchesError(String(error)));
+      dispatch(sliderGetPreviousLaunchesError((error as Error).message));
     }
   };
