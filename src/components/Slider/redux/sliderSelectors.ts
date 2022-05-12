@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { StoreState } from '../../../store';
-import { Slides } from '../types/SliderTypes';
+import type { Slides } from '../types/SliderTypes';
 
 export const getSlides = createSelector(
   [

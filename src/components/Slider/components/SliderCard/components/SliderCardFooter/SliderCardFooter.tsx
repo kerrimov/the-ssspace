@@ -11,7 +11,7 @@ interface SliderCardFooterProps {
   id: string;
 }
 
-export const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
+const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
   id,
 }: SliderCardFooterProps) => {
   const dispatch = useDispatch<Dispatch<SliderSetActiveSlideId>>();
@@ -38,4 +38,4 @@ export const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
   );
 };
 
-React.memo(SliderCardFooter);
+export const SliderCardFooterMemoized = React.memo(SliderCardFooter);

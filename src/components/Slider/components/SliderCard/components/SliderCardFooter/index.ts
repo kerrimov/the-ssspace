@@ -1,1 +1,1 @@
-export { SliderCardFooter } from './SliderCardFooter';
+export { SliderCardFooterMemoized } from './SliderCardFooter';

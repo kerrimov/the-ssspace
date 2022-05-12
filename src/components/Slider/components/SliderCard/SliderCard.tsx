@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardMedia } from '@mui/material';
 import { SliderCardMain } from './components/SliderCardMain';
-import { SliderCardFooter } from './components/SliderCardFooter';
+import { SliderCardFooterMemoized } from './components/SliderCardFooter';
 import { CountdownTimer } from '../../../../shared/components/CountdownTimer';
 import './SliderCard.scss';
 
@@ -23,7 +23,7 @@ export const SliderCard: React.FC<SliderCardProps> = (
       <CardContent className="slider-card-content">
         <SliderCardMain name={name} description={description} date={date} />
         <CountdownTimer launchDate={date} />
-        <SliderCardFooter id={id} />
+        <SliderCardFooterMemoized id={id} />
       </CardContent>
     </Card>
   );

@@ -1,5 +1,5 @@
 import { SliderActions } from './sliderActions';
-import { SliderAllActions, SliderState } from '../types/SliderTypes';
+import type { SliderAllActions, SliderState } from '../types/SliderTypes';
 
 export const sliderState: SliderState = {
   sliderUpcomingLaunches: [],
