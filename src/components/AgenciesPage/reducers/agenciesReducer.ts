@@ -1,5 +1,5 @@
 import { AgenciesActionTypes } from '../actions/ActionTypesAgencies';
-import { AgenciesAction, AgenciesState, Agency } from '../types/Agencies';
+import type { AgenciesState, Agency, AgenciesAction } from '../types/Agencies';
 
 const initialState: AgenciesState = {
   agencies: [],

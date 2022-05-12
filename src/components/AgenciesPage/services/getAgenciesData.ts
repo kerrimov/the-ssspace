@@ -5,11 +5,11 @@ import {
   fetchAgenciesSuccess,
   fetchAgenciesFailure,
 } from '../actions/actionCreators';
-import { AgenciesAction } from '../types/Agencies';
-import type { Agency } from '../types/Agencies';
+import type { AgenciesAction, Agency } from '../types/Agencies';
 
 export const getAgenciesData =
-  () => async (dispatch: Dispatch<AgenciesAction>) => {
+  () =>
+  async (dispatch: Dispatch<AgenciesAction>): Promise<void> => {
     dispatch(fetchAgenciesRequest());
     try {
       const response: Agency[] = await fetchAgencies();
