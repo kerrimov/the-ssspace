@@ -5,7 +5,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit';
 import { AgenciesItem } from './components';
 import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
-import { AgenciesAction } from '../reducers/agenciesReducer';
+import { AgenciesAction } from '../types/Agencies';
 import { StoreState } from '../../../store';
 
 export const AgenciesList = () => {
