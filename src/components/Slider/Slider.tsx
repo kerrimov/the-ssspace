@@ -10,6 +10,7 @@ import { ArrowDirection } from './constants/constants';
 import { SliderGetSlides, SliderState, Slides } from './types/SliderTypes';
 import { getPreviousLaunches } from './services/getPreviousLaunches';
 import { getUpcomingLaunches } from './services/getUpcomingLaunches';
+import { getSlides } from './redux/sliderSelectors';
 import { StoreState } from '../../store';
 import 'swiper/swiper-bundle.css';
 import './Slider.scss';
@@ -17,8 +18,7 @@ import './Slider.scss';
 SwiperCore.use([Navigation, Autoplay]);
 
 export const Slider: React.FC = () => {
-  const { sliderPreviousLaunches, sliderUpcomingLaunches, slides } =
-    useSelector<StoreState, SliderState>(state => state.slider);
+  const slides: Array<Slides> = useSelector(getSlides);
 
   const dispatch = useDispatch<Dispatch<SliderGetSlides>>();
 

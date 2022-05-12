@@ -6,7 +6,6 @@ export const sliderState: SliderState = {
   sliderPreviousLaunches: [],
   isLoading: false,
   error: '',
-  slides: [],
   activeSlideId: null,
 };
 

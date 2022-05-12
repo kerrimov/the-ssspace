@@ -2,7 +2,6 @@ import { SliderActions } from './sliderActions';
 import {
   SliderGetPreviousLaunchesError,
   SliderGetPreviousLaunchesSuccess,
-  SliderGetSlides,
   SliderGetUpcomingLaunchesError,
   SliderGetUpcomingLaunchesSuccess,
   SliderLoadData,
@@ -12,10 +11,6 @@ import {
 
 export const sliderLoadData = (): SliderLoadData => ({
   type: SliderActions.SLIDER_LOAD_DATA,
-});
-export const sliderGetSlides = (slides: Array<Slides>): SliderGetSlides => ({
-  type: SliderActions.SLIDER_GET_SLIDES,
-  payload: slides,
 });
 export const sliderGetUpcomingLaunchesSuccess = (
   launches: Array<Slides>,

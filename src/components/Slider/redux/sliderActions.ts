@@ -1,6 +1,5 @@
 export const enum SliderActions {
   SLIDER_LOAD_DATA = 'sliderLoadData',
-  SLIDER_GET_SLIDES = 'sliderGetSlides',
   SLIDER_GET_UPCOMING_LAUNCHES_SUCCESS = 'sliderGetUpcomingLaunchesSuccess',
   SLIDER_GET_UPCOMING_LAUNCHES_ERROR = 'sliderGetUpcomingLaunchesError',
   SLIDER_GET_PREVIOUS_LAUNCHES_SUCCESS = 'sliderGetPreviousLaunchesSuccess',
