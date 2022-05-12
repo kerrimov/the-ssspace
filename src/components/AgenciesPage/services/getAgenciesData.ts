@@ -5,7 +5,7 @@ import {
   fetchAgenciesSuccess,
   fetchAgenciesFailure,
 } from '../actions/actionCreators';
-import { AgenciesAction } from '../reducers/agenciesReducer';
+import { AgenciesAction } from '../types/Agencies';
 import type { Agency } from '../types/Agencies';
 
 export const getAgenciesData =

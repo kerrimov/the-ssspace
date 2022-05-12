@@ -1,16 +1,5 @@
-import { AgenciesActions } from '../actions/ActionTypesAgencies';
-import { Agency } from '../types/Agencies';
-
-export interface AgenciesState {
-  agencies: Agency[];
-  isLoading: boolean;
-  error: string;
-}
-
-export interface AgenciesAction {
-  type: AgenciesActions;
-  payload?: AgenciesState[keyof AgenciesState];
-}
+import { AgenciesActionTypes } from '../actions/ActionTypesAgencies';
+import { AgenciesAction, AgenciesState, Agency } from '../types/Agencies';
 
 const initialState: AgenciesState = {
   agencies: [],
@@ -23,18 +12,18 @@ export const agenciesReducer = (
   { type, payload }: AgenciesAction,
 ) => {
   switch (type) {
-    case AgenciesActions.FETCH_AGENCIES_REQUEST:
+    case AgenciesActionTypes.FETCH_AGENCIES_REQUEST:
       return {
         ...state,
         isLoading: true,
       };
-    case AgenciesActions.FETCH_AGENCIES_SUCCESS:
+    case AgenciesActionTypes.FETCH_AGENCIES_SUCCESS:
       return {
         agencies: payload as Agency[],
         isLoading: false,
         error: '',
       };
-    case AgenciesActions.FETCH_AGENCIES_FAILURE:
+    case AgenciesActionTypes.FETCH_AGENCIES_FAILURE:
       return {
         ...state,
         isLoading: false,
