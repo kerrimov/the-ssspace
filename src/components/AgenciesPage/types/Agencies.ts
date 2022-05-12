@@ -1,4 +1,4 @@
-import { AgenciesActionTypes } from '../actions/ActionTypesAgencies';
+import type { AgenciesActionTypes } from '../actions/ActionTypesAgencies';
 
 export interface Agency {
   id: number;
