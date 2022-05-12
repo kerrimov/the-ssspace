@@ -3,8 +3,8 @@ import { Dispatch } from 'redux';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, CardActions } from '@mui/material';
-import type { SliderSetActiveID } from '../../../../types/SliderTypes';
 import { setSliderActiveId } from './helpers/setSliderActiveId';
+import { SliderSetActiveSlideId } from '../../../../types/SliderTypes';
 import './SliderCardFooter.scss';
 
 interface SliderCardFooterProps {
@@ -14,7 +14,7 @@ interface SliderCardFooterProps {
 export const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
   id,
 }: SliderCardFooterProps) => {
-  const dispatch = useDispatch<Dispatch<SliderSetActiveID>>();
+  const dispatch = useDispatch<Dispatch<SliderSetActiveSlideId>>();
 
   const onClickSetActiveId = useCallback(
     (id: string) => {
