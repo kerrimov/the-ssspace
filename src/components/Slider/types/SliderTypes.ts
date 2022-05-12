@@ -17,11 +17,6 @@ export interface SliderLoadData extends AnyAction {
   type: SliderActions.SLIDER_LOAD_DATA;
 }
 
-export interface SliderGetSlides {
-  type: SliderActions.SLIDER_GET_SLIDES;
-  payload: Array<Slides>;
-}
-
 export interface SliderGetUpcomingLaunchesSuccess {
   type: SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_SUCCESS;
   payload: Array<Slides>;
@@ -50,7 +45,6 @@ export interface SliderSetActiveSlideId {
 export type SliderAllActions =
   | SliderSetActiveSlideId
   | SliderLoadData
-  | SliderGetSlides
   | SliderGetUpcomingLaunchesSuccess
   | SliderGetUpcomingLaunchesError
   | SliderGetPreviousLaunchesSuccess
@@ -61,6 +55,5 @@ export interface SliderState {
   sliderPreviousLaunches: Array<Slides>;
   isLoading: boolean;
   error: string;
-  slides: Array<Slides>;
   activeSlideId: string | null;
 }

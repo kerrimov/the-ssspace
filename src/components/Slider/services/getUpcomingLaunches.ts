@@ -22,7 +22,7 @@ export const getUpcomingLaunches =
       | SliderGetUpcomingLaunchesSuccess
       | SliderGetUpcomingLaunchesError
     >,
-  ) => {
+  ): Promise<void> => {
     try {
       dispatch(sliderLoadData());
       const upcomingLaunches = await fetchData(urlUpcomingLaunches);
