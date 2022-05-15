@@ -1,3 +1,4 @@
+import { AnyAction } from '@reduxjs/toolkit';
 import type { AgenciesActionTypes } from '../actions/ActionTypesAgencies';
 
 export interface Agency {
@@ -21,11 +22,28 @@ export interface AgenciesState {
   error: string;
 }
 
-export interface AgenciesAction {
-  type: AgenciesActionTypes;
-  payload?: AgenciesState[keyof AgenciesState];
+export type AgenciesAction =
+  | AgenciesActionRequest
+  | AgenciesActionSuccess
+  | AgenciesActionFailed;
+
+export interface AgenciesActionRequest {
+  type: AgenciesActionTypes.FETCH_AGENCIES_REQUEST;
+  payload?: string;
 }
 
-export type ActionCreatorRequest = () => AgenciesAction;
-export type ActionCreatorSuccess = (agencies: Agency[]) => AgenciesAction;
-export type ActionCreatorFailed = (error: string) => AgenciesAction;
+export interface AgenciesActionSuccess {
+  type: AgenciesActionTypes.FETCH_AGENCIES_SUCCESS;
+  payload?: Agency[];
+}
+
+export interface AgenciesActionFailed {
+  type: AgenciesActionTypes.FETCH_AGENCIES_FAILURE;
+  payload?: string;
+}
+
+export type ActionCreatorRequest = () => AgenciesActionRequest;
+export type ActionCreatorSuccess = (
+  agencies: Agency[],
+) => AgenciesActionSuccess;
+export type ActionCreatorFailed = (error: string) => AgenciesActionFailed;

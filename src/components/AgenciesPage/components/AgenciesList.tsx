@@ -1,21 +1,18 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { ThunkDispatch } from '@reduxjs/toolkit';
+import { Dispatch } from '@reduxjs/toolkit';
 import { AgenciesItem } from './components';
 import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
-import { AgenciesAction } from '../types/Agencies';
-import { StoreState } from '../../../store';
 import './AgenciesList.scss';
 
 export const AgenciesList = () => {
-  const dispatch =
-    useDispatch<ThunkDispatch<StoreState, void, AgenciesAction>>();
-  const agencies = selectAgencies();
+  const dispatch = useDispatch<Dispatch>();
+  const { agencies } = selectAgencies();
 
   useEffect(() => {
-    dispatch(getAgenciesData());
+    getAgenciesData(dispatch);
   }, []);
 
   if (!agencies.length)
