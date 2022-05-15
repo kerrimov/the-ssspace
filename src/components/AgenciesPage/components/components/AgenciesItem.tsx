@@ -14,7 +14,9 @@ export const AgenciesItem: React.FC<AgenciesItemProps> = ({
   agency,
 }: AgenciesItemProps) => (
   <Card className="agencies-item">
-    <AgenciesItemImage image={agency.image_url} />
+    <AgenciesItemImage
+      image={agency.image_url || process.env.PUBLIC_URL + '/logo.png'}
+    />
     <AgenciesItemContent agency={agency} />
     <AgenciesItemActions />
   </Card>

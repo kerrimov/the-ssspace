@@ -8,12 +8,8 @@ interface AgenciesItemImageProps {
 
 export const AgenciesItemImage: React.FC<AgenciesItemImageProps> = ({
   image,
-}: AgenciesItemImageProps) => {
-  const img = image ? image : process.env.PUBLIC_URL + '/logo.png';
-
-  return (
-    <div className="agencies-item-image-wrapper">
-      <CardMedia component="img" image={img} alt="astronaut" />
-    </div>
-  );
-};
+}: AgenciesItemImageProps) => (
+  <div className="agencies-item-image-wrapper">
+    <CardMedia component="img" image={image} alt="agencies" />
+  </div>
+);
