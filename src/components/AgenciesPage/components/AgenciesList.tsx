@@ -7,6 +7,7 @@ import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
 import { AgenciesAction } from '../types/Agencies';
 import { StoreState } from '../../../store';
+import './AgenciesList.scss';
 
 export const AgenciesList = () => {
   const dispatch =
@@ -17,7 +18,10 @@ export const AgenciesList = () => {
     dispatch(getAgenciesData());
   }, []);
 
-  if (!agencies.length) return null;
+  if (!agencies.length)
+    return (
+      <h2 className="agencies-list-empty">No agencies for now. Try later.</h2>
+    );
 
   return (
     <Grid container>
