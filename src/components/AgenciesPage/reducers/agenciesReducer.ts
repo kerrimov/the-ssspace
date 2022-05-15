@@ -1,5 +1,5 @@
 import { AgenciesActionTypes } from '../actions/ActionTypesAgencies';
-import type { AgenciesState, Agency, AgenciesAction } from '../types/Agencies';
+import type { AgenciesState, AgenciesAction } from '../types/Agencies';
 
 const initialState: AgenciesState = {
   agencies: [],
@@ -19,7 +19,7 @@ export const agenciesReducer = (
       };
     case AgenciesActionTypes.FETCH_AGENCIES_SUCCESS:
       return {
-        agencies: payload as Agency[],
+        agencies: payload,
         isLoading: false,
         error: '',
       };
@@ -27,7 +27,7 @@ export const agenciesReducer = (
       return {
         ...state,
         isLoading: false,
-        error: payload as string,
+        error: payload,
       };
     default:
       return state;
