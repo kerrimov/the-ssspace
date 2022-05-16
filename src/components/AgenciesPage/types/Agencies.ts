@@ -1,4 +1,3 @@
-import { AnyAction } from '@reduxjs/toolkit';
 import type { AgenciesActionTypes } from '../actions/ActionTypesAgencies';
 
 export interface Agency {
@@ -29,7 +28,6 @@ export type AgenciesAction =
 
 export interface AgenciesActionRequest {
   type: AgenciesActionTypes.FETCH_AGENCIES_REQUEST;
-  payload?: string;
 }
 
 export interface AgenciesActionSuccess {

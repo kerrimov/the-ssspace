@@ -9,9 +9,9 @@ const initialState: AgenciesState = {
 
 export const agenciesReducer = (
   state = initialState,
-  { type, payload }: AgenciesAction,
+  action: AgenciesAction,
 ) => {
-  switch (type) {
+  switch (action.type) {
     case AgenciesActionTypes.FETCH_AGENCIES_REQUEST:
       return {
         ...state,
@@ -19,7 +19,7 @@ export const agenciesReducer = (
       };
     case AgenciesActionTypes.FETCH_AGENCIES_SUCCESS:
       return {
-        agencies: payload,
+        agencies: action.payload,
         isLoading: false,
         error: '',
       };
@@ -27,7 +27,7 @@ export const agenciesReducer = (
       return {
         ...state,
         isLoading: false,
-        error: payload,
+        error: action.payload,
       };
     default:
       return state;
