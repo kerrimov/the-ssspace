@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { ThunkDispatch, AnyAction } from '@reduxjs/toolkit';
+import { Dispatch } from '@reduxjs/toolkit';
 import { RoutesPath } from '../../../Router/routesPath';
-import { RootState } from '../../store';
 import { getFilteredLaunches } from '../../actions/getFilteredLaunches';
 import { FilterCaptions, LaunchFilters } from '../../constants/filerConstants';
+import type { FilterAction } from '../../types/LaunchActions';
 import './FilterLink.scss';
 
 interface FilterLinkProps {
@@ -13,8 +13,8 @@ interface FilterLinkProps {
 }
 
 export const FilterLink = ({ filterValue }: FilterLinkProps) => {
-  const dispatch: ThunkDispatch<RootState, void, AnyAction> = useDispatch();
-  const handleClick = () => dispatch(getFilteredLaunches(filterValue));
+  const dispatch: Dispatch<FilterAction> = useDispatch();
+  const handleClick = () => getFilteredLaunches(filterValue)(dispatch);
 
   return (
     <li className="launches-filter-item">
