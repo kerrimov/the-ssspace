@@ -5,15 +5,19 @@ import { Dispatch } from '@reduxjs/toolkit';
 import { AgenciesItem } from './components';
 import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
+import { AgenciesAction } from '../types/Agencies';
+
 import './AgenciesList.scss';
 
 export const AgenciesList = () => {
-  const dispatch = useDispatch<Dispatch>();
-  const { agencies } = selectAgencies();
+  const dispatch = useDispatch<Dispatch<AgenciesAction>>();
+  const { agencies, isLoading } = selectAgencies();
 
   useEffect(() => {
     getAgenciesData()(dispatch);
   }, []);
+
+  if (isLoading) return <p>Loadding....</p>;
 
   if (!agencies.length)
     return (

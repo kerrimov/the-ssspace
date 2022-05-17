@@ -1,4 +1,4 @@
-import { AgenciesActionTypes } from './ActionTypesAgencies';
+import { AgenciesActionTypes } from '../types/Agencies';
 import type {
   ActionCreatorFailed,
   ActionCreatorRequest,
