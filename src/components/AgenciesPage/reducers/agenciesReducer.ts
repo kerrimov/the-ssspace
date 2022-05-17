@@ -16,12 +16,13 @@ export const agenciesReducer = (
       return {
         ...state,
         isLoading: true,
+        error: '',
       };
     case AgenciesActionTypes.FETCH_AGENCIES_SUCCESS:
       return {
-        agencies: action.payload,
+        ...state,
         isLoading: false,
-        error: '',
+        agencies: action.payload,
       };
     case AgenciesActionTypes.FETCH_AGENCIES_FAILURE:
       return {
