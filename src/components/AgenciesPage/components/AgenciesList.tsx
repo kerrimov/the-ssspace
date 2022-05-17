@@ -12,7 +12,7 @@ export const AgenciesList = () => {
   const { agencies } = selectAgencies();
 
   useEffect(() => {
-    getAgenciesData(dispatch);
+    getAgenciesData()(dispatch);
   }, []);
 
   if (!agencies.length)
