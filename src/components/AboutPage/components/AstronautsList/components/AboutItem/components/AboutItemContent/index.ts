@@ -1,0 +1,1 @@
+export { AboutItemContent } from './AboutItemContent';
