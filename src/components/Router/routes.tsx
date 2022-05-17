@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteObject } from 'react-router';
 import { RoutesPath } from './routesPath';
-import { About } from '../About';
+import { AboutPage } from '../AboutPage';
 import { AgenciesPage } from '../AgenciesPage';
 import { AstronautsPage } from '../AstronautsPage';
 import { EventsPage } from '../EventsPage';
@@ -52,7 +52,7 @@ export const routesConfig: RouteObject[] = [
   },
   {
     path: RoutesPath.ABOUT,
-    element: <About />,
+    element: <AboutPage />,
   },
   {
     path: RoutesPath.DETAILS,

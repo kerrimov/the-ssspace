@@ -1,0 +1,18 @@
+@import '../../../../../../../../shared/styles/variables';
+
+.astronauts-item-actions {
+  justify-content: center;
+
+  .astronauts-item-actions-button {
+    color: $contrast-text-color;
+
+    &:hover,
+    &:focus {
+      color: $primary-light;
+    }
+
+    .astronauts-item-actions-button-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}
