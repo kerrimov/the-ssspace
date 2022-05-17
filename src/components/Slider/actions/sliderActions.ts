@@ -1,5 +1,5 @@
-import { SliderActions } from './sliderActions';
-import type {
+import {
+  SliderActions,
   SliderGetPreviousLaunchesError,
   SliderGetPreviousLaunchesSuccess,
   SliderGetUpcomingLaunchesError,

@@ -1,6 +1,3 @@
-import { AnyAction } from 'redux';
-import { SliderActions } from '../redux/sliderActions';
-
 interface LaunchMission {
   description: string;
 }
@@ -13,7 +10,16 @@ export interface Slides {
   mission: LaunchMission;
 }
 
-export interface SliderLoadData extends AnyAction {
+export const enum SliderActions {
+  SLIDER_LOAD_DATA = 'SLIDER_LOAD_DATA',
+  SLIDER_GET_UPCOMING_LAUNCHES_SUCCESS = 'SLIDER_GET_UPCOMING_LAUNCHES_SUCCESS',
+  SLIDER_GET_UPCOMING_LAUNCHES_ERROR = 'SLIDER_GET_UPCOMING_LAUNCHES_ERROR',
+  SLIDER_GET_PREVIOUS_LAUNCHES_SUCCESS = 'SLIDER_GET_PREVIOUS_LAUNCHES_SUCCESS',
+  SLIDER_GET_PREVIOUS_LAUNCHES_ERROR = 'SLIDER_GET_PREVIOUS_LAUNCHES_ERROR',
+  SLIDER_SET_ACTIVE_SLIDE_ID = 'SLIDER_SET_ACTIVE_SLIDE_ID',
+}
+
+export interface SliderLoadData {
   type: SliderActions.SLIDER_LOAD_DATA;
 }
 
@@ -55,5 +61,5 @@ export interface SliderState {
   sliderPreviousLaunches: Array<Slides>;
   isLoading: boolean;
   error: string;
-  activeSlideId: string | null;
+  activeSlideId: string | undefined;
 }

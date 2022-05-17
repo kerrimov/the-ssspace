@@ -1,4 +1,4 @@
-import { SliderActions } from './sliderActions';
+import { SliderActions } from '../types/SliderTypes';
 import type { SliderAllActions, SliderState } from '../types/SliderTypes';
 
 export const sliderState: SliderState = {
@@ -6,14 +6,13 @@ export const sliderState: SliderState = {
   sliderPreviousLaunches: [],
   isLoading: false,
   error: '',
-  activeSlideId: null,
+  activeSlideId: undefined,
 };
-
 export const sliderReducer = (
   state = sliderState,
-  { type, payload }: SliderAllActions,
+  action: SliderAllActions,
 ) => {
-  switch (type) {
+  switch (action.type) {
     case SliderActions.SLIDER_LOAD_DATA:
       return {
         ...state,
@@ -22,35 +21,31 @@ export const sliderReducer = (
     case SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_ERROR:
       return {
         ...state,
-        sliderUpcomingLaunches: [],
-        error: payload,
+        error: action.payload,
         isLoading: false,
       };
     case SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_SUCCESS:
       return {
         ...state,
-        sliderUpcomingLaunches: payload,
-        error: '',
+        sliderUpcomingLaunches: action.payload,
         isLoading: false,
       };
     case SliderActions.SLIDER_GET_PREVIOUS_LAUNCHES_ERROR:
       return {
         ...state,
-        sliderPreviousLaunches: [],
-        error: payload,
+        error: action.payload,
         isLoading: false,
       };
     case SliderActions.SLIDER_GET_PREVIOUS_LAUNCHES_SUCCESS:
       return {
         ...state,
-        sliderPreviousLaunches: payload,
-        error: '',
+        sliderPreviousLaunches: action.payload,
         isLoading: false,
       };
     case SliderActions.SLIDER_SET_ACTIVE_SLIDE_ID:
       return {
         ...state,
-        activeSlideId: payload,
+        activeSlideId: action.payload,
       };
     default:
       return state;

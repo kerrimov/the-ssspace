@@ -1,9 +1,8 @@
-import { SliderSetActiveSlideId } from '../../../../../types/SliderTypes';
-import { sliderSetActiveSlideId } from '../../../../../redux/sliderActionsCreators';
+import { sliderSetActiveSlideId } from '../../../../../actions/sliderActions';
+import type { SliderSetActiveSlideId } from '../../../../../types/SliderTypes';
 import type { Dispatch } from 'redux';
 
 export const setSliderActiveId =
   (id: string) =>
-  (dispatch: Dispatch<SliderSetActiveSlideId>): void => {
+  (dispatch: Dispatch<SliderSetActiveSlideId>): SliderSetActiveSlideId =>
     dispatch(sliderSetActiveSlideId(id));
-  };
