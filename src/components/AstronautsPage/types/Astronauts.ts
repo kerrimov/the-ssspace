@@ -1,4 +1,8 @@
-import { AstronautsActions } from '../actions/actionTypes';
+export const enum AstronautsActions {
+  FETCH_ASTRONAUTS_REQUEST = 'FETCH_ASTRONAUTS_REQUEST',
+  FETCH_ASTRONAUTS_SUCCESS = 'FETCH_ASTRONAUTS_SUCCESS',
+  FETCH_ASTRONAUTS_FAILURE = 'FETCH_ASTRONAUTS_FAILURE',
+}
 
 export interface AstronautsName {
   name: string;

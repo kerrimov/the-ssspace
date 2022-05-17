@@ -1,4 +1,4 @@
-import { AstronautsActions } from '../actions/actionTypes';
+import { AstronautsActions } from '../types/Astronauts';
 import type {
   FetchAstronautsActions,
   AstronautsState,
@@ -23,11 +23,13 @@ export const astronautsReducer = (
     case AstronautsActions.FETCH_ASTRONAUTS_SUCCESS:
       return {
         ...state,
+        isLoading: false,
         astronauts: action.payload,
       };
     case AstronautsActions.FETCH_ASTRONAUTS_FAILURE:
       return {
         ...state,
+        isLoading: false,
         error: action.payload,
       };
     default:
