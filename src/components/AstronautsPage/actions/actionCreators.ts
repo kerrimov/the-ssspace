@@ -1,4 +1,4 @@
-import { AstronautsActions } from './actionTypes';
+import { AstronautsActions } from '../types/Astronauts';
 import type {
   Astronauts,
   FetchAstronautsRequest,
