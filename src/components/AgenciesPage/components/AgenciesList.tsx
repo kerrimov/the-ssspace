@@ -11,13 +11,13 @@ import './AgenciesList.scss';
 
 export const AgenciesList = () => {
   const dispatch = useDispatch<Dispatch<AgenciesAction>>();
-  const { agencies, isLoading } = selectAgencies();
+  const { agencies, isLoading, error } = selectAgencies();
 
   useEffect(() => {
     getAgenciesData()(dispatch);
   }, []);
 
-  if (isLoading) return <p>Loadding....</p>;
+  if (isLoading) return <p>Loading....</p>;
 
   if (!agencies.length)
     return (
