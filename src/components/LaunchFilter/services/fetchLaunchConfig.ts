@@ -1,10 +1,6 @@
 import { Endpoints } from '../../../shared/api/constants/endpoints';
+import { LocationIds, LaunchFilters } from '../constants/filerConstants';
 import type { FetchLaunchConfig } from '../types/FetchLaunchConfig';
-import {
-  CA_LOCATION,
-  FL_LOCATION,
-  LaunchFilters,
-} from '../constants/filerConstants';
 
 export const fetchLaunchConfig = (filterValue: string): FetchLaunchConfig => {
   switch (filterValue) {
@@ -12,21 +8,25 @@ export const fetchLaunchConfig = (filterValue: string): FetchLaunchConfig => {
       return {
         url: Endpoints.PREVIOUS_LAUNCH_ENDPOINT,
       };
+
     case LaunchFilters.CREWED:
       return {
         url: Endpoints.UPCOMING_LAUNCH_ENDPOINT,
         params: { is__crewed: true },
       };
-    case LaunchFilters.CA_LOCATION:
+
+    case LaunchFilters.CALIFORNIA:
       return {
         url: Endpoints.UPCOMING_LAUNCH_ENDPOINT,
-        params: { location__ids: CA_LOCATION },
+        params: { location__ids: LocationIds.CALIFORNIA },
       };
-    case LaunchFilters.FL_LOCATION:
+
+    case LaunchFilters.FLORIDA:
       return {
         url: Endpoints.UPCOMING_LAUNCH_ENDPOINT,
-        params: { location__ids: FL_LOCATION },
+        params: { location__ids: LocationIds.FLORIDA },
       };
+
     default:
       return {};
   }

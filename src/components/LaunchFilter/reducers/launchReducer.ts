@@ -1,25 +1,36 @@
 import { AnyAction } from '@reduxjs/toolkit';
-import { LaunchActions } from '../actions/actionTypes';
-import { InitialState } from '../constants/initialState';
+import { LaunchFilters } from '../constants/filerConstants';
+import { LaunchActions } from '../types/launchActionTypes';
+import type { LaunchesState } from '../types/LaunchesState';
 
-export const launchReducer = (
-  state = InitialState,
-  { type, payload }: AnyAction,
-) => {
-  if (!payload) return state;
+const initialState: LaunchesState = {
+  [LaunchFilters.PREVIOUS]: [],
+  [LaunchFilters.CREWED]: [],
+  [LaunchFilters.CALIFORNIA]: [],
+  [LaunchFilters.FLORIDA]: [],
+  isLoading: false,
+  error: '',
+};
+
+export const launchReducer = (state = initialState, action: AnyAction) => {
+  if (!action.payload) return state;
+  const { type, payload } = action;
+  const { filterValue, error } = payload;
   switch (type) {
-    case `${payload.filterValue}_${LaunchActions.LAUNCH_REQUEST}`:
-      return { ...state, isLoading: true, error: null };
+    case `${filterValue}${LaunchActions.LAUNCH_REQUEST}`:
+      return { ...state, isLoading: true, error: '' };
 
-    case `${payload.filterValue}_${LaunchActions.LAUNCH_SUCCESS}`:
+    case `${filterValue}${LaunchActions.LAUNCH_SUCCESS}`: {
       return {
         ...state,
-        [payload.filterValue]: payload[payload.filterValue],
+        [filterValue]: payload[filterValue],
         isLoading: false,
       };
+    }
 
-    case `${payload.filterValue}_${LaunchActions.LAUNCH_ERROR}`:
-      return { ...state, isLoading: false, error: payload.error };
+    case `${filterValue}${LaunchActions.LAUNCH_ERROR}`: {
+      return { ...state, isLoading: false, error };
+    }
 
     default:
       return state;

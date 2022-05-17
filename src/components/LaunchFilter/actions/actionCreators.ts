@@ -1,22 +1,31 @@
-import { AxiosError } from 'axios';
-import type { Launch } from '../../../shared/api/types/Launch';
+import { LaunchActions } from '../types/launchActionTypes';
 import { LaunchFilters } from '../constants/filerConstants';
-import { LaunchActions } from './actionTypes';
+import type {
+  FilterActionError,
+  FilterActionRequest,
+  FilterActionSuccess,
+} from '../types/LaunchActions';
+import type { Launch } from '../../../shared/api/types/Launch';
 
-export const requesAction = (filterValue: LaunchFilters) => ({
-  type: `${filterValue}_${LaunchActions.LAUNCH_REQUEST}`,
+export const filterRequestAction = (
+  filterValue: LaunchFilters,
+): FilterActionRequest => ({
+  type: `${filterValue}${LaunchActions.LAUNCH_REQUEST}`,
   payload: { filterValue },
 });
 
-export const successAction = (
+export const filterSuccessAction = (
   filterValue: LaunchFilters,
   launches: Launch[],
-) => ({
-  type: `${filterValue}_${LaunchActions.LAUNCH_SUCCESS}`,
-  payload: { filterValue: filterValue, [filterValue]: launches },
+): FilterActionSuccess => ({
+  type: `${filterValue}${LaunchActions.LAUNCH_SUCCESS}`,
+  payload: { filterValue, [filterValue]: launches },
 });
 
-export const errorAction = (filterValue: LaunchFilters, error: AxiosError) => ({
-  type: `${filterValue}_${LaunchActions.LAUNCH_ERROR}`,
-  payload: { filterValue: filterValue, error: error as AxiosError },
+export const filterErrorAction = (
+  filterValue: LaunchFilters,
+  error: string,
+): FilterActionError => ({
+  type: `${filterValue}${LaunchActions.LAUNCH_ERROR}`,
+  payload: { filterValue, error },
 });

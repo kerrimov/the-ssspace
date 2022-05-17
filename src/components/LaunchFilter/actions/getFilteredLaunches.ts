@@ -1,19 +1,22 @@
-import { Dispatch } from 'react';
-import { AnyAction } from '@reduxjs/toolkit';
-import { AxiosError } from 'axios';
-import type { LaunchResponse } from '../types/LaunchResponse';
+import { Dispatch } from '@reduxjs/toolkit';
+import {
+  filterErrorAction,
+  filterRequestAction,
+  filterSuccessAction,
+} from './actionCreators';
 import { LaunchFilters } from '../constants/filerConstants';
 import { fetchLaunches } from '../services/fetchLaunches';
-import { errorAction, requesAction, successAction } from './actionCreators';
+import type { FilterAction } from '../types/LaunchActions';
+import type { LaunchResponse } from '../types/LaunchResponse';
 
 export const getFilteredLaunches =
   (filterValue: LaunchFilters) =>
-  async (dispatch: Dispatch<AnyAction>): Promise<void> => {
-    dispatch(requesAction(filterValue));
+  async (dispatch: Dispatch<FilterAction>): Promise<void> => {
+    dispatch(filterRequestAction(filterValue));
     try {
       const response: LaunchResponse = await fetchLaunches(filterValue);
-      dispatch(successAction(filterValue, response.data.results));
+      dispatch(filterSuccessAction(filterValue, response.data.results));
     } catch (error) {
-      dispatch(errorAction(filterValue, error as AxiosError));
+      dispatch(filterErrorAction(filterValue, (error as Error).message));
     }
   };
