@@ -11,7 +11,7 @@ import './AgenciesList.scss';
 
 export const AgenciesList = () => {
   const dispatch = useDispatch<Dispatch<AgenciesAction>>();
-  const { agencies, isLoading, error } = selectAgencies();
+  const { agencies, isLoading } = selectAgencies();
 
   useEffect(() => {
     getAgenciesData()(dispatch);
