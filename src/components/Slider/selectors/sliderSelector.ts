@@ -7,7 +7,6 @@ export const getSlides = createSelector(
     (state: StoreState) => state.slider.sliderUpcomingLaunches,
     (state: StoreState) => state.slider.sliderPreviousLaunches,
   ],
-
   (sliderUpcomingLaunches, sliderPreviousLaunches): Array<Slides> =>
     sliderUpcomingLaunches
       .slice(0, 2)

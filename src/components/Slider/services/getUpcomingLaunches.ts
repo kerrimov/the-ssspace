@@ -1,21 +1,20 @@
-import { fetchData } from './sliderFetch';
+import { fetchData } from '../../../shared/api/services/fetchData';
 import { Endpoints } from '../../../shared/api/constants/endpoints';
 import {
   sliderGetUpcomingLaunchesError,
   sliderGetUpcomingLaunchesSuccess,
   sliderLoadData,
-} from '../redux/sliderActionsCreators';
+} from '../actions/sliderActions';
 import type { Dispatch } from 'redux';
 import type {
   SliderGetUpcomingLaunchesError,
   SliderGetUpcomingLaunchesSuccess,
   SliderLoadData,
+  Slides,
 } from '../types/SliderTypes';
 
 export const getUpcomingLaunches =
-  (
-    urlUpcomingLaunches = `${Endpoints.BASE_ENDPOINT}${Endpoints.GO_FOR_LAUNCHES_ENDPOINT}`,
-  ) =>
+  () =>
   async (
     dispatch: Dispatch<
       | SliderLoadData
@@ -25,7 +24,9 @@ export const getUpcomingLaunches =
   ): Promise<void> => {
     try {
       dispatch(sliderLoadData());
-      const upcomingLaunches = await fetchData(urlUpcomingLaunches);
+      const upcomingLaunches = await fetchData<Array<Slides>>(
+        Endpoints.GO_FOR_LAUNCHES_ENDPOINT,
+      );
       dispatch(sliderGetUpcomingLaunchesSuccess(upcomingLaunches));
     } catch (error) {
       dispatch(sliderGetUpcomingLaunchesError((error as Error).message));

@@ -8,7 +8,7 @@ import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirection } from './constants/constants';
 import { getPreviousLaunches } from './services/getPreviousLaunches';
 import { getUpcomingLaunches } from './services/getUpcomingLaunches';
-import { getSlides } from './redux/sliderSelectors';
+import { getSlides } from './selectors/sliderSelector';
 import type { SliderAllActions, Slides } from './types/SliderTypes';
 import type { Dispatch } from 'redux';
 import 'swiper/swiper-bundle.css';
@@ -25,15 +25,15 @@ export const Slider: React.FC = () => {
     getUpcomingLaunches()(dispatch);
   }, []);
 
-  const fillSlides = (launchSlides = slides) =>
-    launchSlides.map(launchSlides => (
-      <SwiperSlide key={launchSlides.id}>
+  const fillSlides = () =>
+    slides.map(slide => (
+      <SwiperSlide key={slide.id}>
         <SliderCard
-          name={launchSlides.name}
-          image={launchSlides.image}
-          date={launchSlides.net}
-          id={launchSlides.id}
-          description={launchSlides.mission.description}
+          name={slide.name}
+          image={slide.image}
+          date={slide.net}
+          id={slide.id}
+          description={slide.mission.description}
         />
       </SwiperSlide>
     ));
