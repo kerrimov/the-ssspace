@@ -14,10 +14,12 @@ export const AboutItemContent = ({
   description,
 }: AboutItemContentProps) => (
   <CardContent className="about-item-content">
-    <Typography gutterBottom variant="h5" component="div">
+    <Typography variant="h5" component="div">
       {name}
     </Typography>
-    <Typography variant="body2">{position}</Typography>
+    <Typography className="about-item-content-position" variant="h6">
+      {position}
+    </Typography>
     <Typography variant="body2">{description}</Typography>
   </CardContent>
 );
