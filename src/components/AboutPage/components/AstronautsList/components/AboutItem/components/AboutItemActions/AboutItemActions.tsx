@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardActions, Button } from '@mui/material';
-import { InfoOutlined } from '@mui/icons-material';
+import { CardActions } from '@mui/material';
+import { SocialsList } from '../../../../../../../Header/components/SocialsList';
 import './AboutItemActions.scss';
 
 interface AboutItemActionsProps {
@@ -9,16 +9,6 @@ interface AboutItemActionsProps {
 
 export const AboutItemActions = ({ contacts }: AboutItemActionsProps) => (
   <CardActions className="astronauts-item-actions">
-    <Button
-      className="astronauts-item-actions-button"
-      variant="contained"
-      size="medium"
-    >
-      <InfoOutlined
-        className="astronauts-item-actions-button-icon"
-        fontSize="small"
-      />
-      {contacts}
-    </Button>
+    <SocialsList />
   </CardActions>
 );
