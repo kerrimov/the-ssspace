@@ -1,0 +1,12 @@
+@import '../../../../../../../../shared/styles/variables';
+
+.about-item-actions {
+  justify-content: center;
+
+  .about-item-actions-button {
+    color: $contrast-text-color;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
