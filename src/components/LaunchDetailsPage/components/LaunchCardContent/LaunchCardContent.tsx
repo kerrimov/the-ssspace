@@ -2,11 +2,11 @@ import React from 'react';
 import { CardHeader } from '@mui/material';
 import { CardDetails } from './components/CardDetails';
 import { CountdownTimer } from '../../../../shared/components/CountdownTimer';
-import type { LaunchDetails } from '../../types/LaunchDetails';
+import type { Launch } from '../../../../shared/api/types/Launch';
 import './LaunchCardContent.scss';
 
 interface LaunchCardContentProps {
-  details: LaunchDetails;
+  details: Launch;
 }
 
 export const LaunchCardContent = ({ details }: LaunchCardContentProps) => (

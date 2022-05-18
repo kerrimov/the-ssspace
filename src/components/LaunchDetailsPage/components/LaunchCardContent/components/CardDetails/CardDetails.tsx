@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { captions } from '../../../../constants/captions';
-import type { LaunchDetails } from '../../../../types/LaunchDetails';
+import type { Launch } from '../../../../../../shared/api/types/Launch';
 import './CardDetails.scss';
 
 interface CardDetailsProps {
-  details: LaunchDetails;
+  details: Launch;
 }
 export const CardDetails = ({ details }: CardDetailsProps) => {
   const detailsValues: string[] = [
