@@ -1,8 +1,10 @@
+import { Launch } from '../../../shared/api/types/Launch';
+
 interface LaunchMission {
   description: string;
 }
 
-export interface Slides {
+export interface Slides extends Launch {
   image: string;
   net: string;
   id: string;
