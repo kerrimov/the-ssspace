@@ -6,7 +6,9 @@ interface AboutItemImageProps {
   image: string;
 }
 
-export const AboutItemImage = ({ image }: AboutItemImageProps) => (
+export const AboutItemImage: React.FC<AboutItemImageProps> = ({
+  image,
+}: AboutItemImageProps) => (
   <CardMedia
     className="about-item-image"
     component="img"

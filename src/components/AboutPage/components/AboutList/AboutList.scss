@@ -1,0 +1,13 @@
+.about-list {
+  margin-bottom: 3rem;
+}
+
+.about-list-grid {
+  &:nth-child(1) {
+    margin-left: auto;
+  }
+  &:nth-child(2) {
+    margin-right: 23.26rem;
+    margin-bottom: 1rem;
+  }
+}

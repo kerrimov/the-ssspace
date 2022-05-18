@@ -8,7 +8,7 @@ interface AboutItemContentProps {
   description: string;
 }
 
-export const AboutItemContent = ({
+export const AboutItemContent: React.FC<AboutItemContentProps> = ({
   name,
   position,
   description,
@@ -20,6 +20,8 @@ export const AboutItemContent = ({
     <Typography className="about-item-content-position" variant="h6">
       {position}
     </Typography>
-    <Typography variant="body2">{description}</Typography>
+    <Typography className="about-item-content-description" variant="body1">
+      {description}
+    </Typography>
   </CardContent>
 );
