@@ -9,8 +9,14 @@ import { ArrowDirection } from './constants/constants';
 import { getPreviousLaunches } from './services/getPreviousLaunches';
 import { getUpcomingLaunches } from './services/getUpcomingLaunches';
 import { getSlides } from './selectors/sliderSelector';
-import type { SliderAllActions, Slides } from './types/SliderTypes';
+import { LoaderMedium } from '../../shared/components/Loaders/LoaderMedium';
+import type {
+  SliderAllActions,
+  SliderState,
+  Slides,
+} from './types/SliderTypes';
 import type { Dispatch } from 'redux';
+import type { StoreState } from '../../store';
 import 'swiper/swiper-bundle.css';
 import './Slider.scss';
 
@@ -18,6 +24,10 @@ SwiperCore.use([Navigation, Autoplay]);
 
 export const Slider: React.FC = () => {
   const slides: Array<Slides> = useSelector(getSlides);
+  //should I create selector for it ?
+  const { isLoading } = useSelector<StoreState, SliderState>(
+    state => state.slider,
+  );
   const dispatch = useDispatch<Dispatch<SliderAllActions>>();
 
   useEffect(() => {
@@ -38,7 +48,9 @@ export const Slider: React.FC = () => {
       </SwiperSlide>
     ));
 
-  return (
+  return isLoading ? (
+    <LoaderMedium />
+  ) : (
     <Container className="slider-container" maxWidth="xl">
       <SliderArrow direction={ArrowDirection.PREVIOUS} />
       <Swiper
