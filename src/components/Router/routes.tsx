@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, RouteObject } from 'react-router';
+import { RouteObject } from 'react-router';
 import { RoutesPath } from './routesPath';
 import { About } from '../About';
 import { AgenciesPage } from '../AgenciesPage';
@@ -9,6 +9,7 @@ import { Home } from '../Home';
 import { LaunchDetailsPage } from '../LaunchDetailsPage';
 import { LaunchList } from '../LaunchList';
 import { LaunchFilters } from '../LaunchFilter/constants/filerConstants';
+import { NotFoundPage } from '../NotFoundPage';
 
 export const routesConfig: RouteObject[] = [
   {
@@ -55,6 +56,6 @@ export const routesConfig: RouteObject[] = [
   },
   {
     path: '*',
-    element: <Navigate to={RoutesPath.HOME} />,
+    element: <NotFoundPage />,
   },
 ];

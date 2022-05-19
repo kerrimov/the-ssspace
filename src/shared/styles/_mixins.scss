@@ -1,12 +1,16 @@
 @import './variables';
 
+@mixin page-heading-style {
+  color: $primary-dark;
+  text-shadow: 4px 3px 5px $primary-main;
+  font-family: $default-font;
+}
+
 @mixin page-header {
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 4rem;
   line-height: 3rem;
   text-align: center;
-  color: $primary-dark;
-  text-shadow: 4px 3px 5px $primary-main;
-  font-family: $default-font;
+  @include page-heading-style;
 }
