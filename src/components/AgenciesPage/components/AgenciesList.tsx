@@ -6,7 +6,7 @@ import { AgenciesItem } from './components';
 import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
 import { AgenciesAction } from '../types/Agencies';
-
+import { LoaderMedium } from '../../../shared/components/Loaders/LoaderMedium';
 import './AgenciesList.scss';
 
 export const AgenciesList = () => {
@@ -17,7 +17,7 @@ export const AgenciesList = () => {
     getAgenciesData()(dispatch);
   }, []);
 
-  if (isLoading) return <p>Loading....</p>;
+  if (isLoading) return <LoaderMedium />;
 
   if (!agencies.length)
     return (

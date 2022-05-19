@@ -2,12 +2,13 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import { AstronautsItem } from './components/AstronautsItem';
 import { selectAstronauts } from '../../selectors/astronautsSelectors';
+import { LoaderMedium } from '../../../../shared/components/Loaders/LoaderMedium';
 import type { Astronauts } from '../../types/Astronauts';
 
 export const AstronautsList = () => {
   const { astronauts, isLoading } = selectAstronauts();
 
-  if (isLoading) return <p>Loading....</p>;
+  if (isLoading) return <LoaderMedium />;
 
   if (!astronauts.length)
     return (
