@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Router } from './components/Router';
 import { theme } from './theme/theme';
 import { Footer } from './components/Footer';
+import { ErrorAlert } from './shared/components/ErrorAlert';
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
       <Header />
       <Router />
       <Footer />
+      <ErrorAlert />
     </ThemeProvider>
   );
 };

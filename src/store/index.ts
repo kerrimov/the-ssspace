@@ -3,6 +3,7 @@ import { agenciesReducer } from '../components/AgenciesPage/reducers/agenciesRed
 import { launchReducer } from '../components/Home/reducers/launchReducer';
 import { astronautsReducer } from '../components/AstronautsPage/reducers/astronautsReducer';
 import { sliderReducer } from '../components/Slider/reducers/sliderReducer';
+import { errorAlertReducer } from '../shared/components/ErrorAlert/reducers/errorAlert';
 import { eventsReducer } from '../components/EventsPage/reducers/eventsReducer';
 
 const reducer = combineReducers({
@@ -10,6 +11,7 @@ const reducer = combineReducers({
   launches: launchReducer,
   astronauts: astronautsReducer,
   slider: sliderReducer,
+  errorAlert: errorAlertReducer,
   events: eventsReducer,
 });
 
