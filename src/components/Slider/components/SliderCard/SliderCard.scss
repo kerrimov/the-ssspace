@@ -3,8 +3,9 @@
 .slider-card {
   display: flex;
   border: 1px $primary-main solid;
+  height: 34.375rem;
   img {
-    height: 34.375rem;
+    min-height: 30.375rem;
     max-width: 33.333%;
   }
 }
