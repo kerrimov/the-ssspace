@@ -5,6 +5,10 @@ import {
   sliderGetPreviousLaunchesSuccess,
   sliderLoadData,
 } from '../actions/sliderActions';
+import {
+  errorAlertOpen,
+  errorAlertSetErrorMessage,
+} from '../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type { Dispatch } from 'redux';
 import type {
   SliderGetPreviousLaunchesError,
@@ -12,6 +16,7 @@ import type {
   SliderLoadData,
   Slides,
 } from '../types/SliderTypes';
+import type { ErrorAlertAllActions } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
 
 export const getPreviousLaunches =
   () =>
@@ -20,6 +25,7 @@ export const getPreviousLaunches =
       | SliderLoadData
       | SliderGetPreviousLaunchesSuccess
       | SliderGetPreviousLaunchesError
+      | ErrorAlertAllActions
     >,
   ): Promise<void> => {
     try {
@@ -30,5 +36,7 @@ export const getPreviousLaunches =
       dispatch(sliderGetPreviousLaunchesSuccess(upcomingLaunches));
     } catch (error) {
       dispatch(sliderGetPreviousLaunchesError((error as Error).message));
+      dispatch(errorAlertSetErrorMessage((error as Error).message));
+      dispatch(errorAlertOpen());
     }
   };
