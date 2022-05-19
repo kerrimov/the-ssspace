@@ -7,10 +7,12 @@ import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
 import { AgenciesAction } from '../types/Agencies';
 import { Loader } from '../../../shared/components/Loader';
+import type { ErrorAlertAllActions } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
 import './AgenciesList.scss';
 
 export const AgenciesList = () => {
-  const dispatch = useDispatch<Dispatch<AgenciesAction>>();
+  const dispatch =
+    useDispatch<Dispatch<AgenciesAction | ErrorAlertAllActions>>();
   const { agencies, isLoading } = selectAgencies();
 
   useEffect(() => {

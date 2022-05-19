@@ -5,6 +5,10 @@ import {
   sliderGetUpcomingLaunchesSuccess,
   sliderLoadData,
 } from '../actions/sliderActions';
+import {
+  errorAlertOpen,
+  errorAlertSetErrorMessage,
+} from '../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type { Dispatch } from 'redux';
 import type {
   SliderGetUpcomingLaunchesError,
@@ -12,6 +16,7 @@ import type {
   SliderLoadData,
   Slides,
 } from '../types/SliderTypes';
+import type { ErrorAlertAllActions } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
 
 export const getUpcomingLaunches =
   () =>
@@ -20,6 +25,7 @@ export const getUpcomingLaunches =
       | SliderLoadData
       | SliderGetUpcomingLaunchesSuccess
       | SliderGetUpcomingLaunchesError
+      | ErrorAlertAllActions
     >,
   ): Promise<void> => {
     try {
@@ -30,5 +36,7 @@ export const getUpcomingLaunches =
       dispatch(sliderGetUpcomingLaunchesSuccess(upcomingLaunches));
     } catch (error) {
       dispatch(sliderGetUpcomingLaunchesError((error as Error).message));
+      dispatch(errorAlertSetErrorMessage((error as Error).message));
+      dispatch(errorAlertOpen());
     }
   };
