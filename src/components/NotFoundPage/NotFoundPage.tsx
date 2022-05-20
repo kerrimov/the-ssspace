@@ -4,11 +4,11 @@ import { RoutesPath } from '../Router/routesPath';
 import './NotFoundPage.scss';
 
 export const NotFoundPage = () => (
-  <Container maxWidth="xl" className="notfound-page">
-    <h1 className="notfound-page-header">Page not found</h1>
-    <p className="notfound-page-404">404</p>
-    <p className="notfound-page-info">Let&apos;s use another try.</p>
-    <Link className="notfound-page-button" href={RoutesPath.HOME}>
+  <Container maxWidth="xl" className="not-found-page">
+    <h1 className="not-found-page-header">Page not found</h1>
+    <p className="not-found-page-404">404</p>
+    <p className="not-found-page-info">Let&apos;s use another try.</p>
+    <Link className="not-found-page-button" href={RoutesPath.HOME}>
       Home page
     </Link>
   </Container>
