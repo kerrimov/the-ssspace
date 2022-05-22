@@ -15,6 +15,13 @@ export const EventsItemContent: React.FC<EventsItemContentProps> = ({
   date,
 }: EventsItemContentProps) => {
   const eventDate = moment(date).utc().format('LLLL');
+  let slicedDesription = '';
+
+  if (description.length > 145) {
+    slicedDesription = description.substr(0, 145) + '...';
+  } else {
+    slicedDesription = description;
+  }
 
   return (
     <CardContent className="events-item-content">
@@ -28,7 +35,9 @@ export const EventsItemContent: React.FC<EventsItemContentProps> = ({
       <Typography className="events-item-content-date" variant="body1">
         {eventDate}
       </Typography>
-      <Typography variant="body1">{description}</Typography>
+      <Typography className="events-item-content-description" variant="body1">
+        {slicedDesription}
+      </Typography>
     </CardContent>
   );
 };

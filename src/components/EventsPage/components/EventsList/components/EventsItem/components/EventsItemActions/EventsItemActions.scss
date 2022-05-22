@@ -2,15 +2,24 @@
 
 .events-item-actions {
   justify-content: center;
-  border-top: 1px solid $primary-main;
-  margin: 0 1rem;
+  margin: auto 0;
+  height: 4rem;
 
   &.MuiCardActions-root {
-    padding: 1rem 0 0 0;
+    padding: 0;
+  }
+
+  & &-info {
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   & &-button {
     align-items: center;
+
+    &:hover {
+      color: $primary-light;
+    }
 
     &-icon {
       margin-right: 0.5rem;

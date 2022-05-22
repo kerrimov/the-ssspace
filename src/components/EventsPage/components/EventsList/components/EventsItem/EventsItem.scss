@@ -1,6 +1,7 @@
 .events-item {
-  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto 2rem;
-  max-width: 21rem;
+  max-width: 21.5rem;
   min-height: 36rem;
 }
