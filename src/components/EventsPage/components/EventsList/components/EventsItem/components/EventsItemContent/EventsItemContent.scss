@@ -1,16 +1,31 @@
 @import '../../../../../../../../shared/styles/variables';
 
 .events-item-content {
-  padding: 1rem;
   text-align: center;
 
+  &.MuiCardContent-root {
+    padding: 1rem 0.75rem 0;
+  }
+
   & &-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 0.5rem;
+    height: 5.5rem;
   }
 
   & &-date {
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid $primary-main;
+  }
+
+  & &-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    min-height: 6rem;
+    border-top: $default-border-width solid $primary-main;
+    border-bottom: $default-border-width solid $primary-main;
   }
 }
