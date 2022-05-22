@@ -1,0 +1,19 @@
+@import '../../../../../../../../shared/styles/variables';
+
+.events-item-actions {
+  justify-content: center;
+  border-top: 1px solid $primary-main;
+  margin: 0 1rem;
+
+  &.MuiCardActions-root {
+    padding: 1rem 0 0 0;
+  }
+
+  & &-button {
+    align-items: center;
+
+    &-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}

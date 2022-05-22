@@ -1,0 +1,1 @@
+export { EventsItemContent } from './EventsItemContent';

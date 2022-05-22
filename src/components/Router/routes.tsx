@@ -4,7 +4,7 @@ import { RoutesPath } from './routesPath';
 import { About } from '../About';
 import { AgenciesPage } from '../AgenciesPage';
 import { AstronautsPage } from '../AstronautsPage';
-import { Events } from '../Events';
+import { EventsPage } from '../EventsPage';
 import { Home } from '../Home';
 import { LaunchDetailsPage } from '../LaunchDetailsPage';
 import { LaunchList } from '../Home/components/LaunchList';
@@ -40,7 +40,7 @@ export const routesConfig: RouteObject[] = [
   },
   {
     path: RoutesPath.EVENTS,
-    element: <Events />,
+    element: <EventsPage />,
   },
   {
     path: RoutesPath.AGENCIES,
