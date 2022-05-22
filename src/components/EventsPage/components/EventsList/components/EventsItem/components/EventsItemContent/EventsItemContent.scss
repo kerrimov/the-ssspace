@@ -1,0 +1,16 @@
+@import '../../../../../../../../shared/styles/variables';
+
+.events-item-content {
+  padding: 1rem;
+  text-align: center;
+
+  & &-name {
+    margin-bottom: 0.5rem;
+  }
+
+  & &-date {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $primary-main;
+  }
+}

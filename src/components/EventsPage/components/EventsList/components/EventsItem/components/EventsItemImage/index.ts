@@ -1,0 +1,1 @@
+export { EventsItemImage } from './EventsItemImage';
