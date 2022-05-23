@@ -9,7 +9,8 @@ import { ArrowDirection } from './constants/constants';
 import { getPreviousLaunches } from './services/getPreviousLaunches';
 import { getUpcomingLaunches } from './services/getUpcomingLaunches';
 import { getSlides } from './selectors/sliderSelector';
-import { LoaderMedium } from '../../shared/components/Loaders/LoaderMedium';
+import { Loader } from '../../shared/components/Loader';
+import { LoaderType } from '../../shared/components/Loader/constants/constants';
 import type {
   SliderAllActions,
   SliderState,
@@ -49,7 +50,7 @@ export const Slider: React.FC = () => {
     ));
 
   return isLoading ? (
-    <LoaderMedium />
+    <Loader type={LoaderType.LOADER_TYPE_LARGE} />
   ) : (
     <Container className="slider-container" maxWidth="xl">
       <SliderArrow direction={ArrowDirection.PREVIOUS} />

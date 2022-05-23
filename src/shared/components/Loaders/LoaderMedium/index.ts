@@ -1,1 +1,0 @@
-export { LoaderMedium } from './LoaderMedium';
