@@ -1,0 +1,12 @@
+.launch-item-image-wrapper {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+
+  & > img {
+    object-fit: cover;
+    &.default {
+      object-fit: contain;
+    }
+  }
+}

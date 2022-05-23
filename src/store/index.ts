@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { appReducer } from './app/reducer';
 import { agenciesReducer } from '../components/AgenciesPage/reducers/agenciesReducer';
-import { launchReducer } from '../components/LaunchFilter/reducers/launchReducer';
+import { launchReducer } from '../components/Home/reducers/launchReducer';
 import { astronautsReducer } from '../components/AstronautsPage/reducers/astronautsReducer';
 import { sliderReducer } from '../components/Slider/reducers/sliderReducer';
 

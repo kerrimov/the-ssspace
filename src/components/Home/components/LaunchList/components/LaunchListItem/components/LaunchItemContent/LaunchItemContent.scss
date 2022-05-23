@@ -1,0 +1,33 @@
+@import '../../../../../../../../shared/styles/variables';
+
+.launch-item-card {
+  &-header {
+    min-height: 5rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $contrast-text-color;
+  }
+
+  &-content {
+    min-height: 4rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+    border-top: 1px solid $primary-main;
+
+  }
+
+  &-pad,
+  &-agency {
+    text-align: center;
+  }
+  &-agency {
+    margin-bottom: 1rem;
+  }
+  &-prop {
+    font-weight: $font-weight-bold;
+ }
+}

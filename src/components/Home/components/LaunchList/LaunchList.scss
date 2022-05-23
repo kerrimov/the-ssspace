@@ -1,0 +1,26 @@
+@import '../../../../shared/styles/mixins';
+@import '../../../../shared/styles/variables';
+
+.launch-header {
+  @include page-header;
+  margin-top: 4rem;
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.launch-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 2rem;
+}
+
+.launch-list-empty {
+  margin: 0 auto 2rem;
+  padding-top: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  color: $primary-dark;
+  font-family: $default-font;
+}

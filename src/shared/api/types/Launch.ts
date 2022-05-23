@@ -6,6 +6,10 @@ interface LaunchPad extends LaunchDetailName {
   location: LaunchDetailName;
 }
 
+interface LaunchMission {
+  description: string;
+}
+
 export interface Launch {
   id: string;
   name: string;
@@ -14,4 +18,5 @@ export interface Launch {
   launch_service_provider: LaunchDetailName;
   pad: LaunchPad;
   image: string;
+  mission: LaunchMission;
 }

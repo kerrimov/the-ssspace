@@ -1,0 +1,5 @@
+export const enum LaunchActionTypes {
+  LAUNCH_REQUEST = 'LAUNCH_REQUEST',
+  LAUNCH_SUCCESS = 'LAUNCH_SUCCESS',
+  LAUNCH_ERROR = 'LAUNCH_ERROR',
+}
