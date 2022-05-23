@@ -23,7 +23,6 @@
     "gh-pages": "^3.2.3",
     "material-ui": "^0.20.2",
     "material-ui-icons": "^1.0.0-beta.36",
-    "module-alias": "^2.2.2",
     "moment": "^2.29.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -78,8 +77,5 @@
   },
   "lint-staged": {
     "*.{ts,tsx,css,md}": "prettier --write"
-  },
-  "_moduleAliases": {
-    "@shared": "srs/shared"
   }
 }
