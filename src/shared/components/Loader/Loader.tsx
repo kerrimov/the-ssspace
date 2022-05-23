@@ -8,8 +8,9 @@ interface LoaderProps {
 }
 
 export const Loader: React.FC<LoaderProps> = ({ type }: LoaderProps) => {
-  const className = type === LoaderType.LOADER_TYPE_LARGE ? 'large' : 'medium';
-  const size = LoaderType.LOADER_TYPE_LARGE ? 500 : 80;
+  const isLarge: boolean = type === LoaderType.LOADER_TYPE_LARGE;
+  const className = isLarge ? 'large' : 'medium';
+  const size = isLarge ? 500 : 80;
   return (
     <Box className={`loader-container ${className}`}>
       <CircularProgress color="primary" className="loader" size={size} />

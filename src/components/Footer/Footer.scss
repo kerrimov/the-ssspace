@@ -8,6 +8,7 @@
   min-height: 3rem;
   overflow: hidden;
   background: $secondary-main;
+  z-index: 5;
 }
 
 .footer-container {
@@ -24,14 +25,11 @@
   letter-spacing: 0.1rem;
   display: block;
   width: 100%;
-  animation: move 5s linear infinite;
+  animation: move 3s linear infinite;
   color: $contrast-text-color;
 }
 
 @keyframes move {
-  0% {
-    transform: translateX(100%);
-  }
   100% {
     transform: translateX(-100%);
   }
