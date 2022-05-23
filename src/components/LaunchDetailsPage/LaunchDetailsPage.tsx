@@ -11,6 +11,7 @@ import { LaunchCardContent } from './components/LaunchCardContent';
 import { getActiveSlideData } from './selectors/selectors';
 import { SecondaryButton } from '../../shared/components/SecondaryButton';
 import { RoutesPath } from '../Router/routesPath';
+import { ButtonSizes } from '../../shared/components/SecondaryButton/SecondaryButton';
 import type { Launch } from '../../shared/api/types/Launch';
 import './LaunchDetailsPage.scss';
 
@@ -22,7 +23,7 @@ export const LaunchDetailsPage = () => {
       <SecondaryButton
         caption="go back"
         path={RoutesPath.HOME}
-        buttonSize="large"
+        buttonSize={ButtonSizes.LARGE}
       />
       <Card raised className="launch-details-card">
         <CardActionArea>
