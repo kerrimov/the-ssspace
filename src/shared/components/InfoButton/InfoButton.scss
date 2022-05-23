@@ -1,14 +1,31 @@
 @import '../../styles/variables';
 
-.agencies-item-actions-button {
-  color: $contrast-text-color;
+.list-item-actions {
+  &-button {
+    color: $contrast-text-color;
+    &:hover,
+    &:focus {
+      color: $primary-light;
+    }
 
-  &:hover,
-  &:focus {
-    color: $primary-light;
+    &-icon {
+      margin-right: 0.5rem;
+      padding-bottom: 0.2rem;
+    }
   }
 
-  &-icon {
-    margin-right: 0.5rem;
+  &-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $contrast-text-color;
+    &:hover,
+    &:focus {
+      color: $primary-light;
+    }
   }
+}
+
+.list-item-actions-button:hover .list-item-actions-link {
+  color: $primary-light;
 }

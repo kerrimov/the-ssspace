@@ -3,7 +3,23 @@
 .MuiButton-root.secondary-button,
 .MuiButton-root.secondary-button:hover,
 .MuiButton-root.secondary-button:focus {
-  margin: 0.5rem;
   border: $goback-button-border solid;
   font-weight: $font-weight-bold;
+}
+
+.secondary-button {
+  &-icon {
+    margin-right: 0.5rem;
+    padding-bottom: 0.2rem;
+  }
+  &-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $primary-dark;
+    &:hover,
+    &:focus {
+      color: $primary-main;
+    }
+  }
 }

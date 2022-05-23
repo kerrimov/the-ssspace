@@ -1,27 +1,39 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { ReactEventHandler } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import { RoutesPath } from '../../../components/Router/routesPath';
 import './SecondaryButton.scss';
 
-interface SecondaryButtonProps {
-  path: string;
-  caption: string;
+interface IconTypeProps {
+  className?: string;
+  fontSize?: 'small' | 'medium' | 'large' | 'inherit';
 }
 
-export const SecondaryButton = ({ path, caption }: SecondaryButtonProps) => {
-  const navigate = useNavigate();
-  const navigateTo = () => {
-    navigate(path);
-  };
+interface SecondaryButtonProps {
+  caption: string;
+  path?: string;
+  clickHandler?: ReactEventHandler;
+  className?: string;
+  buttonSize: 'small' | 'large' | 'medium';
+  icon?: (props: IconTypeProps) => JSX.Element;
+}
 
+export const SecondaryButton = (props: SecondaryButtonProps) => {
+  const { caption, path, clickHandler, className, buttonSize, icon } = props;
   return (
-    <Button
-      className="secondary-button"
-      size="large"
-      variant="outlined"
-      onClick={navigateTo}
-    >
-      {caption}
+    <Button className="secondary-button" size={buttonSize} variant="outlined">
+      <Link
+        className={`secondary-button-link ${className}`}
+        to={path || RoutesPath.HOME}
+        onClick={clickHandler}
+      >
+        {icon &&
+          React.createElement(icon, {
+            className: 'secondary-button-icon',
+            fontSize: 'small',
+          })}
+        {caption}
+      </Link>
     </Button>
   );
 };
