@@ -10,7 +10,6 @@ import { getPreviousLaunches } from './services/getPreviousLaunches';
 import { getUpcomingLaunches } from './services/getUpcomingLaunches';
 import { getSlides } from './selectors/sliderSelector';
 import { Loader } from '../../shared/components/Loader';
-import { LoaderType } from '../../shared/components/Loader/constants/constants';
 import type {
   SliderAllActions,
   SliderState,
@@ -25,7 +24,6 @@ SwiperCore.use([Navigation, Autoplay]);
 
 export const Slider: React.FC = () => {
   const slides: Array<Slides> = useSelector(getSlides);
-  //should I create selector for it ?
   const { isLoading } = useSelector<StoreState, SliderState>(
     state => state.slider,
   );
@@ -50,7 +48,7 @@ export const Slider: React.FC = () => {
     ));
 
   return isLoading ? (
-    <Loader type={LoaderType.LOADER_TYPE_LARGE} />
+    <Loader />
   ) : (
     <Container className="slider-container" maxWidth="xl">
       <SliderArrow direction={ArrowDirection.PREVIOUS} />

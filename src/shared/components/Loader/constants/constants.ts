@@ -1,3 +1,4 @@
-export const enum LoaderType {
-  LOADER_TYPE_LARGE = 'LOADER_TYPE_LARGE',
+export const enum LoaderSize {
+  LOADER_SIZE_LARGE = 500,
+  LOADER_SIZE_MEDIUM = 80,
 }
