@@ -18,4 +18,7 @@ export const launchDetails: Launch = {
   },
   image:
     'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/long2520march25204_image_20190430065008.jpg',
+  mission: {
+    description: '',
+  },
 };

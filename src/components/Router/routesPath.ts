@@ -5,6 +5,7 @@ export enum RoutesPath {
   ASTRONAUTS = '/astronauts',
   ABOUT = '/about',
   DETAILS = '/details',
+  UPCOMING = 'launches-upcoming',
   PREVIOUS = 'launches-previous',
   CREWED = 'launches-crewed',
   CALIFORNIA = 'launches-california',

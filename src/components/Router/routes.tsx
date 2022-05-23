@@ -7,9 +7,9 @@ import { AstronautsPage } from '../AstronautsPage';
 import { Events } from '../Events';
 import { Home } from '../Home';
 import { LaunchDetailsPage } from '../LaunchDetailsPage';
-import { LaunchList } from '../LaunchList';
-import { LaunchFilters } from '../LaunchFilter/constants/filerConstants';
+import { LaunchList } from '../Home/components/LaunchList';
 import { NotFoundPage } from '../NotFoundPage';
+import { Launches } from '../Home/constants/launches';
 
 export const routesConfig: RouteObject[] = [
   {
@@ -17,20 +17,24 @@ export const routesConfig: RouteObject[] = [
     element: <Home />,
     children: [
       {
+        path: RoutesPath.HOME,
+        element: <LaunchList filterValue={Launches.UPCOMING} />,
+      },
+      {
         path: RoutesPath.PREVIOUS,
-        element: <LaunchList filterValue={LaunchFilters.PREVIOUS} />,
+        element: <LaunchList filterValue={Launches.PREVIOUS} />,
       },
       {
         path: RoutesPath.CREWED,
-        element: <LaunchList filterValue={LaunchFilters.CREWED} />,
+        element: <LaunchList filterValue={Launches.CREWED} />,
       },
       {
         path: RoutesPath.CALIFORNIA,
-        element: <LaunchList filterValue={LaunchFilters.CALIFORNIA} />,
+        element: <LaunchList filterValue={Launches.CALIFORNIA} />,
       },
       {
         path: RoutesPath.FLORIDA,
-        element: <LaunchList filterValue={LaunchFilters.FLORIDA} />,
+        element: <LaunchList filterValue={Launches.FLORIDA} />,
       },
     ],
   },
