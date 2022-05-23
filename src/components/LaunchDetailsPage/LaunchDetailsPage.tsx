@@ -19,7 +19,11 @@ export const LaunchDetailsPage = () => {
 
   return details ? (
     <Container className="launch-details-page">
-      <SecondaryButton path={RoutesPath.HOME} caption="go back" />
+      <SecondaryButton
+        caption="go back"
+        path={RoutesPath.HOME}
+        buttonSize="large"
+      />
       <Card raised className="launch-details-card">
         <CardActionArea>
           <Grid
