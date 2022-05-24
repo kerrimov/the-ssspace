@@ -1,6 +1,6 @@
 # Project name: _The ssspace_
 
-Link: [The ssspase](kerrimov.github.io/the-ssspace/)
+Link: [The ssspase](https://kerrimov.github.io/the-ssspace/)
 
 ## This is a web application where you can find and view news, events and astronauts of different space agencies.
 
