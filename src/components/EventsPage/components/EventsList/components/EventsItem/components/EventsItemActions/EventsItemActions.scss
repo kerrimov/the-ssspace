@@ -2,6 +2,7 @@
 
 .events-item-actions {
   justify-content: center;
+  align-items: center;
   margin: auto 0;
   height: 4rem;
 
@@ -14,8 +15,9 @@
     font-weight: bold;
   }
 
-  & &-button {
+  & &-videobutton {
     align-items: center;
+    margin-right: 2rem;
 
     &:hover {
       color: $primary-light;
@@ -23,6 +25,10 @@
 
     &-icon {
       margin-right: 0.5rem;
+    }
+
+    & &-sharebutton {
+      padding: 6rem 16rem;
     }
   }
 }

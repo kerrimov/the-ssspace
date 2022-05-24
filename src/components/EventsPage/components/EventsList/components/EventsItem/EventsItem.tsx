@@ -20,6 +20,6 @@ export const EventsItem: React.FC<EventsItemProps> = ({
       description={eventsItem.description}
       date={eventsItem.date}
     />
-    <EventsItemActions video={eventsItem.video_url} />
+    <EventsItemActions id={eventsItem.id} video={eventsItem.video_url} />
   </Card>
 );
