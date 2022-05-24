@@ -11,7 +11,7 @@ import { LaunchCardContent } from './components/LaunchCardContent';
 import { getActiveSlideData } from './selectors/selectors';
 import { SecondaryButton } from '../../shared/components/SecondaryButton';
 import { RoutesPath } from '../Router/routesPath';
-import { ButtonSizes } from '../../shared/components/SecondaryButton/SecondaryButton';
+import { ButtonSizes } from '../../shared/components/SecondaryButton/types/secondaryButtonTypes';
 import type { Launch } from '../../shared/api/types/Launch';
 import './LaunchDetailsPage.scss';
 
