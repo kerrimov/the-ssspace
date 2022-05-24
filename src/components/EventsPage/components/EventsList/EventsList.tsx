@@ -3,12 +3,13 @@ import { Grid } from '@mui/material';
 import { EventsItem } from './components/EventsItem';
 import { selectEvents } from '../../selectors/eventsSelectors';
 import { Events } from '../../types/Events';
+import { Loader } from '../../../../shared/components/Loader';
 import './EventsList.scss';
 
 export const EventsList = () => {
   const { events, isLoading } = selectEvents();
 
-  if (isLoading) return <p>Loading....</p>;
+  if (isLoading) return <Loader />;
 
   if (!events.length)
     return <h2 className="event-list-empty">No events for now. Try later.</h2>;
