@@ -5,10 +5,7 @@ import {
   fetchAstronautsSuccess,
   fetchAstronautsFailure,
 } from '../../actions/actionCreators';
-import {
-  errorAlertClose,
-  errorAlertSetErrorMessage,
-} from '../../../../shared/components/ErrorAlert/actions/errorAlertActions';
+import { errorAlertSetErrorMessage } from '../../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type {
   Astronauts,
   FetchAstronautsActions,
@@ -27,6 +24,5 @@ export const getAstronautsData =
     } catch (error) {
       dispatch(fetchAstronautsFailure((error as Error).message));
       dispatch(errorAlertSetErrorMessage((error as Error).message));
-      dispatch(errorAlertClose());
     }
   };

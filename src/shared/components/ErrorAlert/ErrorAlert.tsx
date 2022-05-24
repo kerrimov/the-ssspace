@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Alert, AlertTitle, IconButton, Snackbar } from '@mui/material';
 import { Close } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
-import { errorAlertClose } from './actions/errorAlertActions';
+import { errorAlertToggle } from './actions/errorAlertActions';
 import type { Dispatch } from 'redux';
 import type {
   ErrorAlertAllActions,
@@ -12,23 +12,29 @@ import type { StoreState } from '../../../store';
 import './ErrorAlert.scss';
 
 export const ErrorAlert = () => {
-  //should I use selector in that case ?
   const { message, isOpened } = useSelector<StoreState, ErrorAlertState>(
     state => state.errorAlert,
   );
   const dispatch = useDispatch<Dispatch<ErrorAlertAllActions>>();
+
+  const handleToggle = useCallback(() => {
+    if (isOpened) {
+      dispatch(errorAlertToggle());
+    }
+    return;
+  }, [isOpened]);
 
   return (
     <Snackbar
       autoHideDuration={3000}
       open={isOpened}
       className="error-alert"
-      onClose={() => dispatch(errorAlertClose())}
+      onClose={handleToggle}
     >
       <Alert
         severity="error"
         action={
-          <IconButton onClick={() => dispatch(errorAlertClose())}>
+          <IconButton onClick={handleToggle}>
             <Close />
           </IconButton>
         }

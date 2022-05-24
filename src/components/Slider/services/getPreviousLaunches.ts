@@ -5,10 +5,7 @@ import {
   sliderGetPreviousLaunchesSuccess,
   sliderLoadData,
 } from '../actions/sliderActions';
-import {
-  errorAlertOpen,
-  errorAlertSetErrorMessage,
-} from '../../../shared/components/ErrorAlert/actions/errorAlertActions';
+import { errorAlertSetErrorMessage } from '../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type { Dispatch } from 'redux';
 import type {
   SliderGetPreviousLaunchesError,
@@ -37,6 +34,5 @@ export const getPreviousLaunches =
     } catch (error) {
       dispatch(sliderGetPreviousLaunchesError((error as Error).message));
       dispatch(errorAlertSetErrorMessage((error as Error).message));
-      dispatch(errorAlertOpen());
     }
   };

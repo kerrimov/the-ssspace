@@ -30,7 +30,6 @@ export const Slider: React.FC = () => {
   const { isLoading } = useSelector<StoreState, SliderState>(
     state => state.slider,
   );
-  const dispatch = useDispatch<Dispatch<SliderAllActions>>();
 
   useEffect(() => {
     getPreviousLaunches()(dispatch);

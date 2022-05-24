@@ -4,7 +4,7 @@ import {
   ErrorAlertState,
 } from '../types/errorAlertTypes';
 
-const errorAlertState = {
+const errorAlertState: ErrorAlertState = {
   message: 'Something goes wrong',
   isOpened: false,
 };
@@ -14,19 +14,15 @@ export const errorAlertReducer = (
   action: ErrorAlertAllActions,
 ): ErrorAlertState => {
   switch (action.type) {
-    case ErrorAlertAction.ERROR_ALERT_CLOSE:
+    case ErrorAlertAction.ERROR_ALERT_TOGGLE:
       return {
         ...state,
-        isOpened: false,
-      };
-    case ErrorAlertAction.ERROR_ALERT_OPEN:
-      return {
-        ...state,
-        isOpened: true,
+        isOpened: !state.isOpened,
       };
     case ErrorAlertAction.ERROR_ALERT_SET_ERROR_MESSAGE:
       return {
         ...state,
+        isOpened: true,
         message: action.payload,
       };
     default:

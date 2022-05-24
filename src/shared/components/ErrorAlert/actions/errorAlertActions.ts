@@ -1,16 +1,13 @@
 import {
   ErrorAlertAction,
-  ErrorAlertClose,
-  ErrorAlertOpen,
+  ErrorAlertToggle,
   ErrorAlertSetErrorMessage,
 } from '../types/errorAlertTypes';
 
-export const errorAlertClose = (): ErrorAlertClose => ({
-  type: ErrorAlertAction.ERROR_ALERT_CLOSE,
+export const errorAlertToggle = (): ErrorAlertToggle => ({
+  type: ErrorAlertAction.ERROR_ALERT_TOGGLE,
 });
-export const errorAlertOpen = (): ErrorAlertOpen => ({
-  type: ErrorAlertAction.ERROR_ALERT_OPEN,
-});
+
 export const errorAlertSetErrorMessage = (
   errorMessage: string,
 ): ErrorAlertSetErrorMessage => ({
