@@ -1,10 +1,10 @@
-import { Dispatch } from 'react';
 import { fetchEvents } from './fetchEvents';
 import {
   fetchEventsRequest,
   fetchEventsSuccess,
   fetchEventsFailure,
 } from '../../actions/actionCreators';
+import type { Dispatch } from 'redux';
 import type { Events, FetchEventsActions } from '../../types/Events';
 
 export const getEventsData =
