@@ -4,17 +4,12 @@ export interface ErrorAlertState {
 }
 
 export const enum ErrorAlertAction {
-  ERROR_ALERT_OPEN = 'ERROR_ALERT_OPEN',
-  ERROR_ALERT_CLOSE = 'ERROR_ALERT_CLOSE',
+  ERROR_ALERT_TOGGLE = 'ERROR_ALERT_TOGGLE',
   ERROR_ALERT_SET_ERROR_MESSAGE = 'ERROR_ALERT_SET_ERROR_MESSAGE',
 }
 
-export interface ErrorAlertClose {
-  type: ErrorAlertAction.ERROR_ALERT_CLOSE;
-}
-
-export interface ErrorAlertOpen {
-  type: ErrorAlertAction.ERROR_ALERT_OPEN;
+export interface ErrorAlertToggle {
+  type: ErrorAlertAction.ERROR_ALERT_TOGGLE;
 }
 
 export interface ErrorAlertSetErrorMessage {
@@ -22,7 +17,4 @@ export interface ErrorAlertSetErrorMessage {
   payload: string;
 }
 
-export type ErrorAlertAllActions =
-  | ErrorAlertClose
-  | ErrorAlertOpen
-  | ErrorAlertSetErrorMessage;
+export type ErrorAlertAllActions = ErrorAlertToggle | ErrorAlertSetErrorMessage;
