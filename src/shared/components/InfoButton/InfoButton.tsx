@@ -12,9 +12,12 @@ interface InfoButtonProps {
   className?: string;
 }
 
-export const InfoButton = (props: InfoButtonProps) => {
-  const { caption, path, clickHandler, className } = props;
-
+export const InfoButton = ({
+  caption = 'info',
+  path,
+  clickHandler,
+  className,
+}: InfoButtonProps) => {
   return (
     <Button
       className={`list-item-actions-button ${className}`}
@@ -31,8 +34,4 @@ export const InfoButton = (props: InfoButtonProps) => {
       </Link>
     </Button>
   );
-};
-
-InfoButton.defaultProps = {
-  caption: 'info',
 };
