@@ -12,7 +12,10 @@ const selectActiveSlideId = (): string | undefined =>
 export const getActiveSlideData = (): Launch =>
   <Launch>(
     [
-      ...selectLaunches(Launches.PREVIOUS),
       ...selectLaunches(Launches.UPCOMING),
+      ...selectLaunches(Launches.PREVIOUS),
+      ...selectLaunches(Launches.CREWED),
+      ...selectLaunches(Launches.CALIFORNIA),
+      ...selectLaunches(Launches.FLORIDA),
     ].find((slide: Launch) => slide.id === selectActiveSlideId())
   );
