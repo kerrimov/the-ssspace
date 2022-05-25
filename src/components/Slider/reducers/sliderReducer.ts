@@ -9,9 +9,9 @@ export const sliderState: SliderState = {
   activeSlideId: undefined,
 };
 export const sliderReducer = (
-  state = sliderState,
+  state: SliderState = sliderState,
   action: SliderAllActions,
-) => {
+): SliderState => {
   switch (action.type) {
     case SliderActions.SLIDER_LOAD_DATA:
       return {

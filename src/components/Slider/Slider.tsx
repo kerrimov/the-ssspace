@@ -17,7 +17,7 @@ import type {
 } from './types/SliderTypes';
 import type { Dispatch } from 'redux';
 import type { StoreState } from '../../store';
-import type { ErrorAlertAllActions } from '../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '../../shared/components/ErrorAlert/types/errorAlertTypes';
 import 'swiper/swiper-bundle.css';
 import './Slider.scss';
 
@@ -25,8 +25,7 @@ SwiperCore.use([Navigation, Autoplay]);
 
 export const Slider: React.FC = () => {
   const slides: Array<Slides> = useSelector(getSlides);
-  const dispatch =
-    useDispatch<Dispatch<SliderAllActions | ErrorAlertAllActions>>();
+  const dispatch = useDispatch<Dispatch<SliderAllActions | ErrorAlertToggle>>();
   const { isLoading } = useSelector<StoreState, SliderState>(
     state => state.slider,
   );

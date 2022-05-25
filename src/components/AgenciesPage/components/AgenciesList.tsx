@@ -7,12 +7,11 @@ import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
 import { AgenciesAction } from '../types/Agencies';
 import { Loader } from '../../../shared/components/Loader';
-import type { ErrorAlertAllActions } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
 import './AgenciesList.scss';
 
 export const AgenciesList = () => {
-  const dispatch =
-    useDispatch<Dispatch<AgenciesAction | ErrorAlertAllActions>>();
+  const dispatch = useDispatch<Dispatch<AgenciesAction | ErrorAlertToggle>>();
   const { agencies, isLoading } = selectAgencies();
 
   useEffect(() => {
