@@ -1,16 +1,6 @@
-import {
-  ErrorAlertAction,
-  ErrorAlertToggle,
-  ErrorAlertSetErrorMessage,
-} from '../types/errorAlertTypes';
+import { ErrorAlertAction, ErrorAlertToggle } from '../types/errorAlertTypes';
 
-export const errorAlertToggle = (): ErrorAlertToggle => ({
+export const errorAlertToggle = (errorMessage: string): ErrorAlertToggle => ({
   type: ErrorAlertAction.ERROR_ALERT_TOGGLE,
-});
-
-export const errorAlertSetErrorMessage = (
-  errorMessage: string,
-): ErrorAlertSetErrorMessage => ({
-  type: ErrorAlertAction.ERROR_ALERT_SET_ERROR_MESSAGE,
   payload: errorMessage,
 });
