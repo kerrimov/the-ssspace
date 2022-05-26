@@ -17,9 +17,6 @@ export const fetchAstronautsSuccess = (
   payload: astronauts,
 });
 
-export const fetchAstronautsFailure = (
-  error: string,
-): FetchAstronautsFailure => ({
+export const fetchAstronautsFailure = (): FetchAstronautsFailure => ({
   type: AstronautsActions.FETCH_ASTRONAUTS_FAILURE,
-  payload: error,
 });

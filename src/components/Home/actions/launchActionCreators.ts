@@ -24,8 +24,7 @@ export const launchSuccessAction = (
 
 export const launchErrorAction = (
   filterValue: Launches,
-  error: string,
 ): LaunchActionError => ({
   type: `${filterValue}${LaunchActionTypes.LAUNCH_ERROR}`,
-  payload: { filterValue, error },
+  payload: { filterValue },
 });

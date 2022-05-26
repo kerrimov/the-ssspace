@@ -1,6 +1,7 @@
 import { Dispatch } from 'react';
 import { fetchAstronauts } from './fetchAstronauts';
 import {
+  fetchAstronautsFailure,
   fetchAstronautsRequest,
   fetchAstronautsSuccess,
 } from '../../actions/actionCreators';
@@ -21,6 +22,7 @@ export const getAstronautsData =
       const response: Astronauts[] = await fetchAstronauts();
       dispatch(fetchAstronautsSuccess(response));
     } catch (error) {
+      dispatch(fetchAstronautsFailure());
       dispatch(errorAlertToggle((error as Error).message));
     }
   };

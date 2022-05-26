@@ -1,6 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { fetchAgencies } from './fetchAgencies';
 import {
+  fetchAgenciesFailure,
   fetchAgenciesRequest,
   fetchAgenciesSuccess,
 } from '../actions/actionCreators';
@@ -18,6 +19,7 @@ export const getAgenciesData =
       const response: Agency[] = await fetchAgencies();
       dispatch(fetchAgenciesSuccess(response));
     } catch (error) {
+      dispatch(fetchAgenciesFailure());
       dispatch(errorAlertToggle((error as Error).message));
     }
   };

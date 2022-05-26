@@ -17,7 +17,6 @@ export const fetchAgenciesSuccess: ActionCreatorSuccess = (
   payload: agencies,
 });
 
-export const fetchAgenciesFailure: ActionCreatorFailed = (error: string) => ({
+export const fetchAgenciesFailure: ActionCreatorFailed = () => ({
   type: AgenciesActionTypes.FETCH_AGENCIES_FAILURE,
-  payload: error,
 });

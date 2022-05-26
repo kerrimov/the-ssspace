@@ -21,7 +21,6 @@ export type AgenciesSpecification = Omit<Agency, 'id' | 'image_url' | 'name'>;
 export interface AgenciesState {
   agencies: Agency[];
   isLoading: boolean;
-  error: string;
 }
 
 export type AgenciesAction =
@@ -40,11 +39,10 @@ export interface AgenciesActionSuccess {
 
 export interface AgenciesActionFailed {
   type: AgenciesActionTypes.FETCH_AGENCIES_FAILURE;
-  payload?: string;
 }
 
 export type ActionCreatorRequest = () => AgenciesActionRequest;
 export type ActionCreatorSuccess = (
   agencies: Agency[],
 ) => AgenciesActionSuccess;
-export type ActionCreatorFailed = (error: string) => AgenciesActionFailed;
+export type ActionCreatorFailed = () => AgenciesActionFailed;

@@ -22,7 +22,7 @@ export const ErrorAlert = () => {
     <>
       {isOpened && (
         <Snackbar
-          autoHideDuration={3000}
+          autoHideDuration={5000}
           open={isOpened}
           className="error-alert"
           onClose={handleToggle}

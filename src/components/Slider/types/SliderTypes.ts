@@ -32,7 +32,6 @@ export interface SliderGetUpcomingLaunchesSuccess {
 
 export interface SliderGetUpcomingLaunchesError {
   type: SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_ERROR;
-  payload: string;
 }
 
 export interface SliderGetPreviousLaunchesSuccess {
@@ -42,7 +41,6 @@ export interface SliderGetPreviousLaunchesSuccess {
 
 export interface SliderGetPreviousLaunchesError {
   type: SliderActions.SLIDER_GET_PREVIOUS_LAUNCHES_ERROR;
-  payload: string;
 }
 
 export interface SliderSetActiveSlideId {
@@ -62,6 +60,5 @@ export interface SliderState {
   sliderUpcomingLaunches: Array<Slides>;
   sliderPreviousLaunches: Array<Slides>;
   isLoading: boolean;
-  error: string;
   activeSlideId: string | undefined;
 }

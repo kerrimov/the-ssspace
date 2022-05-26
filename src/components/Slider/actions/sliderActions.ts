@@ -20,12 +20,10 @@ export const sliderGetUpcomingLaunchesSuccess = (
   payload: launches,
 });
 
-export const sliderGetUpcomingLaunchesError = (
-  error: string,
-): SliderGetUpcomingLaunchesError => ({
-  type: SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_ERROR,
-  payload: error,
-});
+export const sliderGetUpcomingLaunchesError =
+  (): SliderGetUpcomingLaunchesError => ({
+    type: SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_ERROR,
+  });
 
 export const sliderGetPreviousLaunchesSuccess = (
   launches: Array<Slides>,
@@ -34,12 +32,10 @@ export const sliderGetPreviousLaunchesSuccess = (
   payload: launches,
 });
 
-export const sliderGetPreviousLaunchesError = (
-  error: string,
-): SliderGetPreviousLaunchesError => ({
-  type: SliderActions.SLIDER_GET_PREVIOUS_LAUNCHES_ERROR,
-  payload: error,
-});
+export const sliderGetPreviousLaunchesError =
+  (): SliderGetPreviousLaunchesError => ({
+    type: SliderActions.SLIDER_GET_PREVIOUS_LAUNCHES_ERROR,
+  });
 
 export const sliderSetActiveSlideId = (id: string): SliderSetActiveSlideId => ({
   type: SliderActions.SLIDER_SET_ACTIVE_SLIDE_ID,

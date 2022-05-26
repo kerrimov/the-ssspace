@@ -24,7 +24,6 @@ export interface LaunchActionError {
   type: string;
   payload: {
     filterValue: Launches;
-    error: string;
   };
 }
 

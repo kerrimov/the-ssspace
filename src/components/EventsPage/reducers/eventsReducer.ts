@@ -4,7 +4,6 @@ import type { FetchEventsActions, EventsState } from '../types/Events';
 const initialState: EventsState = {
   events: [],
   isLoading: false,
-  error: '',
 };
 
 export const eventsReducer = (
@@ -27,7 +26,6 @@ export const eventsReducer = (
       return {
         ...state,
         isLoading: false,
-        error: action.payload,
       };
     default:
       return state;

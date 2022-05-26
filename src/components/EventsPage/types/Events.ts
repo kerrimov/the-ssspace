@@ -16,7 +16,6 @@ export const enum EventsActions {
 export interface EventsState {
   events: Events[];
   isLoading: boolean;
-  error: string;
 }
 
 export interface FetchEventsRequest {
@@ -30,7 +29,6 @@ export interface FetchEventsSuccess {
 
 export interface FetchEventsFailure {
   type: EventsActions.FETCH_EVENTS_FAILURE;
-  payload: string;
 }
 
 export type FetchEventsActions =

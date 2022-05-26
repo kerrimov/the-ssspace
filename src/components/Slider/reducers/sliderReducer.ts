@@ -5,7 +5,6 @@ export const sliderState: SliderState = {
   sliderUpcomingLaunches: [],
   sliderPreviousLaunches: [],
   isLoading: false,
-  error: '',
   activeSlideId: undefined,
 };
 export const sliderReducer = (
@@ -21,7 +20,6 @@ export const sliderReducer = (
     case SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_ERROR:
       return {
         ...state,
-        error: action.payload,
         isLoading: false,
       };
     case SliderActions.SLIDER_GET_UPCOMING_LAUNCHES_SUCCESS:
@@ -33,7 +31,6 @@ export const sliderReducer = (
     case SliderActions.SLIDER_GET_PREVIOUS_LAUNCHES_ERROR:
       return {
         ...state,
-        error: action.payload,
         isLoading: false,
       };
     case SliderActions.SLIDER_GET_PREVIOUS_LAUNCHES_SUCCESS:

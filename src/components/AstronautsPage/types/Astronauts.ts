@@ -16,7 +16,6 @@ export interface Astronauts extends AstronautsName {
 export interface AstronautsState {
   astronauts: Astronauts[];
   isLoading: boolean;
-  error: string;
 }
 
 export interface FetchAstronautsRequest {
@@ -30,7 +29,6 @@ export interface FetchAstronautsSuccess {
 
 export interface FetchAstronautsFailure {
   type: AstronautsActions.FETCH_ASTRONAUTS_FAILURE;
-  payload: string;
 }
 
 export type FetchAstronautsActions =
