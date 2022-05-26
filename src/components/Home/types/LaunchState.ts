@@ -8,5 +8,4 @@ export interface LaunchState {
   [Launches.CALIFORNIA]: Launch[];
   [Launches.FLORIDA]: Launch[];
   isLoading: boolean;
-  error: string;
 }

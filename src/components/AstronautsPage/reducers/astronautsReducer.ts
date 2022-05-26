@@ -7,7 +7,6 @@ import type {
 const initialState: AstronautsState = {
   astronauts: [],
   isLoading: false,
-  error: '',
 };
 
 export const astronautsReducer = (
@@ -30,7 +29,6 @@ export const astronautsReducer = (
       return {
         ...state,
         isLoading: false,
-        error: action.payload,
       };
     default:
       return state;

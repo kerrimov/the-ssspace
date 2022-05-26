@@ -1,6 +1,7 @@
 import { fetchData } from '../../../shared/api/services/fetchData';
 import { Endpoints } from '../../../shared/api/constants/endpoints';
 import {
+  sliderGetUpcomingLaunchesError,
   sliderGetUpcomingLaunchesSuccess,
   sliderLoadData,
 } from '../actions/sliderActions';
@@ -31,6 +32,7 @@ export const getUpcomingLaunches =
       );
       dispatch(sliderGetUpcomingLaunchesSuccess(upcomingLaunches));
     } catch (error) {
+      dispatch(sliderGetUpcomingLaunchesError());
       dispatch(errorAlertToggle((error as Error).message));
     }
   };

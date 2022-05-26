@@ -1,4 +1,5 @@
 import {
+  launchErrorAction,
   launchRequestAction,
   launchSuccessAction,
 } from './launchActionCreators';
@@ -20,6 +21,7 @@ export const getLaunches =
       const response: LaunchResponse = await fetchLaunches(filterValue);
       dispatch(launchSuccessAction(filterValue, response.data.results));
     } catch (error) {
+      dispatch(launchErrorAction(filterValue));
       dispatch(errorAlertToggle((error as Error).message));
     }
   };

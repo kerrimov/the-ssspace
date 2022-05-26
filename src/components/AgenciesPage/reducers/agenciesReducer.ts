@@ -4,7 +4,6 @@ import type { AgenciesState, AgenciesAction } from '../types/Agencies';
 const initialState: AgenciesState = {
   agencies: [],
   isLoading: false,
-  error: '',
 };
 
 export const agenciesReducer = (
@@ -16,7 +15,6 @@ export const agenciesReducer = (
       return {
         ...state,
         isLoading: true,
-        error: '',
       };
     case AgenciesActionTypes.FETCH_AGENCIES_SUCCESS:
       return {
@@ -28,7 +26,6 @@ export const agenciesReducer = (
       return {
         ...state,
         isLoading: false,
-        error: action.payload,
       };
     default:
       return state;

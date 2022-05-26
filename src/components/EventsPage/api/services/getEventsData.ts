@@ -1,5 +1,6 @@
 import { fetchEvents } from './fetchEvents';
 import {
+  fetchEventsFailure,
   fetchEventsRequest,
   fetchEventsSuccess,
 } from '../../actions/actionCreators';
@@ -18,6 +19,7 @@ export const getEventsData =
       const response: Events[] = await fetchEvents();
       dispatch(fetchEventsSuccess(response));
     } catch (error) {
+      dispatch(fetchEventsFailure());
       dispatch(errorAlertToggle((error as Error).message));
     }
   };

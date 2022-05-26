@@ -10,13 +10,12 @@ const initialState: LaunchState = {
   [Launches.CALIFORNIA]: [],
   [Launches.FLORIDA]: [],
   isLoading: false,
-  error: '',
 };
 
 export const launchReducer = (state = initialState, action: AnyAction) => {
   if (!action.payload) return state;
   const { type, payload } = action;
-  const { filterValue, error } = payload;
+  const { filterValue } = payload;
   switch (type) {
     case `${filterValue}${LaunchActionTypes.LAUNCH_REQUEST}`:
       return { ...state, isLoading: true, error: '' };
@@ -30,7 +29,7 @@ export const launchReducer = (state = initialState, action: AnyAction) => {
     }
 
     case `${filterValue}${LaunchActionTypes.LAUNCH_ERROR}`: {
-      return { ...state, isLoading: false, error };
+      return { ...state, isLoading: false };
     }
 
     default:

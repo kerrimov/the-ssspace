@@ -15,7 +15,6 @@ export const fetchEventsSuccess = (events: Events[]): FetchEventsSuccess => ({
   payload: events,
 });
 
-export const fetchEventsFailure = (error: string): FetchEventsFailure => ({
+export const fetchEventsFailure = (): FetchEventsFailure => ({
   type: EventsActions.FETCH_EVENTS_FAILURE,
-  payload: error,
 });
