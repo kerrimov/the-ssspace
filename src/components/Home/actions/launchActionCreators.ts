@@ -9,17 +9,19 @@ import type { Launch } from '../../../shared/api/types/Launch';
 
 export const launchRequestAction = (
   filterValue: Launches,
+  isScrollLoading: boolean,
 ): LaunchActionRequest => ({
-  type: `${filterValue}${LaunchActionTypes.LAUNCH_REQUEST}`,
-  payload: { filterValue },
+  type: `${filterValue}_${LaunchActionTypes.LAUNCH_REQUEST}`,
+  payload: { filterValue, isScrollLoading },
 });
 
 export const launchSuccessAction = (
   filterValue: Launches,
   launches: Launch[],
+  launchAmount: number,
 ): LaunchActionSuccess => ({
-  type: `${filterValue}${LaunchActionTypes.LAUNCH_SUCCESS}`,
-  payload: { filterValue, [filterValue]: launches },
+  type: `${filterValue}_${LaunchActionTypes.LAUNCH_SUCCESS}`,
+  payload: { filterValue, launches, launchAmount },
 });
 
 export const launchErrorAction = (
