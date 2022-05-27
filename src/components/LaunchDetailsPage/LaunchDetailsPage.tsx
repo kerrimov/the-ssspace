@@ -8,10 +8,11 @@ import {
   Container,
   Grid,
 } from '@mui/material';
-import { Navigate, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { LaunchCardContent } from './components/LaunchCardContent';
 import { launchDetailsGetLaunchRequest } from './actions/launchDetailsAction';
+import { NotFoundPage } from '../NotFoundPage';
 import { SecondaryButton } from '../../shared/components/SecondaryButton';
 import { RoutesPath } from '../Router/routesPath';
 import { ButtonSizes } from '../../shared/components/SecondaryButton/types/secondaryButtonTypes';
@@ -70,6 +71,6 @@ export const LaunchDetailsPage = () => {
       </Card>
     </Container>
   ) : (
-    <Navigate to={RoutesPath.HOME} />
+    <NotFoundPage />
   );
 };
