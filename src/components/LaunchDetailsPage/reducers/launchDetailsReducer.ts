@@ -2,7 +2,7 @@ import {
   LaunchDetailsAction,
   LaunchDetailsAllActions,
   LaunchDetailsState,
-} from '../types/launchDetailsTypes';
+} from '../types/launchDetailesTypes';
 
 const launchDetailsState: LaunchDetailsState = {
   launch: null,

@@ -16,7 +16,7 @@ export interface LaunchDetailsLoading {
   type: LaunchDetailsAction.LAUNCH_DETAILS_LOADING;
 }
 
-export interface LaunchDetailsTypes {
+export interface LaunchDetailsGetDataSuccess {
   type: LaunchDetailsAction.LAUNCH_DETAILS_LOADING_GET_LAUNCH_SUCCESS;
   payload: Launch;
 }
@@ -32,7 +32,7 @@ export interface LaunchDetailsGetLaunchRequest {
 
 export type LaunchDetailsAllActions =
   | LaunchDetailsLoading
-  | LaunchDetailsTypes
+  | LaunchDetailsGetDataSuccess
   | LaunchDetailsGetLaunchError
   | LaunchDetailsGetLaunchRequest;
 
