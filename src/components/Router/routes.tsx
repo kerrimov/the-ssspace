@@ -61,7 +61,7 @@ export const routesConfig: RouteObject[] = [
     element: <AboutPage />,
   },
   {
-    path: RoutesPath.DETAILS,
+    path: RoutesPath.DETAILS_ID,
     element: <LaunchDetailsPage />,
   },
   {

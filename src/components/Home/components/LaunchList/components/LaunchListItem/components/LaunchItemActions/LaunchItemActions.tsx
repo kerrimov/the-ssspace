@@ -26,7 +26,7 @@ export const LaunchItemActions = ({ id }: LaunchItemActionsProps) => {
   return (
     <CardActions className="launch-item-actions">
       <InfoButton
-        path={RoutesPath.DETAILS}
+        path={`${RoutesPath.DETAILS}${id}`}
         clickHandler={onClickInfo}
         className="launch-info-button"
       />

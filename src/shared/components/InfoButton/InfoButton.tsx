@@ -7,7 +7,7 @@ import './InfoButton.scss';
 
 interface InfoButtonProps {
   caption?: string;
-  path: RoutesPath;
+  path: RoutesPath | string;
   clickHandler?: ReactEventHandler;
   className?: string;
 }
