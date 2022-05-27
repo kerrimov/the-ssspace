@@ -4,7 +4,11 @@ export const launchDetails: Launch = {
   id: '0bc91464-1d61-4545-95c8-01040dc5eec9',
   name: 'Long March 4B (?) | SJ-6 Group 06 (?)',
   status: {
-    name: 'Go for Launch',
+    id: 2,
+    name: 'To Be Determined',
+    abbrev: 'TBD',
+    description:
+      'Current date is a placeholder or rough estimation based on unreliable or interpreted sources.',
   },
   net: '2022-05-07T07:45:00Z',
   launch_service_provider: {

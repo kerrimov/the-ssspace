@@ -10,10 +10,16 @@ interface LaunchMission {
   description: string;
 }
 
+export interface LaunchStatus extends LaunchDetailName {
+  id: number;
+  abbrev: string;
+  description: string;
+}
+
 export interface Launch {
   id: string;
   name: string;
-  status: LaunchDetailName;
+  status: LaunchStatus;
   net: string;
   launch_service_provider: LaunchDetailName;
   pad: LaunchPad;
