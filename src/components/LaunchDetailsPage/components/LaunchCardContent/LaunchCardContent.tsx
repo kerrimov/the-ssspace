@@ -7,23 +7,25 @@ import type { Launch } from '../../../../shared/api/types/Launch';
 import './LaunchCardContent.scss';
 
 interface LaunchCardContentProps {
-  details: Launch;
+  launch: Launch;
 }
 
-export const LaunchCardContent = ({ details }: LaunchCardContentProps) => {
-  const title: string = details.name.slice(0, details.name.indexOf('|'));
-  const subheader: string = details.name.slice(details.name.indexOf('|') + 2);
-  return (
-    <div className="launch-card-content">
-      <CardHeader
-        title={title}
-        subheader={subheader}
-        titleTypographyProps={{ variant: 'h5' }}
-        className="card-title"
-      />
-      <CardDetails details={details} />
-      <CountdownTimer launchDate={details.net} />
-      <LaunchStatusBox status={details.status} />
-    </div>
-  );
+export const LaunchCardContent = ({ launch }: LaunchCardContentProps) => {
+    const title: string = launch.name.slice(0, launch.name.indexOf('|'));
+    const subheader: string = launch.name.slice(launch.name.indexOf('|') + 2);
+
+    return(
+        <div>
+            <CardHeader
+                title={title}
+                subheader={subheader}
+                titleTypographyProps={{ variant: 'h5' }}
+                className="card-title"
+            />
+            <CardDetails launch={launch} />
+            <CountdownTimer launchDate={launch.net} />
+            <LaunchStatusBox status={launch.status} />
+        </div>
+    );
 };
+
