@@ -20,7 +20,7 @@ import type {
   LaunchDetailsGetLaunchRequest,
   LaunchDetailsPageUrlParams,
   LaunchDetailsState,
-} from './types/launchDetailsTypes';
+} from './types/launchDetailesTypes';
 import type { Dispatch } from 'redux';
 import type { StoreState } from '../../store';
 import './LaunchDetailsPage.scss';
@@ -34,7 +34,7 @@ export const LaunchDetailsPage = () => {
 
   useEffect(() => {
     dispatch(launchDetailsGetLaunchRequest(id));
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <Loader />;

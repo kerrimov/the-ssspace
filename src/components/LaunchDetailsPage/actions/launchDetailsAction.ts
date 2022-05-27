@@ -1,11 +1,11 @@
 import {
   LaunchDetailsAction,
   LaunchDetailsGetLaunchError,
-  LaunchDetailsTypes,
+  LaunchDetailsGetDataSuccess,
   LaunchDetailsLoading,
   LaunchDetailsGetLaunchRequest,
-} from '../types/launchDetailsTypes';
-import { Launch } from '../../../shared/api/types/Launch';
+} from '../types/launchDetailesTypes';
+import type { Launch } from '../../../shared/api/types/Launch';
 
 export const launchDetailsLoading = (): LaunchDetailsLoading => ({
   type: LaunchDetailsAction.LAUNCH_DETAILS_LOADING,
@@ -13,7 +13,7 @@ export const launchDetailsLoading = (): LaunchDetailsLoading => ({
 
 export const launchDetailsGetLaunchSuccess = (
   launch: Launch,
-): LaunchDetailsTypes => ({
+): LaunchDetailsGetDataSuccess => ({
   type: LaunchDetailsAction.LAUNCH_DETAILS_LOADING_GET_LAUNCH_SUCCESS,
   payload: launch,
 });
