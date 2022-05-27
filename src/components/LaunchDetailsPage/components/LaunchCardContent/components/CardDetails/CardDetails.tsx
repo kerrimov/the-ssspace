@@ -9,6 +9,7 @@ interface CardDetailsProps {
 }
 export const CardDetails = ({ details }: CardDetailsProps) => {
   const detailsValues: string[] = [
+    details.launch_service_provider.name,
     `${details.pad.name}, ${details.pad.location.name}`,
     details.status.name,
     details.net,
