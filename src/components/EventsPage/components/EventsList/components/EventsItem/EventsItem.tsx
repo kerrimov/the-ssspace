@@ -14,7 +14,11 @@ export const EventsItem: React.FC<EventsItemProps> = ({
   eventsItem,
 }: EventsItemProps) => (
   <Card className="events-item">
-    <EventsItemImage image={eventsItem.feature_image} />
+    <EventsItemImage
+      image={
+        eventsItem.feature_image || process.env.PUBLIC_URL + '/eventDefault.jpg'
+      }
+    />
     <EventsItemContent
       name={eventsItem.name}
       description={eventsItem.description}
