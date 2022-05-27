@@ -5,14 +5,13 @@ import type { Launch } from '../../../../../../shared/api/types/Launch';
 import './CardDetails.scss';
 
 interface CardDetailsProps {
-  details: Launch;
+  launch: Launch;
 }
-export const CardDetails = ({ details }: CardDetailsProps) => {
+export const CardDetails = ({ launch }: CardDetailsProps) => {
   const detailsValues: string[] = [
-    details.launch_service_provider.name,
-    `${details.pad.name}, ${details.pad.location.name}`,
-    details.status.name,
-    details.net,
+    `${launch.pad.name}, ${launch.pad.location.name}`,
+    launch.status.name,
+    launch.net,
   ];
 
   const renderTypographyList = (texts: string[]) =>

@@ -9,7 +9,7 @@ export const enum LaunchDetailsAction {
   LAUNCH_DETAILS_LOADING = 'LAUNCH_DETAILS_LOADING',
   LAUNCH_DETAILS_LOADING_GET_LAUNCH_SUCCESS = 'LAUNCH_DETAILS_LOADING_GET_LAUNCH_SUCCESS',
   LAUNCH_DETAILS_LOADING_GET_LAUNCH_ERROR = 'LAUNCH_DETAILS_LOADING_GET_LAUNCH_ERROR',
-  LAUNCH_DETAILS_MOUNTED = 'LAUNCH_DETAILS_MOUNTED',
+  LAUNCH_DETAILS_GET_LAUNCH_REQUEST = 'LAUNCH_DETAILS_GET_LAUNCH_REQUEST',
 }
 
 export interface LaunchDetailsLoading {
@@ -25,7 +25,17 @@ export interface LaunchDetailsGetLaunchError {
   type: LaunchDetailsAction.LAUNCH_DETAILS_LOADING_GET_LAUNCH_ERROR;
 }
 
+export interface LaunchDetailsGetLaunchRequest {
+  type: LaunchDetailsAction.LAUNCH_DETAILS_GET_LAUNCH_REQUEST;
+  payload: string | undefined;
+}
+
 export type LaunchDetailsAllActions =
   | LaunchDetailsLoading
   | LaunchDetailsTypes
-  | LaunchDetailsGetLaunchError;
+  | LaunchDetailsGetLaunchError
+  | LaunchDetailsGetLaunchRequest;
+
+export type LaunchDetailsPageUrlParams = {
+  id: string;
+};

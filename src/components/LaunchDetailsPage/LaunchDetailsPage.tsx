@@ -1,27 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Container,
   Grid,
   Card,
   CardActionArea,
   CardMedia,
+  Container,
+  Grid,
 } from '@mui/material';
-import { Navigate } from 'react-router';
+import { Navigate, useParams } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
 import { LaunchCardContent } from './components/LaunchCardContent';
-import { getActiveSlideData } from './selectors/selectors';
+import { launchDetailsGetLaunchRequest } from './actions/launchDetailsAction';
 import { SecondaryButton } from '../../shared/components/SecondaryButton';
 import { RoutesPath } from '../Router/routesPath';
 import { ButtonSizes } from '../../shared/components/SecondaryButton/types/secondaryButtonTypes';
-import type { Launch } from '../../shared/api/types/Launch';
+import { Loader } from '../../shared/components/Loader';
+import type {
+  LaunchDetailsGetLaunchRequest,
+  LaunchDetailsPageUrlParams,
+  LaunchDetailsState,
+} from './types/launchDetailsTypes';
+import type { Dispatch } from 'redux';
+import type { StoreState } from '../../store';
 import './LaunchDetailsPage.scss';
 
 export const LaunchDetailsPage = () => {
-  const details: Launch = getActiveSlideData();
   const { id } = useParams<LaunchDetailsPageUrlParams>();
+  const { isLoading, launch } = useSelector<StoreState, LaunchDetailsState>(
+    state => state.launchDetails,
+  );
+  const dispatch = useDispatch<Dispatch<LaunchDetailsGetLaunchRequest>>();
 
-  // useEffect(() => {}, []);
+  useEffect(() => {
+    dispatch(launchDetailsGetLaunchRequest(id));
+  }, []);
 
-  return details ? (
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  return launch ? (
     <Container className="launch-details-page">
       <SecondaryButton
         caption="go back"
@@ -37,14 +56,14 @@ export const LaunchDetailsPage = () => {
           >
             <Grid item xs={4} sm={3} md={4}>
               <CardMedia
-                src={details.image}
-                alt={details.name}
+                src={launch.image}
+                alt={launch.name}
                 component="img"
                 className="card-media"
               />
             </Grid>
             <Grid item xs={4} sm={5} md={8} className="card-content">
-              <LaunchCardContent details={details} />
+              <LaunchCardContent launch={launch} />
             </Grid>
           </Grid>
         </CardActionArea>
