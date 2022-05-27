@@ -1,6 +1,10 @@
 @import '../../../../shared/styles/mixins';
 @import '../../../../shared/styles/variables';
 
+.launch-container {
+  padding-top: 2rem;
+}
+
 .launch-header {
   @include page-header;
   margin-top: 4rem;

@@ -5,6 +5,7 @@ export interface LaunchActionRequest {
   type: string;
   payload: {
     filterValue: Launches;
+    isScrollLoading: boolean;
   };
 }
 
@@ -12,11 +13,8 @@ export interface LaunchActionSuccess {
   type: string;
   payload: {
     filterValue: Launches;
-    [Launches.UPCOMING]?: Launch[];
-    [Launches.PREVIOUS]?: Launch[];
-    [Launches.CREWED]?: Launch[];
-    [Launches.CALIFORNIA]?: Launch[];
-    [Launches.FLORIDA]?: Launch[];
+    launches: Launch[];
+    launchAmount: number;
   };
 }
 
