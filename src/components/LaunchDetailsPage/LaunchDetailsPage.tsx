@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Navigate } from 'react-router';
 import { LaunchCardContent } from './components/LaunchCardContent';
-import { selectLaunchDetails } from './selectors/selectors';
+import { getActiveSlideData } from './selectors/selectors';
 import { SecondaryButton } from '../../shared/components/SecondaryButton';
 import { RoutesPath } from '../Router/routesPath';
 import { ButtonSizes } from '../../shared/components/SecondaryButton/types/secondaryButtonTypes';
@@ -16,7 +16,10 @@ import type { Launch } from '../../shared/api/types/Launch';
 import './LaunchDetailsPage.scss';
 
 export const LaunchDetailsPage = () => {
-  const details: Launch = selectLaunchDetails();
+  const details: Launch = getActiveSlideData();
+  const { id } = useParams<LaunchDetailsPageUrlParams>();
+
+  // useEffect(() => {}, []);
 
   return details ? (
     <Container className="launch-details-page">

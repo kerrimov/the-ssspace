@@ -28,7 +28,7 @@ const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
     <CardActions className="slider-card-footer">
       <Button size="medium" color="primary" variant="contained">
         <Link
-          to={RoutesPath.DETAILS}
+          to={`${RoutesPath.DETAILS}${id}`}
           className="slider-card-read-more-link"
           onClick={() => onClickSetActiveId(id)}
         >
