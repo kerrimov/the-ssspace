@@ -1,29 +1,18 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useRef } from 'react';
 import { Outlet } from 'react-router-dom';
-import { getLaunches } from './actions/getLaunches';
-import { Launches } from './constants/launches';
 import { LaunchFilter } from './components/LaunchFilter/LaunchFilter';
 import { Slider } from '../Slider';
-import type { ErrorAlertToggle } from '../../shared/components/ErrorAlert/types/errorAlertTypes';
-import type { LaunchAction } from './types/LaunchActions';
-import type { Dispatch } from 'redux';
 import './Home.scss';
 
 export const Home = () => {
-  const dispatch: Dispatch<LaunchAction | ErrorAlertToggle> = useDispatch();
-
-  useEffect(() => {
-    getLaunches(Launches.UPCOMING)(dispatch);
-    getLaunches(Launches.PREVIOUS)(dispatch);
-  }, []);
+  const launchListRef = useRef<HTMLElement>(null);
 
   return (
     <div className="home-container">
-      <LaunchFilter />
+      <LaunchFilter launchListRef={launchListRef} />
       <div className="home-inner-container">
         <Slider />
-        <Outlet />
+        <Outlet context={launchListRef} />
       </div>
     </div>
   );

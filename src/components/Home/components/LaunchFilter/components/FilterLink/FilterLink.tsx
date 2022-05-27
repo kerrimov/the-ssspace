@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { RoutesPath } from '../../../../../Router/routesPath';
-import { getLaunches } from '../../../../actions/getLaunches';
 import { FilterCaptions } from '../../constants/launches';
-import { Launches, LaunchFilters } from '../../../../constants/launches';
-import type { Dispatch } from '@reduxjs/toolkit';
-import type { LaunchAction } from '../../../../types/LaunchActions';
+import { LaunchFilters } from '../../../../constants/launches';
 import './FilterLink.scss';
 
 interface FilterLinkProps {
   filterValue: LaunchFilters;
+  launchListRef: RefObject<HTMLElement>;
 }
 
-export const FilterLink = ({ filterValue }: FilterLinkProps) => {
-  const dispatch: Dispatch<LaunchAction> = useDispatch();
-  const handleClick = () => getLaunches(Launches[filterValue])(dispatch);
+export const FilterLink = ({ filterValue, launchListRef }: FilterLinkProps) => {
+  const scrollOptions: ScrollIntoViewOptions = {
+    block: 'start',
+    behavior: 'smooth',
+  };
+
+  const handleClick = () => {
+    launchListRef.current?.scrollIntoView(scrollOptions);
+  };
 
   return (
     <li className="launches-filter-item">

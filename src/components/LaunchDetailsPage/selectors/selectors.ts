@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { selectLaunches } from '../../Home/selectors/launchSelectors';
-import { StoreState } from '../../../store';
-import { Launches } from '../../Home/constants/launches';
+import type { StoreState } from '../../../store';
 import type { Launch } from '../../../shared/api/types/Launch';
 
 const selectActiveSlideId = (): string | undefined =>
@@ -9,13 +8,9 @@ const selectActiveSlideId = (): string | undefined =>
     state => state.slider.activeSlideId,
   );
 
-export const getActiveSlideData = (): Launch =>
-  <Launch>(
-    [
-      ...selectLaunches(Launches.UPCOMING),
-      ...selectLaunches(Launches.PREVIOUS),
-      ...selectLaunches(Launches.CREWED),
-      ...selectLaunches(Launches.CALIFORNIA),
-      ...selectLaunches(Launches.FLORIDA),
-    ].find((slide: Launch) => slide.id === selectActiveSlideId())
+export const selectLaunchDetails = (): Launch => {
+  const { launches }: { launches: Launch[] } = selectLaunches();
+  return <Launch>(
+    launches.find((slide: Launch) => slide.id === selectActiveSlideId())
   );
+};
