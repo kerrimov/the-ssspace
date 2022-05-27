@@ -29,6 +29,7 @@ export const launchDetailsReducer = (
       return {
         ...state,
         isLoading: false,
+        launch: null,
       };
     default:
       return state;

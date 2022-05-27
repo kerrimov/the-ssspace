@@ -7,6 +7,7 @@ export enum RoutesPath {
   ABOUT = '/about',
   DETAILS = '/details/',
   DETAILS_ID = '/details/:id',
+  // todo: it is not used anywhere , should I delete this path ?
   UPCOMING = 'launches-upcoming',
   PREVIOUS = 'launches-previous',
   CREWED = 'launches-crewed',
