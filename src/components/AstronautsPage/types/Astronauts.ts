@@ -2,6 +2,12 @@ export const enum AstronautsActions {
   FETCH_ASTRONAUTS_REQUEST = 'FETCH_ASTRONAUTS_REQUEST',
   FETCH_ASTRONAUTS_SUCCESS = 'FETCH_ASTRONAUTS_SUCCESS',
   FETCH_ASTRONAUTS_FAILURE = 'FETCH_ASTRONAUTS_FAILURE',
+  SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
+}
+
+export interface AstronautsResponse {
+  count: number;
+  results: Astronauts[];
 }
 
 export interface AstronautsName {
@@ -15,6 +21,8 @@ export interface Astronauts extends AstronautsName {
 
 export interface AstronautsState {
   astronauts: Astronauts[];
+  currentPage: number;
+  totalPageCount: number;
   isLoading: boolean;
 }
 
@@ -24,14 +32,20 @@ export interface FetchAstronautsRequest {
 
 export interface FetchAstronautsSuccess {
   type: AstronautsActions.FETCH_ASTRONAUTS_SUCCESS;
-  payload: Astronauts[];
+  payload: AstronautsResponse;
 }
 
 export interface FetchAstronautsFailure {
   type: AstronautsActions.FETCH_ASTRONAUTS_FAILURE;
 }
 
+export interface SetCurrentPage {
+  type: AstronautsActions.SET_CURRENT_PAGE;
+  payload: number;
+}
+
 export type FetchAstronautsActions =
   | FetchAstronautsRequest
   | FetchAstronautsSuccess
-  | FetchAstronautsFailure;
+  | FetchAstronautsFailure
+  | SetCurrentPage;

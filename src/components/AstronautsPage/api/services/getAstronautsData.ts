@@ -7,7 +7,7 @@ import {
 } from '../../actions/actionCreators';
 import { errorAlertToggle } from '../../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type {
-  Astronauts,
+  AstronautsResponse,
   FetchAstronautsActions,
 } from '../../types/Astronauts';
 import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
@@ -19,7 +19,7 @@ export const getAstronautsData =
   ): Promise<void> => {
     dispatch(fetchAstronautsRequest());
     try {
-      const response: Astronauts[] = await fetchAstronauts();
+      const response: AstronautsResponse = await fetchAstronauts(limit, offset);
       dispatch(fetchAstronautsSuccess(response));
     } catch (error) {
       dispatch(fetchAstronautsFailure());
