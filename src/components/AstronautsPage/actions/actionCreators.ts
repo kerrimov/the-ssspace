@@ -1,9 +1,10 @@
 import { AstronautsActions } from '../types/Astronauts';
 import type {
-  Astronauts,
+  AstronautsResponse,
   FetchAstronautsRequest,
   FetchAstronautsSuccess,
   FetchAstronautsFailure,
+  SetCurrentPage,
 } from '../types/Astronauts';
 
 export const fetchAstronautsRequest = (): FetchAstronautsRequest => ({
@@ -11,7 +12,7 @@ export const fetchAstronautsRequest = (): FetchAstronautsRequest => ({
 });
 
 export const fetchAstronautsSuccess = (
-  astronauts: Astronauts[],
+  astronauts: AstronautsResponse,
 ): FetchAstronautsSuccess => ({
   type: AstronautsActions.FETCH_ASTRONAUTS_SUCCESS,
   payload: astronauts,
@@ -19,4 +20,9 @@ export const fetchAstronautsSuccess = (
 
 export const fetchAstronautsFailure = (): FetchAstronautsFailure => ({
   type: AstronautsActions.FETCH_ASTRONAUTS_FAILURE,
+});
+
+export const setCurrentPage = (page: number): SetCurrentPage => ({
+  type: AstronautsActions.SET_CURRENT_PAGE,
+  payload: page,
 });

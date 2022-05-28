@@ -8,3 +8,9 @@
   color: $primary-dark;
   font-family: $default-font;
 }
+
+.astronauts-list-paginator {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}

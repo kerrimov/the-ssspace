@@ -6,6 +6,8 @@ import type {
 
 const initialState: AstronautsState = {
   astronauts: [],
+  currentPage: 1,
+  totalPageCount: 0,
   isLoading: false,
 };
 
@@ -23,12 +25,18 @@ export const astronautsReducer = (
       return {
         ...state,
         isLoading: false,
-        astronauts: action.payload,
+        astronauts: action.payload.results,
+        totalPageCount: action.payload.count,
       };
     case AstronautsActions.FETCH_ASTRONAUTS_FAILURE:
       return {
         ...state,
         isLoading: false,
+      };
+    case AstronautsActions.SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload,
       };
     default:
       return state;
