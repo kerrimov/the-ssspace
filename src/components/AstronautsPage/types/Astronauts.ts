@@ -15,6 +15,7 @@ export interface AstronautsName {
 }
 
 export interface Astronauts extends AstronautsName {
+  id?: number;
   agency: AstronautsName;
   profile_image: string;
 }

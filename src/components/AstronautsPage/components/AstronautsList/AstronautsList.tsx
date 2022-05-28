@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Grid, Pagination } from '@mui/material';
+import { Grid } from '@mui/material';
 import { AstronautsItem } from './components/AstronautsItem';
 import { FetchAstronautsActions } from '../../types/Astronauts';
 import { getAstronautsData } from '../../api/services/getAstronautsData';
 import { selectAstronauts } from '../../selectors/astronautsSelectors';
 import { Loader } from '../../../../shared/components/Loader';
 import { setCurrentPage } from '../../actions/actionCreators';
+import { Paginator } from '../../../../shared/components/Paginator/Paginator';
+import { fetchDefaults } from '../../../../shared/api/constants/fetchDefaults';
 import type { Dispatch } from 'redux';
 import type { Astronauts } from '../../types/Astronauts';
 import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
@@ -17,20 +19,14 @@ export const AstronautsList = () => {
     useDispatch<Dispatch<FetchAstronautsActions | ErrorAlertToggle>>();
   const { astronauts, isLoading, currentPage, totalPageCount } =
     selectAstronauts();
-  const limitPerPage = 12;
-  const pageCount: number = Math.ceil(totalPageCount / limitPerPage);
 
   useEffect(() => {
-    getAstronautsData(limitPerPage, 0)(dispatch);
-  }, [limitPerPage]);
+    getAstronautsData(fetchDefaults.LIMIT, currentPage)(dispatch);
+  }, []);
 
   const handleChange = (_: React.ChangeEvent<unknown>, value: number): void => {
     dispatch(setCurrentPage(value));
-    if (value > 1) {
-      getAstronautsData(limitPerPage, (value - 1) * 12)(dispatch);
-    } else {
-      getAstronautsData(limitPerPage, 0)(dispatch);
-    }
+    getAstronautsData(fetchDefaults.LIMIT, value)(dispatch);
   };
 
   if (isLoading) return <Loader />;
@@ -58,17 +54,11 @@ export const AstronautsList = () => {
           ),
         )}
       </Grid>
-      <Pagination
-        className="astronauts-list-paginator"
-        color="primary"
-        size="large"
-        variant="outlined"
-        shape="rounded"
-        siblingCount={2}
-        boundaryCount={2}
-        count={pageCount}
-        page={currentPage}
-        onChange={handleChange}
+      <Paginator
+        totalPageCount={totalPageCount}
+        limitPerPage={fetchDefaults.LIMIT}
+        currentPage={currentPage}
+        changeHandler={handleChange}
       />
     </>
   );
