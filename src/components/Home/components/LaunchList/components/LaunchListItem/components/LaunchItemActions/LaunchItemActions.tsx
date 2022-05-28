@@ -19,7 +19,9 @@ export const LaunchItemActions = ({ id }: LaunchItemActionsProps) => {
   const dispatch: Dispatch<SliderSetActiveSlideId> = useDispatch();
   const onClickInfo = () => setSliderActiveId(id)(dispatch);
   const onClickShare = () =>
-    navigator.clipboard.writeText(`${window.location.href}${id}`);
+    navigator.clipboard.writeText(
+      `${window.location.href}${RoutesPath.DETAILS.slice(1)}/${id}`,
+    );
 
   return (
     <CardActions className="launch-item-actions">
