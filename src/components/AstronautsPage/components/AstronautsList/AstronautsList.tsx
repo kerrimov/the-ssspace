@@ -4,6 +4,7 @@ import { AstronautsItem } from './components/AstronautsItem';
 import { selectAstronauts } from '../../selectors/astronautsSelectors';
 import { Loader } from '../../../../shared/components/Loader';
 import type { Astronauts } from '../../types/Astronauts';
+import './AstronautsList.scss';
 
 export const AstronautsList = () => {
   const { astronauts, isLoading } = selectAstronauts();
