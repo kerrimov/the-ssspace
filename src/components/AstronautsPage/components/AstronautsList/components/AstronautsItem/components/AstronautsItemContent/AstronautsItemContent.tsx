@@ -13,9 +13,15 @@ export const AstronautsItemContent = ({
   agency,
 }: AstronautsItemContentProps) => (
   <CardContent className="astronauts-item-content">
-    <Typography gutterBottom variant="h5" component="div">
+    <Typography
+      className="astronauts-item-content-name"
+      variant="h5"
+      component="div"
+    >
       {name}
     </Typography>
-    <Typography variant="body2">{agency.name}</Typography>
+    <Typography className="astronauts-item-content-agency" variant="body1">
+      {agency.name}
+    </Typography>
   </CardContent>
 );
