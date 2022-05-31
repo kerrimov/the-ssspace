@@ -12,7 +12,7 @@ export const EventsList = () => {
   if (isLoading) return <Loader />;
 
   if (!events.length)
-    return <h2 className="event-list-empty">No events for now. Try later.</h2>;
+    return <h2 className="events-list-empty">No events for now. Try later.</h2>;
 
   return (
     <Grid container>
