@@ -39,32 +39,32 @@
     background-color: $primary-main;
   }
   &.tbd {
-    color: #ffffff;
+    color: $white-color;
     background-color: $light-grey;
   }
   &.success {
     font-size: 1.2rem;
-    color: #ffffff;
-    background-color: #228b22;
+    color: $white-color;
+    background-color: $success-status-color;
   }
   &.failure {
     font-size: 1.2rem;
-    color: #ffffff;
-    background-color: #ff0000;
+    color: $white-color;
+    background-color: $failure-status-color;
   }
   &.partial-failure {
     font-size: 0.8rem;
-    color: #ffffff;
-    background-color: #ff0000;
+    color: $white-color;
+    background-color: $failure-status-color;
   }
   &.hold {
-    color: #ffffff;
-    background-color: #ffa500;
+    color: $white-color;
+    background-color: $hold-status-color;
   }
   &.in-flight {
     font-size: 1.2rem;
-    color: #ffffff;
-    background-color: #87ceeb;
+    color: $white-color;
+    background-color: $inflight-status-color;
   }
 }
 
