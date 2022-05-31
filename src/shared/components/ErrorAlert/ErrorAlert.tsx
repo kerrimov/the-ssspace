@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, AlertTitle, Snackbar } from '@mui/material';
+import { Snackbar } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { errorAlertToggle } from './actions/errorAlertActions';
 import type { Dispatch } from 'redux';
@@ -19,22 +19,12 @@ export const ErrorAlert = () => {
   const handleToggle = () => dispatch(errorAlertToggle(''));
 
   return (
-    <>
-      {isOpened && (
-        <Snackbar
-          autoHideDuration={5000}
-          open={isOpened}
-          className="error-alert"
-          onClose={handleToggle}
-        >
-          <Alert severity="error">
-            <AlertTitle>
-              <strong>Error</strong>
-            </AlertTitle>
-            {message}
-          </Alert>
-        </Snackbar>
-      )}
-    </>
+    <Snackbar
+      autoHideDuration={5000}
+      open={isOpened}
+      message={message}
+      className="error-alert"
+      onClose={handleToggle}
+    />
   );
 };
