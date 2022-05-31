@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .MuiSnackbar-root.error-alert {
   max-width: 50%;
   height: 1.5rem;
@@ -8,6 +10,6 @@
   transform: translateX(-50%);
   z-index: 5;
   .MuiPaper-elevation {
-    background-color: #fc6868;
+    background-color: $snackbar-background;
   }
 }
