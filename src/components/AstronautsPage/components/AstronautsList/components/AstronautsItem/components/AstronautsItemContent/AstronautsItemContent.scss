@@ -4,4 +4,23 @@
   text-align: center;
   margin-bottom: 0.5rem;
   color: $contrast-text-color;
+
+  &.MuiCardContent-root {
+    padding: 0.5rem 0.75rem 0;
+  }
+
+  & &-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    height: 4rem;
+  }
+
+  & &-agency {
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    border-top: $default-border-width solid $primary-main;
+    border-bottom: $default-border-width solid $primary-main;
+  }
 }
