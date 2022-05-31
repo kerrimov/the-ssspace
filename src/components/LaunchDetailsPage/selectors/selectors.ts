@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectLaunches } from '../../Home/selectors/launchSelectors';
 import type { StoreState } from '../../../store';
 import type { Launch } from '../../../shared/api/types/Launch';
+import type { LaunchState } from '../../Home/types/LaunchState';
 
 const selectActiveSlideId = (): string | undefined =>
   useSelector<StoreState, string | undefined>(
@@ -9,8 +10,10 @@ const selectActiveSlideId = (): string | undefined =>
   );
 
 export const selectLaunchDetails = (): Launch => {
-  const { launches }: { launches: Launch[] } = selectLaunches();
+  const launchState: LaunchState = selectLaunches();
   return <Launch>(
-    launches.find((slide: Launch) => slide.id === selectActiveSlideId())
+    launchState.launches.find(
+      (slide: Launch) => slide.id === selectActiveSlideId(),
+    )
   );
 };

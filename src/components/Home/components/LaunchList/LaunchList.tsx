@@ -13,6 +13,7 @@ import type { InfiniteScrollValues } from '../../../../shared/api/services/useIn
 import type { LaunchAction } from '../../types/LaunchActions';
 import type { Launch } from '../../../../shared/api/types/Launch';
 import type { Dispatch } from 'redux';
+import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
 import './LaunchList.scss';
 
 interface LaunchListProps {
@@ -20,7 +21,7 @@ interface LaunchListProps {
 }
 
 export const LaunchList = ({ filterValue }: LaunchListProps) => {
-  const dispatch: Dispatch<LaunchAction> = useDispatch();
+  const dispatch: Dispatch<LaunchAction | ErrorAlertToggle> = useDispatch();
   const launchListRef: RefObject<HTMLDivElement> = useOutletContext();
 
   const { loadMoreRef, nextPage, setNextPage }: InfiniteScrollValues =
@@ -44,24 +45,29 @@ export const LaunchList = ({ filterValue }: LaunchListProps) => {
       getLaunches(filterValue, nextPage)(dispatch);
   }, [nextPage]);
 
-  if (isLoading && launchListIsEmpty) return <Loader isLarge={false} />;
+  if (!isLoading && launchListIsEmpty)
+    return (
+      <h2 className="launch-list-empty"> No launches for now.Try later.</h2>
+    );
 
-  return !launchListIsEmpty ? (
-    <div className="launch-container" ref={launchListRef}>
-      <h1 className="launch-header">{filterValue} launches </h1>
-      {isLoading && !isScrollLoading ? (
-        <Loader isLarge={false} />
-      ) : (
-        <ul className="launch-list">
-          {launches.map((launch: Launch) => (
-            <LaunchListItem key={launch.id} launch={launch} />
-          ))}
-        </ul>
+  return (
+    <>
+      {!launchListIsEmpty && (
+        <div className="launch-container" ref={launchListRef}>
+          <h1 className="launch-header">{filterValue} launches </h1>
+          {isLoading && !isScrollLoading ? (
+            <Loader isLarge={false} />
+          ) : (
+            <ul className="launch-list">
+              {launches.map((launch: Launch) => (
+                <LaunchListItem key={launch.id} launch={launch} />
+              ))}
+            </ul>
+          )}
+          {!isLoading && <div ref={loadMoreRef}></div>}
+          {isLoading && isScrollLoading && <Loader isLarge={false} />}
+        </div>
       )}
-      {!isLoading && <div ref={loadMoreRef}></div>}
-      {isLoading && isScrollLoading && <Loader isLarge={false} />}
-    </div>
-  ) : (
-    <h2 className="launch-list-empty"> No launches for now.Try later.</h2>
+    </>
   );
 };

@@ -1,28 +1,32 @@
 import { Launches } from '../constants/launches';
 import type { Launch } from '../../../shared/api/types/Launch';
 
+interface LaunchActionPayload {
+  filterValue: Launches;
+}
+
+export interface LaunchActionPayloadRequest extends LaunchActionPayload {
+  isScrollLoading: boolean;
+}
+
+export interface LaunchActionPayloadSuccess extends LaunchActionPayload {
+  launches: Launch[];
+  launchAmount: number;
+}
+
 export interface LaunchActionRequest {
   type: string;
-  payload: {
-    filterValue: Launches;
-    isScrollLoading: boolean;
-  };
+  payload: LaunchActionPayloadRequest;
 }
 
 export interface LaunchActionSuccess {
   type: string;
-  payload: {
-    filterValue: Launches;
-    launches: Launch[];
-    launchAmount: number;
-  };
+  payload: LaunchActionPayloadSuccess;
 }
 
 export interface LaunchActionError {
   type: string;
-  payload: {
-    filterValue: Launches;
-  };
+  payload: LaunchActionPayload;
 }
 
 export type LaunchAction =
