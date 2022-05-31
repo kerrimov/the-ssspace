@@ -13,13 +13,13 @@ import type {
 import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
 
 export const getAstronautsData =
-  () =>
+  (limit: number, page: number) =>
   async (
     dispatch: Dispatch<FetchAstronautsActions | ErrorAlertToggle>,
   ): Promise<void> => {
     dispatch(fetchAstronautsRequest());
     try {
-      const response: AstronautsResponse = await fetchAstronauts(limit, offset);
+      const response: AstronautsResponse = await fetchAstronauts(limit, page);
       dispatch(fetchAstronautsSuccess(response));
     } catch (error) {
       dispatch(fetchAstronautsFailure());

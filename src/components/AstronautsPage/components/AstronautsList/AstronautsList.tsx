@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import { AstronautsItem } from './components/AstronautsItem';
 import { FetchAstronautsActions } from '../../types/Astronauts';
@@ -10,7 +11,7 @@ import { setCurrentPage } from '../../actions/actionCreators';
 import { Paginator } from '../../../../shared/components/Paginator/Paginator';
 import { fetchDefaults } from '../../../../shared/api/constants/fetchDefaults';
 import type { Dispatch } from 'redux';
-import type { Astronauts } from '../../types/Astronauts';
+import type { Astronauts, PageParams } from '../../types/Astronauts';
 import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
 import './AstronautsList.scss';
 
@@ -19,15 +20,12 @@ export const AstronautsList = () => {
     useDispatch<Dispatch<FetchAstronautsActions | ErrorAlertToggle>>();
   const { astronauts, isLoading, currentPage, totalPageCount } =
     selectAstronauts();
+  const { page = fetchDefaults.FIRST_PAGE } = useParams<PageParams>();
 
   useEffect(() => {
-    getAstronautsData(fetchDefaults.LIMIT, currentPage)(dispatch);
-  }, []);
-
-  const handleChange = (_: React.ChangeEvent<unknown>, value: number): void => {
-    dispatch(setCurrentPage(value));
-    getAstronautsData(fetchDefaults.LIMIT, value)(dispatch);
-  };
+    dispatch(setCurrentPage(Number(page)));
+    getAstronautsData(fetchDefaults.LIMIT, Number(page))(dispatch);
+  }, [page]);
 
   if (isLoading) return <Loader />;
 
@@ -58,7 +56,6 @@ export const AstronautsList = () => {
         totalPageCount={totalPageCount}
         limitPerPage={fetchDefaults.LIMIT}
         currentPage={currentPage}
-        changeHandler={handleChange}
       />
     </>
   );
