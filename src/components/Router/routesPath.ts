@@ -3,6 +3,7 @@ export enum RoutesPath {
   EVENTS = '/events',
   AGENCIES = '/agencies',
   ASTRONAUTS = '/astronauts',
+  ASTRONAUTS_PAGE = '/astronauts/:page',
   ABOUT = '/about',
   DETAILS = '/details',
   UPCOMING = 'launches-upcoming',

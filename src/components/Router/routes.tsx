@@ -49,6 +49,12 @@ export const routesConfig: RouteObject[] = [
   {
     path: RoutesPath.ASTRONAUTS,
     element: <AstronautsPage />,
+    children: [
+      {
+        path: RoutesPath.ASTRONAUTS_PAGE,
+        element: <AstronautsPage />,
+      },
+    ],
   },
   {
     path: RoutesPath.ABOUT,

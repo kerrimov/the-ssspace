@@ -5,6 +5,10 @@ export const enum AstronautsActions {
   SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
 }
 
+export type PageParams = {
+  page: string;
+};
+
 export interface AstronautsResponse {
   count: number;
   results: Astronauts[];
