@@ -10,18 +10,21 @@ import { fetchDefaults } from '../../../shared/api/constants/fetchDefaults';
 import type { ErrorAlertToggle } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
 import type { Dispatch } from '@reduxjs/toolkit';
 import type { LaunchAction } from '../types/LaunchActions';
-import type { LaunchResponse } from '../types/LaunchResponse';
+import type {
+  LaunchResponse,
+  LaunchResponseData,
+} from '../types/LaunchResponse';
 
 export const getLaunches =
   (filterValue: Launches, page: number = fetchDefaults.FIRST_PAGE) =>
   async (
     dispatch: Dispatch<LaunchAction | ErrorAlertToggle>,
   ): Promise<void> => {
-    const isScrollLoading: boolean = page !== 1;
+    const isScrollLoading: boolean = page !== fetchDefaults.FIRST_PAGE;
     dispatch(launchRequestAction(filterValue, isScrollLoading));
     try {
       const response: LaunchResponse = await fetchLaunches(filterValue, page);
-      const { results, count }: LaunchResponse['data'] = response.data;
+      const { results, count }: LaunchResponseData = response.data;
       dispatch(launchSuccessAction(filterValue, results, count));
     } catch (error) {
       dispatch(launchErrorAction(filterValue));

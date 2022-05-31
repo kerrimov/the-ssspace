@@ -2,8 +2,8 @@ import { Launches } from '../constants/launches';
 import { LaunchActionTypes } from '../types/launchActionTypes';
 import {
   LaunchAction,
-  LaunchActionRequest,
-  LaunchActionSuccess,
+  LaunchActionPayloadRequest,
+  LaunchActionPayloadSuccess,
 } from '../types/LaunchActions';
 import type { Launch } from '../../../shared/api/types/Launch';
 import type { LaunchState } from '../types/LaunchState';
@@ -29,14 +29,13 @@ export const launchReducer = (
 
   switch (action.type) {
     case `${filterValue}_${LaunchActionTypes.LAUNCH_REQUEST}`: {
-      const { isScrollLoading } =
-        action.payload as LaunchActionRequest['payload'];
+      const { isScrollLoading } = action.payload as LaunchActionPayloadRequest;
       return { ...state, isLoading: true, isScrollLoading };
     }
 
     case `${filterValue}_${LaunchActionTypes.LAUNCH_SUCCESS}`: {
       const { launches, launchAmount } =
-        action.payload as LaunchActionSuccess['payload'];
+        action.payload as LaunchActionPayloadSuccess;
       return {
         ...state,
         launches: checkPage(launches),
