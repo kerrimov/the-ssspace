@@ -31,7 +31,7 @@ export function* launchDetailsGetLaunch(
     const data: Launch = yield call(getLaunch, action.payload);
     yield put(launchDetailsGetLaunchSuccess(data));
   } catch (error) {
-    yield put(errorAlertToggle((error as Error).message));
     yield put(launchDetailsGetLaunchError());
+    yield put(errorAlertToggle((error as Error).message));
   }
 }
