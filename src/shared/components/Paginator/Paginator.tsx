@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pagination, PaginationItem } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { RoutesPath } from '../../../components/Router/routesPath';
+import { RoutesPath } from '@components/Router/routesPath';
 import './Paginator.scss';
 
 interface PaginatorProps {

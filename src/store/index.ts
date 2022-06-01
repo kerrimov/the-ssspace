@@ -6,8 +6,8 @@ import { astronautsReducer } from '@components/AstronautsPage/reducers/astronaut
 import { sliderReducer } from '@components/Slider/reducers/sliderReducer';
 import { eventsReducer } from '@components/EventsPage/reducers/eventsReducer';
 import { errorAlertReducer } from '@shared/components/ErrorAlert/reducers/errorAlert';
+import { launchDetailsReducer } from '@components/LaunchDetailsPage/reducers/launchDetailsReducer';
 import { rootSaga } from './sagas';
-import { launchDetailsReducer } from '../components/LaunchDetailsPage/reducers/launchDetailsReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 

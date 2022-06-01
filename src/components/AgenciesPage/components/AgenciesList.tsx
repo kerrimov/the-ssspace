@@ -3,13 +3,13 @@ import { Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { Dispatch } from '@reduxjs/toolkit';
 import { Loader } from '@shared/components/Loader';
+import { fetchDefaults } from '@shared/api/constants/fetchDefaults';
+import { useInfiniteScroll } from '@shared/api/services/useInfiniteScroll';
 import { AgenciesItem } from './components';
 import { selectAgencies } from '../selectors/selectors';
 import { getAgenciesData } from '../services/getAgenciesData';
 import { AgenciesAction } from '../types/Agencies';
-import { fetchDefaults } from '../../../shared/api/constants/fetchDefaults';
-import { useInfiniteScroll } from '../../../shared/api/services/useInfiniteScroll';
-import type { InfiniteScrollValues } from '../../../shared/api/services/useInfiniteScroll';
+import type { InfiniteScrollValues } from '@shared/api/services/useInfiniteScroll';
 import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 import './AgenciesList.scss';
 

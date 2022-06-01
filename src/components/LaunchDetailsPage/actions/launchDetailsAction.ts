@@ -5,7 +5,7 @@ import {
   LaunchDetailsLoading,
   LaunchDetailsGetLaunchRequest,
 } from '../types/launchDetailesTypes';
-import type { Launch } from '../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 
 export const launchDetailsLoading = (): LaunchDetailsLoading => ({
   type: LaunchDetailsAction.LAUNCH_DETAILS_LOADING,
