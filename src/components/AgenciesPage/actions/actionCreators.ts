@@ -6,15 +6,19 @@ import type {
   Agency,
 } from '../types/Agencies';
 
-export const fetchAgenciesRequest: ActionCreatorRequest = () => ({
+export const fetchAgenciesRequest: ActionCreatorRequest = (
+  isScrollLoading: boolean,
+) => ({
   type: AgenciesActionTypes.FETCH_AGENCIES_REQUEST,
+  payload: isScrollLoading,
 });
 
 export const fetchAgenciesSuccess: ActionCreatorSuccess = (
   agencies: Agency[],
+  agenciesAmount: number,
 ) => ({
   type: AgenciesActionTypes.FETCH_AGENCIES_SUCCESS,
-  payload: agencies,
+  payload: { agencies, agenciesAmount },
 });
 
 export const fetchAgenciesFailure: ActionCreatorFailed = () => ({

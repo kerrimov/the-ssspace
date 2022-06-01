@@ -12,6 +12,7 @@ export interface Agency {
   launchers: string;
   image_url: string;
   spacecraft: string;
+  logo_url: string;
   [key: string]: string | number;
 }
 
@@ -20,7 +21,9 @@ export type AgenciesSpecification = Omit<Agency, 'id' | 'image_url' | 'name'>;
 
 export interface AgenciesState {
   agencies: Agency[];
+  agenciesAmount: number;
   isLoading: boolean;
+  isScrollLoading: boolean;
 }
 
 export type AgenciesAction =
@@ -30,19 +33,31 @@ export type AgenciesAction =
 
 export interface AgenciesActionRequest {
   type: AgenciesActionTypes.FETCH_AGENCIES_REQUEST;
+  payload: boolean;
 }
 
 export interface AgenciesActionSuccess {
   type: AgenciesActionTypes.FETCH_AGENCIES_SUCCESS;
-  payload?: Agency[];
+  payload: { agencies: Agency[]; agenciesAmount: number };
 }
 
 export interface AgenciesActionFailed {
   type: AgenciesActionTypes.FETCH_AGENCIES_FAILURE;
 }
 
-export type ActionCreatorRequest = () => AgenciesActionRequest;
+export type ActionCreatorRequest = (
+  isScrollLoading: boolean,
+) => AgenciesActionRequest;
 export type ActionCreatorSuccess = (
   agencies: Agency[],
+  agenciesAmount: number,
 ) => AgenciesActionSuccess;
+
 export type ActionCreatorFailed = () => AgenciesActionFailed;
+
+export interface AgenciesResponse {
+  data: {
+    results: Agency[];
+    count: number;
+  };
+}
