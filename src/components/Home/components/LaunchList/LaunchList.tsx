@@ -30,7 +30,7 @@ export const LaunchList = ({ filterValue }: LaunchListProps) => {
   const { launches, launchAmount, isLoading, isScrollLoading }: LaunchState =
     selectLaunches();
 
-  const launchListIsEmpty: boolean = launches.length === 0;
+  const launchListIsEmpty = !launches.length;
   const isLastPage: boolean = launches.length >= launchAmount;
 
   useEffect(() => {

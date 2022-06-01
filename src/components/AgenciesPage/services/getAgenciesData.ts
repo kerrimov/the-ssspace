@@ -1,4 +1,3 @@
-import { Dispatch } from '@reduxjs/toolkit';
 import { fetchAgencies } from './fetchAgencies';
 import {
   fetchAgenciesFailure,
@@ -6,18 +5,21 @@ import {
   fetchAgenciesSuccess,
 } from '../actions/actionCreators';
 import { errorAlertToggle } from '../../../shared/components/ErrorAlert/actions/errorAlertActions';
+import type { Dispatch } from '@reduxjs/toolkit';
 import type { ErrorAlertToggle } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
-import type { AgenciesAction, Agency } from '../types/Agencies';
+import type { AgenciesAction, AgenciesResponse } from '../types/Agencies';
 
 export const getAgenciesData =
-  () =>
+  (page: number) =>
   async (
     dispatch: Dispatch<AgenciesAction | ErrorAlertToggle>,
   ): Promise<void> => {
-    dispatch(fetchAgenciesRequest());
+    const isScrollLoading: boolean = page !== 1;
+    dispatch(fetchAgenciesRequest(isScrollLoading));
     try {
-      const response: Agency[] = await fetchAgencies();
-      dispatch(fetchAgenciesSuccess(response));
+      const response: AgenciesResponse = await fetchAgencies(page);
+      const { results, count } = response.data;
+      dispatch(fetchAgenciesSuccess(results, count));
     } catch (error) {
       dispatch(fetchAgenciesFailure());
       dispatch(errorAlertToggle((error as Error).message));

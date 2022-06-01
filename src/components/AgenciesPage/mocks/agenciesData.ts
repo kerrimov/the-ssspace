@@ -11,6 +11,7 @@ export const agenciesData: Agency[] = [
     spacecraft: '',
     image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/arianespace_logo_20210603173752.png',
+    logo_url: '',
   },
   {
     id: 1,
@@ -22,6 +23,7 @@ export const agenciesData: Agency[] = [
     spacecraft: 'Shenzhou',
     image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/national2520aeronautics2520and2520space2520administration_logo_20190207032448.png',
+    logo_url: '',
   },
 
   {
@@ -34,6 +36,7 @@ export const agenciesData: Agency[] = [
     spacecraft: '',
     image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/china2520national2520space2520administration_logo_20190207032431.png',
+    logo_url: '',
   },
   {
     id: 3,
@@ -45,5 +48,6 @@ export const agenciesData: Agency[] = [
     spacecraft: 'Shenzhou',
     image_url:
       'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/logo/indian2520space2520research2520organization_logo_20190215225409.png',
+    logo_url: '',
   },
 ];
