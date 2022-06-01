@@ -20,7 +20,7 @@ export const LaunchItemActions = ({ id }: LaunchItemActionsProps) => {
   const onClickInfo = () => setSliderActiveId(id)(dispatch);
   const onClickShare = () =>
     navigator.clipboard.writeText(
-      `${window.location.href}${RoutesPath.DETAILS.slice(1)}/${id}`,
+      `${window.location.href}${RoutesPath.DETAILS.slice(1)}${id}`,
     );
 
   return (
