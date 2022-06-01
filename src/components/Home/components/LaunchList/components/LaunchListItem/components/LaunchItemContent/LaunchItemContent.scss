@@ -1,4 +1,4 @@
-@import '../../../../../../../../shared/styles/variables';
+@import '@styles/variables';
 
 .launch-item-card {
   &-header {
@@ -17,7 +17,6 @@
     flex-direction: column;
     margin: 0 1rem;
     border-top: 1px solid $primary-main;
-
   }
 
   &-pad,
@@ -29,5 +28,5 @@
   }
   &-prop {
     font-weight: $font-weight-bold;
- }
+  }
 }
