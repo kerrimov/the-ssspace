@@ -10,10 +10,10 @@ import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { SecondaryButton } from '@shared/components/SecondaryButton';
 import { ButtonSizes } from '@shared/components/SecondaryButton/types/secondaryButtonTypes';
+import { Loader } from '@shared/components/Loader';
 import { launchDetailsGetLaunchRequest } from './actions/launchDetailsAction';
 import { LaunchCardContent } from './components/LaunchCardContent';
 import { NotFoundPage } from '../NotFoundPage';
-import { Loader } from '../../shared/components/Loader';
 import { RoutesPath } from '../Router/routesPath';
 import type {
   LaunchDetailsGetLaunchRequest,
