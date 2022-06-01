@@ -5,8 +5,6 @@ import {
   Card,
   CardActionArea,
   CardMedia,
-  Container,
-  Grid,
 } from '@mui/material';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
