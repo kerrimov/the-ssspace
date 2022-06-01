@@ -5,6 +5,8 @@ import {
   launchDetailsGetLaunchSuccess,
   launchDetailsLoading,
 } from '../../actions/launchDetailsAction';
+import { errorAlertToggle } from '../../../../shared/components/ErrorAlert/actions/errorAlertActions';
+import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
 import type {
   LaunchDetailsGetDataSuccess,
   LaunchDetailsGetLaunchError,
@@ -19,7 +21,8 @@ export function* launchDetailsGetLaunch(
   | PutEffect<LaunchDetailsLoading>
   | CallEffect<Launch>
   | PutEffect<LaunchDetailsGetDataSuccess>
-  | PutEffect<LaunchDetailsGetLaunchError>,
+  | PutEffect<LaunchDetailsGetLaunchError>
+  | PutEffect<ErrorAlertToggle>,
   void,
   Launch
 > {
@@ -27,8 +30,8 @@ export function* launchDetailsGetLaunch(
     yield put(launchDetailsLoading());
     const data: Launch = yield call(getLaunch, action.payload);
     yield put(launchDetailsGetLaunchSuccess(data));
-  } catch {
-    //there will be dispatching snackbar too, and I will pass error into it
+  } catch (error) {
+    yield put(errorAlertToggle((error as Error).message));
     yield put(launchDetailsGetLaunchError());
   }
 }
