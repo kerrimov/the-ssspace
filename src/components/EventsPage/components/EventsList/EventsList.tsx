@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid } from '@mui/material';
+import { Loader } from '@shared/components/Loader';
 import { EventsItem } from './components/EventsItem';
 import { selectEvents } from '../../selectors/eventsSelectors';
 import { Events } from '../../types/Events';
-import { Loader } from '@shared/components/Loader';
 import './EventsList.scss';
 
 export const EventsList = () => {
