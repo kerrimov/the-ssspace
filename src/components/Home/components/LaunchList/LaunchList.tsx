@@ -1,19 +1,19 @@
 import React, { RefObject, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useOutletContext } from 'react-router';
+import { fetchDefaults } from '@shared/api/constants/fetchDefaults';
+import { Loader } from '@shared/components/Loader';
+import { useInfiniteScroll } from '@shared/api/services/useInfiniteScroll';
 import { LaunchListItem } from './components/LaunchListItem';
 import { Launches } from '../../constants/launches';
 import { selectLaunches } from '../../selectors/launchSelectors';
-import { Loader } from '../../../../shared/components/Loader';
-import { useInfiniteScroll } from '../../../../shared/api/services/useInfiniteScroll';
-import { fetchDefaults } from '../../../../shared/api/constants/fetchDefaults';
 import { getLaunches } from '../../actions/getLaunches';
 import type { LaunchState } from '../../types/LaunchState';
-import type { InfiniteScrollValues } from '../../../../shared/api/services/useInfiniteScroll';
+import type { InfiniteScrollValues } from '@shared/api/services/useInfiniteScroll';
 import type { LaunchAction } from '../../types/LaunchActions';
-import type { Launch } from '../../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 import type { Dispatch } from 'redux';
-import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 import './LaunchList.scss';
 
 interface LaunchListProps {

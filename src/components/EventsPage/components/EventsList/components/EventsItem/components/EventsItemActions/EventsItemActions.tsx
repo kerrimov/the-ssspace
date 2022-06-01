@@ -1,8 +1,8 @@
 import React from 'react';
 import { CardActions, Button } from '@mui/material';
 import { PlayCircle, Share } from '@mui/icons-material';
-import { ButtonSizes } from '../../../../../../../../shared/components/SecondaryButton/types/secondaryButtonTypes';
-import { SecondaryButton } from '../../../../../../../../shared/components/SecondaryButton';
+import { ButtonSizes } from '@shared/components/SecondaryButton/types/secondaryButtonTypes';
+import { SecondaryButton } from '@shared/components/SecondaryButton';
 import './EventsItemActions.scss';
 
 interface EventsItemActionsProps {

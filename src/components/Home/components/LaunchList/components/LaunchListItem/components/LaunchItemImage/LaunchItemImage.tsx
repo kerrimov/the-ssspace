@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardMedia } from '@mui/material';
-import { Launch } from '../../../../../../../../shared/api/types/Launch';
+import { Launch } from '@shared/api/types/Launch';
 import './LaunchItemImage.scss';
 
 interface LaunchItemImageProps {

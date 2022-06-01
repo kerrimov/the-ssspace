@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Popover } from '@mui/material';
-import { LaunchStatus } from '../../../../../../shared/api/types/Launch';
+import { LaunchStatus } from '@shared/api/types/Launch';
 import './LaunchStatusBox.scss';
 
 interface LaunchStatusProp {

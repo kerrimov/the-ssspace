@@ -1,13 +1,13 @@
+import { errorAlertToggle } from '@shared/components/ErrorAlert/actions/errorAlertActions';
 import { fetchAgencies } from './fetchAgencies';
 import {
   fetchAgenciesFailure,
   fetchAgenciesRequest,
   fetchAgenciesSuccess,
 } from '../actions/actionCreators';
-import { errorAlertToggle } from '../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type { Dispatch } from '@reduxjs/toolkit';
-import type { ErrorAlertToggle } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
 import type { AgenciesAction, AgenciesResponse } from '../types/Agencies';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 
 export const getAgenciesData =
   (page: number) =>

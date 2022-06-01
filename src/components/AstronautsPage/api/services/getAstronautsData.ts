@@ -1,16 +1,16 @@
 import { Dispatch } from 'react';
+import { errorAlertToggle } from '@shared/components/ErrorAlert/actions/errorAlertActions';
 import { fetchAstronauts } from './fetchAstronauts';
 import {
   fetchAstronautsFailure,
   fetchAstronautsRequest,
   fetchAstronautsSuccess,
 } from '../../actions/actionCreators';
-import { errorAlertToggle } from '../../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type {
   AstronautsResponse,
   FetchAstronautsActions,
 } from '../../types/Astronauts';
-import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 
 export const getAstronautsData =
   (limit: number, page: number) =>

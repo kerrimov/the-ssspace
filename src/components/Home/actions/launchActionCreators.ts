@@ -5,7 +5,7 @@ import type {
   LaunchActionRequest,
   LaunchActionSuccess,
 } from '../types/LaunchActions';
-import type { Launch } from '../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 
 export const launchRequestAction = (
   filterValue: Launches,

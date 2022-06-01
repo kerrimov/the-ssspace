@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import { EventsItem } from './components/EventsItem';
 import { selectEvents } from '../../selectors/eventsSelectors';
 import { Events } from '../../types/Events';
-import { Loader } from '../../../../shared/components/Loader';
+import { Loader } from '@shared/components/Loader';
 import './EventsList.scss';
 
 export const EventsList = () => {

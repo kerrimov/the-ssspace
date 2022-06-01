@@ -1,4 +1,4 @@
-import { Launch } from '../../../shared/api/types/Launch';
+import { Launch } from '@shared/api/types/Launch';
 
 interface LaunchMission {
   description: string;

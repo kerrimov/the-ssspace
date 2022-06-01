@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { Endpoints } from '../../../shared/api/constants/endpoints';
+import { Endpoints } from '@shared/api/constants/endpoints';
+import { axiosInstance } from '@shared/api/services/axiosInstance';
 import { fetchDefaults } from '../../../shared/api/constants/fetchDefaults';
-import { axiosInstance } from '../../../shared/api/services/axiosInstance';
 import { AgenciesResponse, Agency } from '../types/Agencies';
 
 export const fetchAgencies = async (

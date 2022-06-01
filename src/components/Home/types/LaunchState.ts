@@ -1,4 +1,4 @@
-import type { Launch } from '../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 
 export interface LaunchState {
   launches: Launch[];

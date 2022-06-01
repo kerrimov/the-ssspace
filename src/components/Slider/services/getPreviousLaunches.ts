@@ -1,11 +1,11 @@
-import { fetchData } from '../../../shared/api/services/fetchData';
-import { Endpoints } from '../../../shared/api/constants/endpoints';
+import { fetchData } from '@shared/api/services/fetchData';
+import { Endpoints } from '@shared/api/constants/endpoints';
+import { errorAlertToggle } from '@shared/components/ErrorAlert/actions/errorAlertActions';
 import {
   sliderGetPreviousLaunchesError,
   sliderGetPreviousLaunchesSuccess,
   sliderLoadData,
 } from '../actions/sliderActions';
-import { errorAlertToggle } from '../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type { Dispatch } from 'redux';
 import type {
   SliderGetPreviousLaunchesError,
@@ -13,7 +13,7 @@ import type {
   SliderLoadData,
   Slides,
 } from '../types/SliderTypes';
-import type { ErrorAlertToggle } from '../../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 
 export const getPreviousLaunches =
   () =>
