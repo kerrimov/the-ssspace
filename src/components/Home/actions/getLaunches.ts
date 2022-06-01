@@ -1,4 +1,5 @@
 import { errorAlertToggle } from '@shared/components/ErrorAlert/actions/errorAlertActions';
+import { fetchDefaults } from '@shared/api/constants/fetchDefaults';
 import {
   launchErrorAction,
   launchRequestAction,
@@ -6,7 +7,6 @@ import {
 } from './launchActionCreators';
 import { Launches } from '../constants/launches';
 import { fetchLaunches } from '../services/fetchLaunches';
-import { fetchDefaults } from '@shared/api/constants/fetchDefaults';
 import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 import type { Dispatch } from '@reduxjs/toolkit';
 import type { LaunchAction } from '../types/LaunchActions';
