@@ -1,5 +1,5 @@
-import { fetchDefaults } from '../../../shared/api/constants/fetchDefaults';
-import { Endpoints } from '../../../shared/api/constants/endpoints';
+import { fetchDefaults } from '@shared/api/constants/fetchDefaults';
+import { Endpoints } from '@shared/api/constants/endpoints';
 import { LocationIds, Launches } from '../constants/launches';
 import type { FetchLaunchConfig } from '../types/FetchLaunchConfig';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardContent, CardHeader, Typography } from '@mui/material';
-import { Launch } from '../../../../../../../../shared/api/types/Launch';
+import { Launch } from '@shared/api/types/Launch';
 import './LaunchItemContent.scss';
 
 interface LaunchItemContentProps {

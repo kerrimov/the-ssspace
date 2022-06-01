@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
+import { Loader } from '@shared/components/Loader';
 import { AstronautsItem } from './components/AstronautsItem';
 import { FetchAstronautsActions } from '../../types/Astronauts';
 import { getAstronautsData } from '../../api/services/getAstronautsData';
 import { selectAstronauts } from '../../selectors/astronautsSelectors';
-import { Loader } from '../../../../shared/components/Loader';
 import { setCurrentPage } from '../../actions/actionCreators';
-import { Paginator } from '../../../../shared/components/Paginator/Paginator';
-import { fetchDefaults } from '../../../../shared/api/constants/fetchDefaults';
+import { Paginator } from '@shared/components/Paginator/Paginator';
+import { fetchDefaults } from '@shared/api/constants/fetchDefaults';
 import type { Dispatch } from 'redux';
 import type { Astronauts, PageParams } from '../../types/Astronauts';
-import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 import './AstronautsList.scss';
 
 export const AstronautsList = () => {

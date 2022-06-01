@@ -1,13 +1,13 @@
+import { errorAlertToggle } from '@shared/components/ErrorAlert/actions/errorAlertActions';
 import { fetchEvents } from './fetchEvents';
 import {
   fetchEventsFailure,
   fetchEventsRequest,
   fetchEventsSuccess,
 } from '../../actions/actionCreators';
-import { errorAlertToggle } from '../../../../shared/components/ErrorAlert/actions/errorAlertActions';
 import type { Dispatch } from 'redux';
 import type { Events, FetchEventsActions } from '../../types/Events';
-import type { ErrorAlertToggle } from '../../../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 
 export const getEventsData =
   () =>

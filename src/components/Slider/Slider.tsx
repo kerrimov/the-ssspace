@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import { Container } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
+import { Loader } from '@shared/components/Loader';
 import { SliderCard } from './components/SliderCard';
 import { SliderArrow } from './components/SliderArrow';
 import { ArrowDirection } from './constants/constants';
 import { getPreviousLaunches } from './services/getPreviousLaunches';
 import { getUpcomingLaunches } from './services/getUpcomingLaunches';
 import { getSlides } from './selectors/sliderSelector';
-import { Loader } from '../../shared/components/Loader';
 import type {
   SliderAllActions,
   SliderState,
@@ -17,7 +17,7 @@ import type {
 } from './types/SliderTypes';
 import type { Dispatch } from 'redux';
 import type { StoreState } from '../../store';
-import type { ErrorAlertToggle } from '../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 import 'swiper/swiper-bundle.css';
 import './Slider.scss';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import moment from 'moment';
 import { captions } from '../../../../constants/captions';
-import type { Launch } from '../../../../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 import './CardDetails.scss';
 
 interface CardDetailsProps {

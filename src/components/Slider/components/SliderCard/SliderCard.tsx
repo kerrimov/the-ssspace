@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardContent, CardMedia } from '@mui/material';
+import { CountdownTimer } from '@shared/components/CountdownTimer';
 import { SliderCardMain } from './components/SliderCardMain';
 import { SliderCardFooterMemoized } from './components/SliderCardFooter';
-import { CountdownTimer } from '../../../../shared/components/CountdownTimer';
 import './SliderCard.scss';
 
 interface SliderCardProps {

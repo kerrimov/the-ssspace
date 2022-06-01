@@ -1,4 +1,4 @@
-import type { Launch } from '../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 
 export const launchDetails: Launch = {
   id: '0bc91464-1d61-4545-95c8-01040dc5eec9',

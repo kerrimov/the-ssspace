@@ -3,7 +3,7 @@ import { Card } from '@mui/material';
 import { LaunchItemImage } from './components/LaunchItemImage';
 import { LaunchItemContent } from './components/LaunchItemContent';
 import { LaunchItemActions } from './components/LaunchItemActions';
-import type { Launch } from '../../../../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 import './LaunchListItem.scss';
 
 interface LaunchListItemProps {

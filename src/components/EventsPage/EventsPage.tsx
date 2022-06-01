@@ -5,7 +5,7 @@ import { getEventsData } from './api/services/getEventsData';
 import { EventsList } from './components/EventsList';
 import { FetchEventsActions } from './types/Events';
 import type { Dispatch } from 'redux';
-import type { ErrorAlertToggle } from '../../shared/components/ErrorAlert/types/errorAlertTypes';
+import type { ErrorAlertToggle } from '@shared/components/ErrorAlert/types/errorAlertTypes';
 import './EventsPage.scss';
 
 export const EventsPage = () => {

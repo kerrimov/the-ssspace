@@ -1,5 +1,5 @@
 import { Launches } from '../constants/launches';
-import type { Launch } from '../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 
 interface LaunchActionPayload {
   filterValue: Launches;

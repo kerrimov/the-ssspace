@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Endpoints } from '../../../../shared/api/constants/endpoints';
+import { Endpoints } from '@shared/api/constants/endpoints';
 
 export const fetchEvents = async () => {
   try {

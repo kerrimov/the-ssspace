@@ -5,7 +5,7 @@ import {
   LaunchActionPayloadRequest,
   LaunchActionPayloadSuccess,
 } from '../types/LaunchActions';
-import type { Launch } from '../../../shared/api/types/Launch';
+import type { Launch } from '@shared/api/types/Launch';
 import type { LaunchState } from '../types/LaunchState';
 
 const initState: LaunchState = {
