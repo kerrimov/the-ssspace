@@ -1,12 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
+import { agenciesReducer } from '@components/AgenciesPage/reducers/agenciesReducer';
+import { launchReducer } from '@components/Home/reducers/launchReducer';
+import { astronautsReducer } from '@components/AstronautsPage/reducers/astronautsReducer';
+import { sliderReducer } from '@components/Slider/reducers/sliderReducer';
+import { eventsReducer } from '@components/EventsPage/reducers/eventsReducer';
+import { errorAlertReducer } from '@shared/components/ErrorAlert/reducers/errorAlert';
 import { rootSaga } from './sagas';
-import { agenciesReducer } from '../components/AgenciesPage/reducers/agenciesReducer';
-import { launchReducer } from '../components/Home/reducers/launchReducer';
-import { astronautsReducer } from '../components/AstronautsPage/reducers/astronautsReducer';
-import { sliderReducer } from '../components/Slider/reducers/sliderReducer';
-import { errorAlertReducer } from '../shared/components/ErrorAlert/reducers/errorAlert';
-import { eventsReducer } from '../components/EventsPage/reducers/eventsReducer';
 import { launchDetailsReducer } from '../components/LaunchDetailsPage/reducers/launchDetailsReducer';
 
 const sagaMiddleware = createSagaMiddleware();

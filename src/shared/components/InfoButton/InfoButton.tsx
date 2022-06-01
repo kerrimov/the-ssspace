@@ -2,7 +2,7 @@ import React, { ReactEventHandler } from 'react';
 import { Link } from 'react-router-dom';
 import { InfoOutlined } from '@mui/icons-material';
 import { Button } from '@mui/material';
-import { RoutesPath } from '../../../components/Router/routesPath';
+import { RoutesPath } from '@components/Router/routesPath';
 import './InfoButton.scss';
 
 interface InfoButtonProps {
