@@ -6,7 +6,7 @@ import {
   CardActionArea,
   CardMedia,
 } from '@mui/material';
-import { useParams } from 'react-router';
+import { useParams, useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { SecondaryButton } from '@shared/components/SecondaryButton';
 import { ButtonSizes } from '@shared/components/SecondaryButton/types/secondaryButtonTypes';
@@ -24,7 +24,15 @@ import type { Dispatch } from 'redux';
 import type { StoreState } from '../../store';
 import './LaunchDetailsPage.scss';
 
+interface LocationState {
+  from: string;
+}
+
 export const LaunchDetailsPage = () => {
+  let from: string | RoutesPath = RoutesPath.HOME;
+  const state = useLocation().state as LocationState;
+  if (state) from = state.from;
+
   const { id } = useParams<LaunchDetailsPageUrlParams>();
   const { isLoading, launch } = useSelector<StoreState, LaunchDetailsState>(
     state => state.launchDetails,
@@ -43,7 +51,7 @@ export const LaunchDetailsPage = () => {
     <Container className="launch-details-page">
       <SecondaryButton
         caption="go back"
-        path={RoutesPath.HOME}
+        path={from}
         buttonSize={ButtonSizes.LARGE}
       />
       <Card raised className="launch-details-card">

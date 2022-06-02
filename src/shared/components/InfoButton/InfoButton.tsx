@@ -1,5 +1,5 @@
 import React, { ReactEventHandler } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { InfoOutlined } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import { RoutesPath } from '@components/Router/routesPath';
@@ -18,6 +18,8 @@ export const InfoButton = ({
   clickHandler,
   className,
 }: InfoButtonProps) => {
+  const location = useLocation();
+
   return (
     <Button
       className={`list-item-actions-button ${className}`}
@@ -25,7 +27,11 @@ export const InfoButton = ({
       size="medium"
       onClick={clickHandler}
     >
-      <Link className="list-item-actions-link" to={path}>
+      <Link
+        className="list-item-actions-link"
+        to={path}
+        state={{ from: location.pathname }}
+      >
         <InfoOutlined
           className="list-item-actions-button-icon"
           fontSize="small"

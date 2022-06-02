@@ -1,13 +1,16 @@
 import { fetchDefaults } from '@shared/api/constants/fetchDefaults';
 import { Endpoints } from '@shared/api/constants/endpoints';
 import { LocationIds, Launches } from '../constants/launches';
-import type { FetchLaunchConfig } from '../types/FetchLaunchConfig';
+import type {
+  FetchLaunchConfig,
+  FetchLaunchConfigParams,
+} from '../types/FetchLaunchConfig';
 
 export const fetchLaunchConfig = (
   filterValue: string,
   currentPage: number,
 ): FetchLaunchConfig => {
-  const params: FetchLaunchConfig['params'] = {
+  const params: FetchLaunchConfigParams = {
     limit: fetchDefaults.LIMIT,
     offset: (currentPage - 1) * fetchDefaults.LIMIT,
   };

@@ -2,7 +2,7 @@ import { AgenciesActionTypes, Agency } from '../types/Agencies';
 import type {
   AgenciesState,
   AgenciesAction,
-  AgenciesActionSuccess,
+  AgenciesActionPayloadSuccess,
 } from '../types/Agencies';
 
 const initialState: AgenciesState = {
@@ -30,7 +30,7 @@ export const agenciesReducer = (
       };
     case AgenciesActionTypes.FETCH_AGENCIES_SUCCESS: {
       const { agencies, agenciesAmount } =
-        action.payload as AgenciesActionSuccess['payload'];
+        action.payload as AgenciesActionPayloadSuccess;
       return {
         ...state,
         isLoading: false,

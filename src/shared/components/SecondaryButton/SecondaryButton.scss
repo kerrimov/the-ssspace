@@ -7,6 +7,15 @@
   font-weight: $font-weight-bold;
 }
 
+.MuiButton-root.secondary-button {
+  color: $primary-dark;
+}
+
+.MuiButton-root.secondary-button:hover,
+.MuiButton-root.secondary-button:focus {
+  color: $primary-main;
+}
+
 .secondary-button {
   &-icon {
     margin-right: 0.5rem;
@@ -16,10 +25,5 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: $primary-dark;
-    &:hover,
-    &:focus {
-      color: $primary-main;
-    }
   }
 }
