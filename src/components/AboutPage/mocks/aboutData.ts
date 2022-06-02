@@ -55,7 +55,8 @@ export const aboutData: Array<About> = [
       { icon: LinkedIn, url: 'https://www.linkedin.com/in/vklochan/' },
       { icon: GitHub, url: 'https://github.com/vovkis13' },
     ],
-    description: 'Likes to code, but prefer to think',
+    description:
+      'Results-oriented, easy to learn, self-motivated Front-end developer. Likes to code, but prefer to think',
     profile_image: process.env.PUBLIC_URL + '/vk_photo.jpg',
   },
   {

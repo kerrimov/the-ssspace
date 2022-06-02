@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { Dispatch } from 'redux';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Button, CardActions } from '@mui/material';
 import { setSliderActiveId } from './helpers/setSliderActiveId';
@@ -16,6 +17,7 @@ const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
   id,
 }: SliderCardFooterProps) => {
   const dispatch = useDispatch<Dispatch<SliderSetActiveSlideId>>();
+  const location = useLocation();
 
   const onClickSetActiveId = useCallback(
     (id: string) => {
@@ -29,6 +31,7 @@ const SliderCardFooter: React.FC<SliderCardFooterProps> = ({
       <Button size="medium" color="primary" variant="contained">
         <Link
           to={`${RoutesPath.DETAILS}${id}`}
+          state={{ from: location.pathname }}
           className="slider-card-read-more-link"
           onClick={() => onClickSetActiveId(id)}
         >

@@ -36,9 +36,14 @@ export interface AgenciesActionRequest {
   payload: boolean;
 }
 
+export interface AgenciesActionPayloadSuccess {
+  agencies: Agency[];
+  agenciesAmount: number;
+}
+
 export interface AgenciesActionSuccess {
   type: AgenciesActionTypes.FETCH_AGENCIES_SUCCESS;
-  payload: { agencies: Agency[]; agenciesAmount: number };
+  payload: AgenciesActionPayloadSuccess;
 }
 
 export interface AgenciesActionFailed {

@@ -26,17 +26,17 @@ export const SecondaryButton = (props: SecondaryButtonProps) => {
   const { caption, path, clickHandler, className, buttonSize, Icon } = props;
 
   return (
-    <Button className="secondary-button" size={buttonSize} variant="outlined">
-      <Link
-        className={`secondary-button-link ${className}`}
-        to={path}
-        onClick={clickHandler}
-      >
+    <Link
+      className={`secondary-button-link ${className}`}
+      to={path}
+      onClick={clickHandler}
+    >
+      <Button className="secondary-button" size={buttonSize} variant="outlined">
         {Icon && (
           <Icon className="secondary-button-icon" fontSize={FontSizes.SMALL} />
         )}
         {caption}
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 };
