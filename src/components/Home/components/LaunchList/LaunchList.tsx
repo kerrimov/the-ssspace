@@ -56,7 +56,7 @@ export const LaunchList = ({ filterValue }: LaunchListProps) => {
         <div className="launch-container" ref={launchListRef}>
           <h1 className="launch-header">{filterValue} launches </h1>
           {isLoading && !isScrollLoading ? (
-            <Loader isLarge={false} />
+            <Loader />
           ) : (
             <ul className="launch-list">
               {launches.map((launch: Launch) => (

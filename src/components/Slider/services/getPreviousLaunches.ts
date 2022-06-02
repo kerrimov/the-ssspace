@@ -27,10 +27,10 @@ export const getPreviousLaunches =
   ): Promise<void> => {
     try {
       dispatch(sliderLoadData());
-      const upcomingLaunches = await fetchData<Array<Slides>>(
-        Endpoints.PREVIOUS_LAUNCHES_ENDPOINT,
+      const previousLaunches = await fetchData<Array<Slides>>(
+        Endpoints.PREVIOUS_LAUNCH_ENDPOINT,
       );
-      dispatch(sliderGetPreviousLaunchesSuccess(upcomingLaunches));
+      dispatch(sliderGetPreviousLaunchesSuccess(previousLaunches));
     } catch (error) {
       dispatch(sliderGetPreviousLaunchesError());
       dispatch(errorAlertToggle((error as Error).message));

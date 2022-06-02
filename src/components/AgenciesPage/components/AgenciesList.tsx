@@ -19,7 +19,7 @@ export const AgenciesList = () => {
 
   const { loadMoreRef, nextPage, setNextPage }: InfiniteScrollValues =
     useInfiniteScroll();
-  const agenciesListIsEmpty: boolean = agencies.length === 0;
+  const agenciesListIsEmpty = !agencies.length;
   const isLastPage: boolean = agencies.length >= agenciesAmount;
 
   useEffect(() => {
