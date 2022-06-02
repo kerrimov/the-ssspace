@@ -18,11 +18,12 @@ interface LaunchItemActionsProps {
 export const LaunchItemActions = ({ id }: LaunchItemActionsProps) => {
   const dispatch: Dispatch<SliderSetActiveSlideId> = useDispatch();
   const onClickInfo = () => setSliderActiveId(id)(dispatch);
-  const onClickShare = () =>
+  const onClickShare = () => {
+    const { origin, pathname } = window.location;
     navigator.clipboard.writeText(
-      `${window.location.href}${RoutesPath.DETAILS.slice(1)}${id}`,
+      `${origin}${pathname}#/${RoutesPath.DETAILS.slice(1)}${id}`,
     );
-
+  };
   return (
     <CardActions className="launch-item-actions">
       <InfoButton
