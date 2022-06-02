@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/the-ssspace/static/css/main.80c01923.css",
+    "main.js": "/the-ssspace/static/js/main.e5e39a77.js",
+    "static/media/california.svg": "/the-ssspace/static/media/california.5ccebf2c29cdb8f93a09.svg",
+    "static/media/florida.svg": "/the-ssspace/static/media/florida.d30e3cd547a682bba78c.svg",
+    "static/media/crewed.svg": "/the-ssspace/static/media/crewed.f89ec449bec847198ec1.svg",
+    "static/media/previous.svg": "/the-ssspace/static/media/previous.4011875ef6454041cbe8.svg",
+    "index.html": "/the-ssspace/index.html",
+    "main.80c01923.css.map": "/the-ssspace/static/css/main.80c01923.css.map",
+    "main.e5e39a77.js.map": "/the-ssspace/static/js/main.e5e39a77.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80c01923.css",
+    "static/js/main.e5e39a77.js"
+  ]
+}
