@@ -36,6 +36,8 @@ export const LaunchList = ({ filterValue }: LaunchListProps) => {
   useEffect(() => {
     if (filterValue === Launches.UPCOMING)
       window.scroll({ top: 0, behavior: 'smooth' });
+    else launchListRef.current?.scrollIntoView(true);
+
     setNextPage(fetchDefaults.FIRST_PAGE);
     getLaunches(filterValue)(dispatch);
   }, [filterValue]);

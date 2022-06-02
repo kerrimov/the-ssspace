@@ -9,7 +9,7 @@ export const Home = () => {
 
   return (
     <div className="home-container">
-      <LaunchFilter launchListRef={launchListRef} />
+      <LaunchFilter />
       <div className="home-inner-container">
         <Slider />
         <Outlet context={launchListRef} />
